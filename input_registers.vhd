@@ -1,0 +1,1 @@
+-- registers that latch CA, CD, and RD/WR on falling edge of n0

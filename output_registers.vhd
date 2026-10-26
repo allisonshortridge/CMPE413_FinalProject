@@ -1,0 +1,1 @@
+-- holds read byte stable for full clock when output-enable is high
