@@ -22,7 +22,9 @@ architecture structural of pos_dlatch is
 -- 2-input NOR gate
 component nor2
     port (
-
+        input1  :   in std_logic;
+        input2  :   in std_logic;
+        output  :   out std_logic
     );
 end component
 
