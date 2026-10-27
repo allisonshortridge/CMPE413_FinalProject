@@ -1,0 +1,3 @@
+-- four LRU bits (one per index)
+-- update logic on hits and refills
+-- victim-select logic (invalid way first, otherwise LRU way)
