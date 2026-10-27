@@ -34,6 +34,13 @@ component pos_dlatch
 end component
 
 
+component inverter
+    port (
+        input    : in  std_logic;
+        output   : out std_logic
+    );
+end component;
+
 -- transmission gate
 component tx
     port ( 
@@ -56,10 +63,11 @@ component decoder1to2
 end component
 
 for pos_dlatch_1: pos_dlatch use entity work.pos_dlatch(structural);
+for inverter_1: inverter use entity work.inverter(structural);
 for tx_1: tx use entity work.tx(structural);
-for decoder1to2_1: use entity work.decoder1to2(structural);
+for decoder1to2_1: decoder1to2 use entity work.decoder1to2(structural);
 
-signal wr_en, rd_en, dlatch_out: std_logic;
+signal wr_en, rd_en, not_rd_en, dlatch_out: std_logic;
 
 begin
 
@@ -67,6 +75,8 @@ begin
 
     pos_dlatch_1: pos_dlatch port map(wr_data, wr_en, dlatch_out, dlatch_out);
 
-    tx_1: tx port map(rd_en, ?, dlatch_out, rd_data);
+    inverter_1: inverter port map(rd_en, not_rd_en);
+
+    tx_1: tx port map(rd_en, not_rd_en, dlatch_out, rd_data);
 
 end structural
