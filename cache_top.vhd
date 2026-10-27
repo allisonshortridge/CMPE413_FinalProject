@@ -1,4 +1,0 @@
--- wires everything together and exposes chip pins
-    -- CA, CD, START, RD/WR, CLK, RESET, BUSY, MA, MD and ENABLE
-    -- builds MA as the block address with the last two bits 00
-    -- drives CD with the tri-state buffer on output enable

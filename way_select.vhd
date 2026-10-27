@@ -1,2 +1,0 @@
--- uses the two hit signals to mux the read byte between the ways
--- steers write and refill purlse to the correct way

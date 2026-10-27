@@ -1,1 +1,0 @@
--- rising-edge flipflop that turns FSM's fill_arm and write signals into clean one-clock pulse on cache chip enable????
