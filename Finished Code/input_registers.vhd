@@ -6,7 +6,7 @@ entity input_register is
     port (
         d   : in std_logic;
         load : in std_logic;
-        clock    : in std_logic;
+        clk    : in std_logic;
         q   : out std_logic
     );
 end input_register;

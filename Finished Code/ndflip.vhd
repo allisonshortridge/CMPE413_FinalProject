@@ -5,8 +5,7 @@ use IEEE.std_logic_1164.all;
 entity ndflip is
     port (
         d   : in std_logic;
-        load : in std_logic;
-        clock    : in std_logic;
+        clk    : in std_logic;
         q   : out std_logic
     );
 end ndflip;
