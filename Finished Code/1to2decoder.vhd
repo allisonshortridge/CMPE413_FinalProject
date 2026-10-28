@@ -28,7 +28,7 @@ component and2
         input2   : in  std_logic;
         output   : out std_logic
     );
-end component
+end component;
 
 for inverter_1: inverter use entity work.inverter(structural);
 for and2_1, and2_2: and2 use entity work.and2(structural);
@@ -41,4 +41,4 @@ begin
     and2_1: and2 port map(not_a0, E, Y0);
     and2_2: and2 port map(A0, E, Y1);
 
-end structural
+end structural;

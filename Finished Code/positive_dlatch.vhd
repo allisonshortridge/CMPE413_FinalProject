@@ -1,6 +1,6 @@
 -- for cache cell
 
-    -- uses 4 2-input NOR gates and an inverter
+    -- uses 4 2-input NOR gates and two inverters
 
 library STD;
 library IEEE;
@@ -26,7 +26,7 @@ component nor2
         input2  :   in std_logic;
         output  :   out std_logic
     );
-end component
+end component;
 
 -- inverter
 component inverter
@@ -36,23 +36,24 @@ component inverter
 end component;
 
 for nor2_1, nor2_2, nor2_3, nor2_4: nor2 use entity work.nor2(structural);
-for inverter_1: inverter use entity work.inverter(structural);
+for inverter_1, inverter_2: inverter use entity work.inverter(structural);
 
-signal not_d, d_nor_en_out, notd_nor_en_out, q_temp, qbar_temp:std_logic;
+signal not_d, not_en, d_nor_en_out, notd_nor_en_out, q_temp, qbar_temp:std_logic;
 
 begin
     -- inversion of d input
     inverter_1: inverter port map(d, not_d);
+    inverter_2: inverter port map(en, not_en);
 
     -- logic for q output
-    nor2_1: nor2 port map(d, en, d_nor_en_out);
+    nor2_1: nor2 port map(d, not_en, d_nor_en_out);
     nor2_2: nor2 port map(d_nor_en_out, qbar_temp, q_temp);
 
     -- logic for qbar output
-    nor2_3: nor2 port map(not_d, en, notd_nor_en_out);
+    nor2_3: nor2 port map(not_d, not_en, notd_nor_en_out);
     nor2_4: nor2 port map(notd_nor_en_out, q_temp, qbar_temp);
 
     q<=q_temp;
     qbar<=qbar_temp;
 
-end structural
+end structural;

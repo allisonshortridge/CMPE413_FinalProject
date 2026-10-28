@@ -2,15 +2,15 @@ library STD;
 library IEEE;
 use IEEE.std_logic_1164.all;
 
-entity cd_out is
+entity ma_out is
     port (
         addr_in   : in std_logic_vector(7 downto 0);
         en  : in std_logic;
         y   : out std_logic_vector(7 downto 0)
     );
-end cd_out;
+end ma_out;
 
-architecture structural of cd_out is
+architecture structural of ma_out is
     component tristate_buffer
         port (
         input1  :   in std_logic;

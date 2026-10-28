@@ -47,8 +47,8 @@ architecture structural of mux is
 begin
     inv_1: inverter port map(sel, sel_not);
 
-    and_1: and3 port map (sel_not, input1, and_1_out);
-    and_2: and3 port map (sel, input2, and_2_out);
+    and_1: and2 port map (sel_not, input1, and_1_out);
+    and_2: and2 port map (sel, input2, and_2_out);
 
-    or_1: or4 port map (and_1_out, and_2_out, y);
+    or_1: or2 port map (and_1_out, and_2_out, y);
 end structural;

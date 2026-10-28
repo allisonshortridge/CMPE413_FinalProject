@@ -30,7 +30,7 @@ end component;
 for inverter_1: inverter use entity work.inverter(structural);
 for or2_1: or2 use entity work.or2(structural);
 
-signals or_input1, or_input2, or_output, inverter_output: std_logic;
+signal or_input1, or_input2, or_output, inverter_output: std_logic;
 
 begin
     or_input1<=input1;

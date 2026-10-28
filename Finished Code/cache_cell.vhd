@@ -24,7 +24,7 @@ end cache_cell;
 architecture structural of cache_cell is
 
 -- positive level sensitive latch
-component pos_dlatch
+component positive_dlatch
     port (
         d   : in  std_logic;
         en : in  std_logic;
@@ -62,7 +62,7 @@ component decoder1to2
     );
 end component;
 
-for pos_dlatch_1: pos_dlatch use entity work.pos_dlatch(structural);
+for positive_dlatch_1: positive_dlatch use entity work.positive_dlatch(structural);
 for inverter_1: inverter use entity work.inverter(structural);
 for tx_1: tx use entity work.tx(structural);
 for decoder1to2_1: decoder1to2 use entity work.decoder1to2(structural);
@@ -73,7 +73,7 @@ begin
 
     decoder1to2_1: decoder1to2 port map(rd_wr, chip_en, rd_en, wr_en);
 
-    pos_dlatch_1: pos_dlatch port map(wr_data, wr_en, dlatch_out, dlatch_out);
+    positive_dlatch_1: positive_dlatch port map(wr_data, wr_en, dlatch_out, open);
 
     inverter_1: inverter port map(rd_en, not_rd_en);
 
