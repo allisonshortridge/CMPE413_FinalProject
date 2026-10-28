@@ -24,12 +24,12 @@ architecture structural of ca_reg is
 for bit_0, bit_1, bit_2, bit_3, bit_4, bit_5, bit_6, bit_7: reg use entity work.reg(structural);;
 
 begin
-  u_bit0 : port map (ca(0), load, clk, q(0));
-  u_bit1 : port map (ca(1), load, clk, q(1));
-  u_bit2 : port map (ca(2), load, clk, q(2));
-  u_bit3 : port map (ca(3), load, clk, q(3));
-  u_bit4 : port map (ca(4), load, clk, q(4));
-  u_bit5 : port map (ca(5), load, clk, q(5));
-  u_bit6 : port map (ca(6), load, clk, q(6));
-  u_bit7 : port map (ca(7), load, clk, q(7));
+  bit0 : port map (ca(0), load, clk, q(0));
+  bit1 : port map (ca(1), load, clk, q(1));
+  bit2 : port map (ca(2), load, clk, q(2));
+  bit3 : port map (ca(3), load, clk, q(3));
+  bit4 : port map (ca(4), load, clk, q(4));
+  bit5 : port map (ca(5), load, clk, q(5));
+  bit6 : port map (ca(6), load, clk, q(6));
+  bit7 : port map (ca(7), load, clk, q(7));
 end architecture structural;
