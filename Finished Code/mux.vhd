@@ -11,7 +11,7 @@ entity mux is
     );
 end mux;
 
-architecture structural of mu1 is
+architecture structural of mux is
     component and2
         port (
         input1   : in std_logic;
