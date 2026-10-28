@@ -31,7 +31,7 @@ component pos_dlatch
         q   : out std_logic;
         qbar: out std_logic
     );
-end component
+end component;
 
 
 component inverter
@@ -49,7 +49,7 @@ component tx
         input : in std_logic;
         output : out std_logic
     );
-end component
+end component;
 
 
 -- 1-to-2 decoder
@@ -60,7 +60,7 @@ component decoder1to2
         Y1    : out std_logic;
         Y0    : out std_logic
     );
-end component
+end component;
 
 for pos_dlatch_1: pos_dlatch use entity work.pos_dlatch(structural);
 for inverter_1: inverter use entity work.inverter(structural);
@@ -79,4 +79,4 @@ begin
 
     tx_1: tx port map(rd_en, not_rd_en, dlatch_out, rd_data);
 
-end structural
+end structural;
