@@ -10,6 +10,7 @@ entity cache_block is
         vt_en       :   in std_logic;
         wr_valid    :   in std_logic;
         wr_tag      :   in std_logic_vector(1 downto 0);
+        byte_offset :   in std_logic_vector(1 downto 0);
         valid_bit   :   out std_logic;
         tag         :   out std_logic_vector(1 downto 0);
         rd_data   :   out std_logic_vector(7 downto 0)
@@ -38,14 +39,37 @@ component cache_cell
     );
 end component;
 
+-- decoder for determining which byte in the block to access
+component decoder2to4
+    port (
+        A1    : in std_logic;
+        A0    : in std_logic;
+        E     : in std_logic;
+        Y3    : out std_logic;
+        Y2    : out std_logic;
+        Y1    : out std_logic;
+        Y0    : out std_logic
+    );
+end component;
 
-for cache_byte1: cache_byte use entity work.cache_byte(structural);
+
+for cache_byte0, cache_byte1, cache_byte2, cache_byte3: cache_byte use entity work.cache_byte(structural);
 for valid_bit1, tag1, tag0: cache_cell use entity work.cache_cell(structural);
-for inverter_1: inverter use entity work.inverter(structural);
+for byte_decoder: decoder2to4 use entity work.decoder2to4(structural);
+
+
+signal byte_en: std_logic_vector(3 downto 0);
 
 begin
 
-    cache_byte1: cache_byte port map(wr_data, chip_en, rd_wr, rd_data);
+    -- determine which byte in block to access
+    byte_decoder: decoder2to4 port map(byte_offset, chip_en, byte_en);
+
+    -- use byte enable from decoder logic to determine which byte is going to be accessed
+    cache_byte0: cache_byte port map(wr_data, byte_en(0), rd_wr, rd_data);
+    cache_byte1: cache_byte port map(wr_data, byte_en(1), rd_wr, rd_data);
+    cache_byte2: cache_byte port map(wr_data, byte_en(2), rd_wr, rd_data);
+    cache_byte3: cache_byte port map(wr_data, byte_en(3), rd_wr, rd_data);
 
     valid_bit1: cache_cell port map(wr_valid, chip_en, vt_en, valid_bit);
 
