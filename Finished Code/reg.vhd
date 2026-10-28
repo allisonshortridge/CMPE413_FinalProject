@@ -2,16 +2,16 @@ library STD;
 library IEEE;
 use IEEE.std_logic_1164.all;
 
-entity input_register is
+entity reg is
     port (
         d   : in std_logic;
         load : in std_logic;
         clk    : in std_logic;
         q   : out std_logic
     );
-end input_register;
+end reg;
 
-architecture structural of input_register is
+architecture structural of reg is
     component mux
         port (
             input1   : in std_logic;
