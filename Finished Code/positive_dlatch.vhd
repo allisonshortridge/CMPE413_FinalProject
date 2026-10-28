@@ -8,16 +8,16 @@ use IEEE.std_logic_1164.all;
 
 
 -- positive level sensitive dlatch
-entity pos_dlatch is
+entity positive_dlatch is
     port (
         d   : in  std_logic;
         en : in  std_logic;
         q   : out std_logic;
         qbar: out std_logic
     );
-end pos_dlatch;
+end positive_dlatch;
 
-architecture structural of pos_dlatch is
+architecture structural of positive_dlatch is
 
 -- 2-input NOR gate
 component nor2
