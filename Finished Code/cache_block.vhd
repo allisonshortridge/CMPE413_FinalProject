@@ -6,11 +6,11 @@ entity cache_block is
     port (
         wr_data     :   in std_logic_vector(7 downto 0);
         chip_en     :   in std_logic;
+        byte_en     :   in std_logic_vector(3 downto 0);
         rd_wr       :   in std_logic;
         vt_en       :   in std_logic;
         wr_valid    :   in std_logic;
         wr_tag      :   in std_logic_vector(1 downto 0);
-        byte_offset :   in std_logic_vector(1 downto 0);
         valid_bit   :   out std_logic;
         tag         :   out std_logic_vector(1 downto 0);
         rd_data   :   out std_logic_vector(7 downto 0)
@@ -55,15 +55,8 @@ end component;
 
 for cache_byte0, cache_byte1, cache_byte2, cache_byte3: cache_byte use entity work.cache_byte(structural);
 for valid_bit1, tag1, tag0: cache_cell use entity work.cache_cell(structural);
-for byte_decoder: decoder2to4 use entity work.decoder2to4(structural);
-
-
-signal byte_en: std_logic_vector(3 downto 0);
 
 begin
-
-    -- determine which byte in block to access
-    byte_decoder: decoder2to4 port map(byte_offset, chip_en, byte_en);
 
     -- use byte enable from decoder logic to determine which byte is going to be accessed
     cache_byte0: cache_byte port map(wr_data, byte_en(0), rd_wr, rd_data);
