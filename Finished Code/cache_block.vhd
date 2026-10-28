@@ -39,19 +39,6 @@ component cache_cell
     );
 end component;
 
--- decoder for determining which byte in the block to access
-component decoder2to4
-    port (
-        A1    : in std_logic;
-        A0    : in std_logic;
-        E     : in std_logic;
-        Y3    : out std_logic;
-        Y2    : out std_logic;
-        Y1    : out std_logic;
-        Y0    : out std_logic
-    );
-end component;
-
 
 for cache_byte0, cache_byte1, cache_byte2, cache_byte3: cache_byte use entity work.cache_byte(structural);
 for valid_bit1, tag1, tag0: cache_cell use entity work.cache_cell(structural);
