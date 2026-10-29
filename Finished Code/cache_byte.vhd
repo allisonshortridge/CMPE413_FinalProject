@@ -28,13 +28,13 @@ for bit7, bit6, bit5, bit4, bit3, bit2, bit1, bit0: cache_cell use entity work.c
 begin
 
     -- 8 cache cells
-    bit7: cache_cell port map(wr_data[7], chip_en, rd_wr, rd_data[7]);
-    bit6: cache_cell port map(wr_data[6], chip_en, rd_wr, rd_data[6]);
-    bit5: cache_cell port map(wr_data[5], chip_en, rd_wr, rd_data[5]);
-    bit4: cache_cell port map(wr_data[4], chip_en, rd_wr, rd_data[4]);
-    bit3: cache_cell port map(wr_data[3], chip_en, rd_wr, rd_data[3]);
-    bit2: cache_cell port map(wr_data[2], chip_en, rd_wr, rd_data[2]);
-    bit1: cache_cell port map(wr_data[1], chip_en, rd_wr, rd_data[1]);
-    bit0: cache_cell port map(wr_data[0], chip_en, rd_wr, rd_data[0]);
+    bit7: cache_cell port map(wr_data(7), chip_en, rd_wr, rd_data(7));
+    bit6: cache_cell port map(wr_data(6), chip_en, rd_wr, rd_data(6));
+    bit5: cache_cell port map(wr_data(5), chip_en, rd_wr, rd_data(5));
+    bit4: cache_cell port map(wr_data(4), chip_en, rd_wr, rd_data(4));
+    bit3: cache_cell port map(wr_data(3), chip_en, rd_wr, rd_data(3));
+    bit2: cache_cell port map(wr_data(2), chip_en, rd_wr, rd_data(2));
+    bit1: cache_cell port map(wr_data(1), chip_en, rd_wr, rd_data(1));
+    bit0: cache_cell port map(wr_data(0), chip_en, rd_wr, rd_data(0));
 
 end structural;
