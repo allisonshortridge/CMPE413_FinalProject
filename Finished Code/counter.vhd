@@ -13,7 +13,7 @@ end counter;
 
 architecture structural of counter is
 
-component pdflip_wrst
+component pdflip
     port (
         d   :   in std_logic;
         clk :   in std_logic;
@@ -45,7 +45,7 @@ component xor2
     );
 end component;
 
-for dff_0, dff_1, dff_2, dff_3: pdflip_wrst use entity work.pdflip_wrst(structural);
+for dff_0, dff_1, dff_2, dff_3: pdflip use entity work.pdflip(structural);
 for inverter_1: inverter use entity work.inverter(structural);
 for and2_1, and2_2: and2 use entity work.and2(structural);
 for xor2_1, xor2_2, xor2_3: xor2 use entity work.xor2(structural);
@@ -66,10 +66,10 @@ begin
     and2_2: and2 port map(q_temp(2), q1q0, q2q1q0);
     xor2_3: xor2 port map(q_temp(3), q2q1q0, d(3));
 
-    dff0: pdflip_wrst port map(d(0), clk, rst, q_temp(0));
-    dff1: pdflip_wrst port map(d(1), clk, rst, q_temp(1));
-    dff2: pdflip_wrst port map(d(2), clk, rst, q_temp(2));
-    dff3: pdflip_wrst port map(d(3), clk, rst, q_temp(3));
+    dff_0: pdflip port map(d(0), clk, rst, q_temp(0));
+    dff_1: pdflip port map(d(1), clk, rst, q_temp(1));
+    dff_2: pdflip port map(d(2), clk, rst, q_temp(2));
+    dff_3: pdflip port map(d(3), clk, rst, q_temp(3));
 
     q<=q_temp;
 
