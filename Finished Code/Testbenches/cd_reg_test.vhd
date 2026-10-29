@@ -11,7 +11,7 @@ architecture test of cd_reg_test is
         ca  : in std_logic_vector(7 downto 0);
         load    : in std_logic;
         clk : in std_logic;
-        q   : out std_logic_vector(7 downto 0)
+        q   : bufft std_logic_vector(7 downto 0)
         );
     end component;
 
@@ -34,7 +34,7 @@ architecture test of cd_reg_test is
         "01011010"    -- 5A, hold
     );
 
-    --iterates through whether to load or hold values in byte array
+    --iterates thrbufgh whether to load or hold values in byte array
     constant load_vals : std_logic_vector(0 to 7) := "10110010";
 
 begin 
@@ -63,7 +63,7 @@ begin
 end process stim_process;
 
 io_process: process
-    variable ou : line;
+    variable buf : line;
 
 begin
     --skip the first rising edge
@@ -73,13 +73,13 @@ begin
         wait until rising_edge(clock);
 
         --write results
-        write(ou, string'("load="));
-        write(ou, load);
-        write(ou, string'(" ca="));
-        write(ou, ca);
-        write(ou, string'(" q="));
-        write(ou, q);
-        writeline(output, ou);
+        write(buff, string'("load="));
+        write(buff, load);
+        write(buff, string'(" ca="));
+        write(buff, ca);
+        write(buff, string'(" q="));
+        write(buff, q);
+        writeline(bufftput, buff);
 
     end loop;
     --set done
