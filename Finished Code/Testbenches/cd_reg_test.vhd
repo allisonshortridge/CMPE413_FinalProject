@@ -18,20 +18,21 @@ architecture test of cd_reg_test is
     for cd_reg_1: cd_reg use entity work.cd_reg(structural);
 
     signal ca, q: std_logic_vector(7 downto 0);
-    signal load, clock: std_logic;
+    signal load: std_logic; 
+    signal clock: std_logic;
     signal done: std_logic := '0';
 
     --test values
     type byte_array is array (0 to 7) of std_logic_vector(7 downto 0);
     constant ca_vals : byte_array := (
-        "10100101",   -- A5, load
-        "00111100",   -- 3C, hold
-        "00111100",   -- 3C, load
-        "11111111",   -- FF, load
-        "00000000",   -- 00, hold
-        "00000000",   -- 00, hold
-        "00000000",   -- 00, load
-        "01011010"    -- 5A, hold
+        "10100101",   
+        "00111100",   
+        "00111100",   
+        "11111111",   
+        "00000000",   
+        "00000000",   
+        "00000000",   
+        "01011010"
     );
 
     --iterates through whether to load or hold values in byte array
@@ -82,7 +83,7 @@ begin
         writeline(bufftput, buff);
 
     end loop;
-    --set done
+    --set done bit
     done <= '1';
     wait;
 end process io_process;
