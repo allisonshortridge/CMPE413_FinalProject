@@ -33,7 +33,7 @@ end component;
 for inverter_1: inverter use entity work.inverter(structural);
 for and2_1, and2_2: and2 use entity work.and2(structural);
 
-signals not_a0: std_logic;
+signal not_a0: std_logic;
 
 begin
     inverter_1: inverter port map(A0, not_a0);
