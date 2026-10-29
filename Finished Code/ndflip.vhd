@@ -50,7 +50,7 @@ begin
     inv_2: inverter port map(rst, rst_not);
     and2_1: and2 port map(d, rst_not, d_int);
 
-    pdl_1: positive_dlatch port map(d, clk, q_int, open);
+    pdl_1: positive_dlatch port map(d_int, clk, q_int, open);
     pdl_2: positive_dlatch port map(q_int, clk_not, q, open);
 
 end structural;
