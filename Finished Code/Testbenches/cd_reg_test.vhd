@@ -63,7 +63,7 @@ begin
 end process stim_process;
 
 io_process: process
-    variable buf : line;
+    variable buff : line;
 
 begin
     --skip the first rising edge

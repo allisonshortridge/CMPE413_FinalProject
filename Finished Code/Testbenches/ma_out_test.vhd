@@ -35,6 +35,7 @@ architecture test of ma_out_test is
         "00000100",
         "00110100"
     );
+    
     --iterates through whether enable output of values
     constant en_vals : std_logic_vector(0 to 9) := "1111110011";
 
