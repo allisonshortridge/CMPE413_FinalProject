@@ -21,7 +21,7 @@ architecture test of cd_reg_test is
     signal load, clock: std_logic;
     signal done: std_logic := '0';
 
-    --test bits
+    --test values
     type byte_array is array (0 to 7) of std_logic_vector(7 downto 0);
     constant ca_vals : byte_array := (
         "10100101",   -- A5, load
@@ -34,7 +34,7 @@ architecture test of cd_reg_test is
         "01011010"    -- 5A, hold
     );
 
-    --iterates thrbufgh whether to load or hold values in byte array
+    --iterates through whether to load or hold values in byte array
     constant load_vals : std_logic_vector(0 to 7) := "10110010";
 
 begin 
