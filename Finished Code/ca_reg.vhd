@@ -9,7 +9,7 @@ entity ca_reg is
         clk  : in  std_logic;
         q    : out std_logic_vector(7 downto 0)
     );
-end entity ca_reg;
+end ca_reg;
 
 architecture structural of ca_reg is
     component reg
