@@ -11,7 +11,7 @@ architecture test of cd_reg_test is
         ca  : in std_logic_vector(7 downto 0);
         load    : in std_logic;
         clk : in std_logic;
-        q   : bufft std_logic_vector(7 downto 0)
+        q   : buff std_logic_vector(7 downto 0)
         );
     end component;
 
