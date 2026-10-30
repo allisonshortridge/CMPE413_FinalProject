@@ -87,7 +87,7 @@ component and2
     port (
         input1 : in  std_logic;
         input2 : in  std_logic;
-        output      : out std_logic
+        output : out std_logic
     );
 end component;
 
@@ -95,7 +95,7 @@ component or2
     port (
         input1 : in  std_logic;
         input2 : in  std_logic;
-        output      : out std_logic
+        output : out std_logic
     ); 
 end component;
 
@@ -119,7 +119,7 @@ end component;
 
 for way0, way1: cache_way use entity work.cache_way(structural);
 for data_ff, tv_ff, rstp_ff: pdflip use entity work.pdflip(structural);
-for way_ff, rstn_ff: ndflip use entity work.ndflip(structural);
+for way_ff, rstn_ff, rstf_ff: ndflip use entity work.ndflip(structural);
 for lru_latch0, lru_latch1, lru_latch2, lru_latch3: positive_dlatch use entity work.positive_dlatch(structural);
 for inv_way, inv_v1, inv_clk, inv_ref, inv_wr: inverter use entity work.inverter(structural);
 for all: and2 use entity work.and2(structural);
@@ -128,7 +128,7 @@ for all: nor2 use entity work.nor2(structural);
 for all: mux use entity work.mux(structural);
 
 signal data_q, tv_q, rd_wr, vt_en, wr_valid  : std_logic;
-signal rst_p, rst_n                          : std_logic;
+signal rst_f, rst_p, rst_n                   : std_logic;
 signal way_i, nway, way_d, nvalid1, v0, v1   : std_logic;
 signal nclk, nrefill, upd_rd, upd_wr, lru_upd: std_logic;
 signal way_en                                : std_logic_vector(1 downto 0);
@@ -137,11 +137,7 @@ signal ben0, ben1                            : std_logic_vector(15 downto 0);
 signal lru_wr_en, lru, lru_pick              : std_logic_vector(3 downto 0);
 signal pick01, pick23, lru_sel, t_vic        : std_logic;
 
-signal gnd : std_logic;
-
 begin
-
-    gnd <= '0';
 
     -- write strobes retimed to the rising edge: low = write, one clock wide
     data_ff: pdflip port map(data_wr, clk, rst, data_q);
@@ -150,8 +146,11 @@ begin
 
     -- reset invalidation: rst_p is reset sampled on the rising edge, rst_n lags it by half a clock.
     -- wr_valid stays 0 until half a clock after the valid latches close.
-    rstp_ff: pdflip port map(rst, clk, gnd, rst_p);
-    rstn_ff: ndflip port map(rst_p, clk, gnd, rst_n);
+    -- reset is first sampled on the falling edge (rst_f), so the rising-edge flop below never samples it
+    -- at the same instant the CPU changes it
+    rstf_ff: ndflip port map(rst, clk, '0', rst_f);
+    rstp_ff: pdflip port map(rst_f, clk, '0', rst_p);
+    rstn_ff: ndflip port map(rst_p, clk, '0', rst_n);
     vt_nor:  nor2 port map(tv_q, rst_p, vt_en);
     wv_nor:  nor2 port map(rst_p, rst_n, wr_valid);
 
@@ -218,4 +217,4 @@ begin
     vic_or:  or2 port map(nvalid1, lru_sel, t_vic);
     vic_and: and2 port map(v0, t_vic, victim);
     
-end structural;
+end architecture structural;

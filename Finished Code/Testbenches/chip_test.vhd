@@ -15,30 +15,30 @@ end chip_test;
   
 architecture test of chip_test is
 
-  component chip  
+  component cache_top  
     port (
-      cpu_add    : in  std_logic_vector(5 downto 0);
-      cpu_data   : inout  std_logic_vector(7 downto 0);
-      cpu_rd_wrn : in  std_logic;    
+      ca    : in  std_logic_vector(5 downto 0);
+      cd   : inout  std_logic_vector(7 downto 0);
+      rw : in  std_logic;    
       start      : in  std_logic;
       clk        : in  std_logic;
       reset      : in  std_logic;
-      mem_data   : in  std_logic_vector(7 downto 0);
+      md   : in  std_logic_vector(7 downto 0);
       Vdd	 : in  std_logic;
       Gnd        : in  std_logic;
       busy       : out std_logic;
-      mem_en     : out std_logic;
-      mem_add    : out std_logic_vector(5 downto 0));
+      enable     : out std_logic;
+      ma    : out std_logic_vector(5 downto 0));
   end component;
 
 
   
-  for c1 : chip use entity work.chip(structural);
+  for c1 : cache_top use entity work.cache_top(structural);
 
   signal Vdd, Gnd: std_logic;
-  signal cpu_data, mem_data: std_logic_vector(7 downto 0);
-  signal cpu_add, mem_add: std_logic_vector(5 downto 0);
-  signal cpu_rd_wrn, reset, clk, start, clock, busy, mem_en: std_logic;
+  signal cd, md: std_logic_vector(7 downto 0);
+  signal ca, ma: std_logic_vector(5 downto 0);
+  signal rw, reset, clk, start, clock, busy, enable: std_logic;
 
   signal clk_count: integer:=0;
 
@@ -51,30 +51,30 @@ procedure print_output is
    write (out_line, string'(" Start: "));
    write (out_line, start);
    write (out_line, string'(" Cpu Read/Write: "));
-   write (out_line, cpu_rd_wrn);
+   write (out_line, rw);
    write (out_line, string'(" Reset: "));
    write (out_line, reset);
    writeline(output, out_line);
 
    write (out_line, string' (" CPU address: "));
-   write (out_line, cpu_add);
+   write (out_line, ca);
    write (out_line, string'(" CPU data: "));
-   write (out_line, cpu_data);
+   write (out_line, cd);
    writeline(output, out_line);
    
    write (out_line, string'(" Memory data: "));
-   write (out_line, mem_data);   
+   write (out_line, md);   
    writeline(output, out_line);
    writeline(output, out_line);
       
    write (out_line, string'(" Busy: "));
    write (out_line, busy);
    write (out_line, string'(" Memory  Enable: "));
-   write (out_line, mem_en);
+   write (out_line, enable);
    writeline(output, out_line);
 
    write (out_line, string'(" Memory  Address: "));
-   write (out_line, mem_add);
+   write (out_line, ma);
    writeline(output, out_line);   
 
    write (out_line, string'(" ----------------------------------------------"));
@@ -91,7 +91,7 @@ begin
   Gnd <= '0';
   clk <= clock;
   
-  c1 : chip port map (cpu_add, cpu_data, cpu_rd_wrn, start, clk, reset, mem_data, Vdd, Gnd, busy, mem_en, mem_add);   
+  c1 : cache_top port map (ca, cd, rw, start, clk, reset, md, Vdd, Gnd, busy, enable, ma);   
 
   clking : process
   begin
@@ -101,7 +101,7 @@ begin
   
   io_process: process
 
-    file infile  : text is in "./chip_in.txt";
+    file infile  : text is in "C:\Users\Asra\Desktop\example_testbench_for_project\chip_in.txt";
     variable out_line: line;
     variable buf: line;
     variable value: std_logic_vector(7 downto 0);
@@ -117,15 +117,15 @@ begin
 
       readline(infile, buf);
       read(buf, value0);
-      cpu_add <= value0;
+      ca <= value0;
 
       readline(infile, buf);
       read(buf, value);
-      cpu_data <= value;
+      cd <= value;
 
       readline(infile, buf);
       read(buf, value1);
-      cpu_rd_wrn <= value1;
+      rw <= value1;
 
       readline(infile, buf);
       read(buf, value1);
@@ -139,7 +139,7 @@ begin
 
       readline(infile, buf);
       read(buf, value);
-      mem_data <= value;
+      md <= value;
       
       clk_count <= clk_count+1;
 
