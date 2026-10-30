@@ -25,6 +25,7 @@ architecture structural of output_registers is
         port (
             d   : in std_logic;
             clk   : in std_logic;
+            rst   : in std_logic;
             q : out std_logic
         );
         end component;
@@ -47,14 +48,14 @@ begin
     mux_7: mux port map(q_int(6), data_in(6), load, sel_7);
     mux_8: mux port map(q_int(7), data_in(7), load, sel_8);
 
-    ndflip_1: ndflip port map(sel_1, clk, q_int(0));
-    ndflip_2: ndflip port map(sel_2, clk, q_int(1));
-    ndflip_3: ndflip port map(sel_3, clk, q_int(2));
-    ndflip_4: ndflip port map(sel_4, clk, q_int(3));
-    ndflip_5: ndflip port map(sel_5, clk, q_int(4));
-    ndflip_6: ndflip port map(sel_6, clk, q_int(5));
-    ndflip_7: ndflip port map(sel_7, clk, q_int(6));
-    ndflip_8: ndflip port map(sel_8, clk, q_int(7));
+    ndflip_1: ndflip port map(sel_1, clk, '0', q_int(0));
+    ndflip_2: ndflip port map(sel_2, clk, '0', q_int(1));
+    ndflip_3: ndflip port map(sel_3, clk, '0', q_int(2));
+    ndflip_4: ndflip port map(sel_4, clk, '0', q_int(3));
+    ndflip_5: ndflip port map(sel_5, clk, '0', q_int(4));
+    ndflip_6: ndflip port map(sel_6, clk, '0', q_int(5));
+    ndflip_7: ndflip port map(sel_7, clk, '0', q_int(6));
+    ndflip_8: ndflip port map(sel_8, clk, '0', q_int(7));
 
     data_out <= q_int;
 end structural;

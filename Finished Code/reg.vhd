@@ -25,6 +25,7 @@ architecture structural of reg is
         port (
             d   : in std_logic;
             clk   : in std_logic;
+            rst   : in std_logic;
             q : out std_logic
         );
         end component;
@@ -39,7 +40,7 @@ begin
 --mapping ports to gates
     mux_1: mux port map(q_int, d, load, sel_1);
 
-    ndflip_1: ndflip port map(sel_1, clk, q_int);
+    ndflip_1: ndflip port map(sel_1, clk, '0', q_int);
 
     q <= q_int;
 end structural;
