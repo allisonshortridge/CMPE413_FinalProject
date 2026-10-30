@@ -217,4 +217,4 @@ begin
     vic_or:  or2 port map(nvalid1, lru_sel, t_vic);
     vic_and: and2 port map(v0, t_vic, victim);
     
-end architecture structural;
+end structural;
