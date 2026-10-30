@@ -16,4 +16,4 @@ begin
     
     output <= input2 or input1;
 
-end architecture structural;
+end structural;
