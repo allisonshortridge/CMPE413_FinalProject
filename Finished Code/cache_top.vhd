@@ -18,12 +18,14 @@ entity cache_top is
         reset : in std_logic;
         start : in std_logic;
         rw : in std_logic;  --RD/WR (1 = read, 0 = write)
-        ca : in std_logic_vector(7 downto 0);   --CPU address
+        ca : in std_logic_vector(5 downto 0);   --CPU address
         cd : inout std_logic_vector(7 downto 0);    --CPU data
         md : in std_logic_vector(7 downto 0);   --memory data
+        vdd : in std_logic; --power pins, not used by the logic
+        gnd : in std_logic;
         busy : out std_logic;
         enable : out std_logic; --ENABLE to memory
-        ma : out std_logic_vector(7 downto 0)   -- memory address
+        ma : out std_logic_vector(5 downto 0)   -- memory address
     );
 end cache_top;
 
@@ -187,7 +189,7 @@ architecture structural of cache_top is
     for ma_drv: ma_out use entity work.ma_out(structural);
 
     --CPU request. held while cache is busy
-    signal ca_q, cd_q : std_logic_vector(7 downto 0);
+    signal ca_in, ca_q, cd_q : std_logic_vector(7 downto 0);
     signal rw_q : std_logic;
 
     --fsm signals
@@ -210,7 +212,7 @@ architecture structural of cache_top is
 
     --data paths
     signal wr_data, rd_sel, out_q : std_logic_vector(7 downto 0);
-    signal ma_addr : std_logic_vector(7 downto 0);
+    signal ma_addr, ma_y : std_logic_vector(7 downto 0);
 
 begin
 
@@ -234,8 +236,9 @@ begin
         tv_wr => tv_wr
     );
 
-    --input registers
-    ca_reg_1: ca_reg port map (ca, load_in, clk, ca_q);
+    --input registers. ca_reg is 8 bits wide, upper 2 bits tied to 0
+    ca_in <= "00" & ca;
+    ca_reg_1: ca_reg port map (ca_in, load_in, clk, ca_q);
     cd_reg_1: cd_reg port map (cd, load_in, clk, cd_q);
     rw_reg: reg port map (rw, load_in, clk, rw_q);
 
@@ -283,8 +286,9 @@ begin
     out_reg: output_registers port map (rd_sel, out_load, clk, out_q);
     cd_drv: cd_out port map (out_q, out_oe, cd);
 
-    --memory address
-    ma_addr <= ca_q(7 downto 2) & "00";
-    ma_drv: ma_out port map (ma_addr, ma_oe, ma);
+    --memory address. ma_out is 8 bits wide, only the low 6 bits go to the MA pins
+    ma_addr <= "00" & ca_q(5 downto 2) & "00";
+    ma_drv: ma_out port map (ma_addr, ma_oe, ma_y);
+    ma <= ma_y(5 downto 0);
 
 end structural;

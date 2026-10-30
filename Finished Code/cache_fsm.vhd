@@ -236,7 +236,7 @@ begin
     --output signals
     load_in <= s_idle;
     out_oe <= s_out;
-    mem_enable <= s_req;
+    enable <= s_req;
     ma_oe <= s_req; 
     byte_cnt <= b1 & b0;
     out_load <= out_load_i;

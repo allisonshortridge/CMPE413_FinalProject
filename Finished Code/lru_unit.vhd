@@ -87,7 +87,7 @@ component and2
     port (
         input1 : in  std_logic;
         input2 : in  std_logic;
-        y      : out std_logic
+        output      : out std_logic
     );
 end component;
 
@@ -95,7 +95,7 @@ component or2
     port (
         input1 : in  std_logic;
         input2 : in  std_logic;
-        y      : out std_logic
+        output      : out std_logic
     ); 
 end component;
 
