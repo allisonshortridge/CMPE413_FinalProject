@@ -28,7 +28,6 @@ entity cache_top is
 end cache_top;
 
 architecture structural of cache_top is
-
     component cache_fsm
         port (
             clk : in std_logic;
