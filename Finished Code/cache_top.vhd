@@ -1,154 +1,300 @@
--- Entity: chip_test 
--- Architecture : test 
--- Author: cpatel2
--- Created On: 11/01/05
---
+--ca_reg / cd_reg / rw_q   input registers. follow inputs while IDLE
+--address_decoder          set + byte decode, tag out. byte offset comes from byte_cnt
+--mux8 (wr_mux)            write data: CD register for CPU write, MD for refill
+--lru_unit                 both ways, LRU bits, victim select
+--hit_miss x2              one tag/valid comparator per way
+--mux8 (rd_mux)            read data from way that hit
+--output_registers         captures selected byte at end of COMPARE/READ
+--cd_out                   drives output register onto CD during OUT
+--ma_out                   drives block-aligned address onto MA during READ MISS REQUEST
+
+library STD;
 library IEEE;
 use IEEE.std_logic_1164.all;
-use IEEE.std_logic_textio.all;
-use IEEE.std_logic_arith.all;
-use STD.textio.all;
-  
-entity chip_test is
-  
-end chip_test;
-  
-architecture test of chip_test is
 
-  component cache_top  
+entity cache_top is
     port (
-      ca    : in  std_logic_vector(5 downto 0);
-      cd   : inout  std_logic_vector(7 downto 0);
-      rw : in  std_logic;    
-      start      : in  std_logic;
-      clk        : in  std_logic;
-      reset      : in  std_logic;
-      md   : in  std_logic_vector(7 downto 0);
-      Vdd	 : in  std_logic;
-      Gnd        : in  std_logic;
-      busy       : out std_logic;
-      enable     : out std_logic;
-      ma    : out std_logic_vector(5 downto 0));
-  end component;
+        clk : in std_logic;
+        reset : in std_logic;
+        start : in std_logic;
+        rw : in std_logic;  --RD/WR (1 = read, 0 = write)
+        ca : in std_logic_vector(5 downto 0);   --CPU address
+        cd : inout std_logic_vector(7 downto 0);    --CPU data
+        md : in std_logic_vector(7 downto 0);   --memory data
+        vdd : in std_logic; --power pins, not used by the logic
+        gnd : in std_logic;
+        busy : out std_logic;
+        enable : out std_logic; --ENABLE to memory
+        ma : out std_logic_vector(5 downto 0)   -- memory address
+    );
+end cache_top;
 
+architecture structural of cache_top is
+    component cache_fsm
+        port (
+            clk : in std_logic;
+            reset : in std_logic;
+            start : in std_logic;
+            rw : in std_logic;
+            hit : in std_logic;
+            busy : out std_logic;
+            load_in : out std_logic;
+            out_load : out std_logic;
+            out_oe : out std_logic;
+            enable : out std_logic;
+            ma_oe : out std_logic;
+            dec_en : out std_logic;
+            refill : out std_logic;
+            byte_cnt : out std_logic_vector(1 downto 0);
+            data_wr : out std_logic;
+            tv_wr : out std_logic
+        );
+        end component;
 
-  
-  for c1 : cache_top use entity work.cache_top(structural);
+    component ca_reg
+        port (
+            ca : in std_logic_vector(7 downto 0);
+            load : in std_logic;
+            clk : in std_logic;
+            q : out std_logic_vector(7 downto 0)
+        );
+        end component;
 
-  signal Vdd, Gnd: std_logic;
-  signal cd, md: std_logic_vector(7 downto 0);
-  signal ca, ma: std_logic_vector(5 downto 0);
-  signal rw, reset, clk, start, clock, busy, enable: std_logic;
+    component cd_reg
+        port (
+            ca : in std_logic_vector(7 downto 0);
+            load : in std_logic;
+            clk : in std_logic;
+            q : out std_logic_vector(7 downto 0)
+        );
+        end component;
 
-  signal clk_count: integer:=0;
+    component reg
+        port (
+            d : in std_logic;
+            load : in std_logic;
+            clk : in std_logic;
+            q : out std_logic
+        );
+        end component;
 
-procedure print_output is
-   variable out_line: line;
+    component address_decoder
+        port (
+            address : in std_logic_vector(5 downto 0);
+            chip_en : in std_logic;
+            refill : in std_logic;
+            byte_cnt: in std_logic_vector(1 downto 0);
+            rq_tag : out std_logic_vector(1 downto 0);
+            block_en: out std_logic_vector(3 downto 0);
+            byte_en : out std_logic_vector(15 downto 0)
+        );
+        end component;
 
-   begin
-   write (out_line, string' (" Clock: "));
-   write (out_line, clk_count);
-   write (out_line, string'(" Start: "));
-   write (out_line, start);
-   write (out_line, string'(" Cpu Read/Write: "));
-   write (out_line, rw);
-   write (out_line, string'(" Reset: "));
-   write (out_line, reset);
-   writeline(output, out_line);
+    component lru_unit
+        port (
+            wr_data : in std_logic_vector(7 downto 0);
+            rq_tag : in std_logic_vector(1 downto 0);
+            block_en : in std_logic_vector(3 downto 0);
+            byte_en : in std_logic_vector(15 downto 0);
+            data_wr : in std_logic;
+            tv_wr : in std_logic;
+            refill : in std_logic;
+            lookup : in std_logic;
+            way_in : in std_logic;
+            rd_done : in std_logic;
+            clk : in std_logic;
+            rst : in std_logic;
+            valid0 : out std_logic;
+            valid1 : out std_logic;
+            tag0 : out std_logic_vector(1 downto 0);
+            tag1 : out std_logic_vector(1 downto 0);
+            rd_data0 : out std_logic_vector(7 downto 0);
+            rd_data1 : out std_logic_vector(7 downto 0);
+            victim : out std_logic
+        );
+        end component;
 
-   write (out_line, string' (" CPU address: "));
-   write (out_line, ca);
-   write (out_line, string'(" CPU data: "));
-   write (out_line, cd);
-   writeline(output, out_line);
-   
-   write (out_line, string'(" Memory data: "));
-   write (out_line, md);   
-   writeline(output, out_line);
-   writeline(output, out_line);
-      
-   write (out_line, string'(" Busy: "));
-   write (out_line, busy);
-   write (out_line, string'(" Memory  Enable: "));
-   write (out_line, enable);
-   writeline(output, out_line);
+    component hit_miss
+        port (
+            tag_req : in std_logic_vector(1 downto 0);
+            tag_stored : in std_logic_vector(1 downto 0);
+            valid : in std_logic;
+            hit : out std_logic
+        );
+        end component;
 
-   write (out_line, string'(" Memory  Address: "));
-   write (out_line, ma);
-   writeline(output, out_line);   
+    component mux
+        port (
+            input1 : in std_logic;
+            input2 : in std_logic;
+            sel : in std_logic;
+            y : out std_logic
+        );
+        end component;
 
-   write (out_line, string'(" ----------------------------------------------"));
-   writeline(output, out_line);
+    component mux8
+        port (
+            input1 : in std_logic_vector(7 downto 0);
+            input2 : in std_logic_vector(7 downto 0);
+            sel : in std_logic;
+            y : out std_logic_vector(7 downto 0)
+        );
+        end component;
 
-   
-end print_output;
+    component or2
+        port (
+            input1 : in std_logic;
+            input2 : in std_logic;
+            output : out std_logic
+        );
+        end component;
 
+    component output_registers
+        port (
+            data_in : in std_logic_vector(7 downto 0);
+            load : in std_logic;
+            clk : in std_logic;
+            data_out : out std_logic_vector(7 downto 0)
+        );
+        end component;
 
+    component cd_out
+        port (
+            data_in : in std_logic_vector(7 downto 0);
+            en : in std_logic;
+            y : out std_logic_vector(7 downto 0)
+        );
+        end component;
+
+    component ma_out
+        port (
+            addr_in : in std_logic_vector(7 downto 0);
+            en : in std_logic;
+            y : out std_logic_vector(7 downto 0)
+        );
+        end component;
+
+    for fsm_1: cache_fsm use entity work.cache_fsm(structural);
+    for ca_reg_1: ca_reg use entity work.ca_reg(structural);
+    for cd_reg_1: cd_reg use entity work.cd_reg(structural);
+    for rw_reg: reg use entity work.reg(structural);
+    for addr_dec: address_decoder use entity work.address_decoder(structural);
+    for lru_1: lru_unit use entity work.lru_unit(structural);
+    for hit_0, hit_1: hit_miss use entity work.hit_miss(structural);
+    for way_mux: mux use entity work.mux(structural);
+    for wr_mux, rd_mux: mux8 use entity work.mux8(structural);
+    for hit_or, chip_or: or2 use entity work.or2(structural);
+    for out_reg: output_registers use entity work.output_registers(structural);
+    for cd_drv: cd_out use entity work.cd_out(structural);
+    for ma_drv: ma_out use entity work.ma_out(structural);
+
+    --CPU request. held while cache is busy
+    signal ca_in, ca_q, cd_q : std_logic_vector(7 downto 0);
+    signal rw_q : std_logic;
+
+    --fsm signals
+    signal load_in, out_load, out_oe, ma_oe : std_logic;
+    signal dec_en, chip_en, refill : std_logic;
+    signal dec_en_f, refill_f : std_logic;
+    signal data_wr, tv_wr : std_logic;
+    signal byte_cnt : std_logic_vector(1 downto 0);
+
+    --address decoder
+    signal rq_tag : std_logic_vector(1 downto 0);
+    signal block_en : std_logic_vector(3 downto 0);
+    signal byte_en : std_logic_vector(15 downto 0);
+
+    --ways
+    signal valid0, valid1 : std_logic;
+    signal tag0, tag1 : std_logic_vector(1 downto 0);
+    signal rd_data0, rd_data1 : std_logic_vector(7 downto 0);
+    signal victim : std_logic;
+    signal hit0, hit1, hit_i, way_in : std_logic;
+
+    --data paths
+    signal wr_data, rd_sel, out_q : std_logic_vector(7 downto 0);
+    signal ma_addr, ma_y : std_logic_vector(7 downto 0);
 
 begin
 
-  Vdd <= '1';
-  Gnd <= '0';
-  clk <= clock;
-  
-  c1 : cache_top port map (ca, cd, rw, start, clk, reset, md, Vdd, Gnd, busy, enable, ma);   
+    --control signals
+    fsm_1: cache_fsm port map (
+        clk => clk,
+        reset => reset,
+        start => start,
+        rw => rw_q,
+        hit => hit_i,
+        busy => busy,
+        load_in => load_in,
+        out_load => out_load,
+        out_oe => out_oe,
+        enable => enable,
+        ma_oe => ma_oe,
+        dec_en => dec_en,
+        refill => refill,
+        byte_cnt => byte_cnt,
+        data_wr => data_wr,
+        tv_wr => tv_wr
+    );
 
-  clking : process
-  begin
-    clock<= '1', '0' after 5 ns;
-    wait for 10 ns;
-  end process clking;
-  
-  io_process: process
+    --input registers. ca_reg is 8 bits wide, upper 2 bits tied to 0
+    ca_in <= "00" & ca;
+    ca_reg_1: ca_reg port map (ca_in, load_in, clk, ca_q);
+    cd_reg_1: cd_reg port map (cd, load_in, clk, cd_q);
+    rw_reg: reg port map (rw, load_in, clk, rw_q);
 
-    file infile  : text is in "C:\Users\Asra\Desktop\example_testbench_for_project\chip_in.txt";
-    variable out_line: line;
-    variable buf: line;
-    variable value: std_logic_vector(7 downto 0);
-    variable value0: std_logic_vector(5 downto 0);
-    variable value1: std_logic;
-    
-  begin
+    --simulation only. refill and dec_en dip for a few delta cycles when the fsm goes from WRITE BIT to WAIT,
+    --while the cache cells are being written. the 1 ps inertial delay swallows the dip
+    refill_f <= refill after 1 ps;
+    dec_en_f <= dec_en after 1 ps;
 
-    while not (endfile(infile)) loop
-      
-      wait until rising_edge(clock);
-      print_output;
+    --address decoding
+    --chip_en is dec_en plus the OUT state, so the set stays selected for the LRU update during OUT
+    chip_or: or2 port map (dec_en_f, out_oe, chip_en);
+    addr_dec: address_decoder port map (ca_q(5 downto 0), chip_en, refill_f, byte_cnt, rq_tag, block_en, byte_en);
 
-      readline(infile, buf);
-      read(buf, value0);
-      ca <= value0;
+    --write data: CPU data for a write, memory data for a refill
+    wr_mux: mux8 port map (cd_q, md, refill_f, wr_data);
 
-      readline(infile, buf);
-      read(buf, value);
-      cd <= value;
+    --the two ways, LRU bits and victim select
+    lru_1: lru_unit port map (
+        wr_data => wr_data,
+        rq_tag => rq_tag,
+        block_en => block_en,
+        byte_en => byte_en,
+        data_wr => data_wr,
+        tv_wr => tv_wr,
+        refill => refill_f,
+        lookup => out_load,
+        way_in => way_in,
+        rd_done => out_oe,
+        clk => clk,
+        rst => reset,
+        valid0 => valid0,
+        valid1 => valid1,
+        tag0 => tag0,
+        tag1 => tag1,
+        rd_data0 => rd_data0,
+        rd_data1 => rd_data1,
+        victim => victim
+    );
 
-      readline(infile, buf);
-      read(buf, value1);
-      rw <= value1;
+    --hit detect. checks per way
+    hit_0: hit_miss port map (rq_tag, tag0, valid0, hit0);
+    hit_1: hit_miss port map (rq_tag, tag1, valid1, hit1);
+    hit_or: or2 port map (hit0, hit1, hit_i);
 
-      readline(infile, buf);
-      read(buf, value1);
-      start <= value1;      
+    --way to use: the hit way on a hit, the victim way on a miss
+    way_mux: mux port map (victim, hit1, hit_i, way_in);
 
-      readline(infile, buf);
-      read(buf, value1);
-      reset <= value1;      
-      
-      wait until falling_edge(clock);
+    --read data from the way that hit
+    rd_mux: mux8 port map (rd_data0, rd_data1, hit1, rd_sel);
+    out_reg: output_registers port map (rd_sel, out_load, clk, out_q);
+    cd_drv: cd_out port map (out_q, out_oe, cd);
 
-      readline(infile, buf);
-      read(buf, value);
-      md <= value;
-      
-      clk_count <= clk_count+1;
+    --memory address. ma_out is 8 bits wide, only the low 6 bits go to the MA pins
+    ma_addr <= "00" & ca_q(5 downto 2) & "00";
+    ma_drv: ma_out port map (ma_addr, ma_oe, ma_y);
+    ma <= ma_y(5 downto 0);
 
-      print_output;
-
-    end loop;
-    wait;
-      
-  end process io_process;
-
-
-end test;
+end structural;
