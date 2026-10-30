@@ -37,7 +37,12 @@ for ndflip_1, ndflip_2, ndflip_3, ndflip_4, ndflip_5, ndflip_6, ndflip_7, ndflip
 signal sel_1, sel_2, sel_3, sel_4, sel_5, sel_6, sel_7, sel_8: std_logic;
 signal q_int: std_logic_vector(7 downto 0);
 
+signal gnd: std_logic;
+
 begin
+
+    gnd<='0';
+    
 --mapping ports to gates
     mux_1: mux port map(q_int(0), data_in(0), load, sel_1);
     mux_2: mux port map(q_int(1), data_in(1), load, sel_2);
@@ -48,14 +53,14 @@ begin
     mux_7: mux port map(q_int(6), data_in(6), load, sel_7);
     mux_8: mux port map(q_int(7), data_in(7), load, sel_8);
 
-    ndflip_1: ndflip port map(sel_1, clk, '0', q_int(0));
-    ndflip_2: ndflip port map(sel_2, clk, '0', q_int(1));
-    ndflip_3: ndflip port map(sel_3, clk, '0', q_int(2));
-    ndflip_4: ndflip port map(sel_4, clk, '0', q_int(3));
-    ndflip_5: ndflip port map(sel_5, clk, '0', q_int(4));
-    ndflip_6: ndflip port map(sel_6, clk, '0', q_int(5));
-    ndflip_7: ndflip port map(sel_7, clk, '0', q_int(6));
-    ndflip_8: ndflip port map(sel_8, clk, '0', q_int(7));
+    ndflip_1: ndflip port map(sel_1, clk, gnd, q_int(0));
+    ndflip_2: ndflip port map(sel_2, clk, gnd, q_int(1));
+    ndflip_3: ndflip port map(sel_3, clk, gnd, q_int(2));
+    ndflip_4: ndflip port map(sel_4, clk, gnd, q_int(3));
+    ndflip_5: ndflip port map(sel_5, clk, gnd, q_int(4));
+    ndflip_6: ndflip port map(sel_6, clk, gnd, q_int(5));
+    ndflip_7: ndflip port map(sel_7, clk, gnd, q_int(6));
+    ndflip_8: ndflip port map(sel_8, clk, gnd, q_int(7));
 
     data_out <= q_int;
 end structural;
