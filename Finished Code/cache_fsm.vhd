@@ -34,18 +34,18 @@ entity cache_fsm is
         reset : in std_logic;
         start : in std_logic;
         rw : in std_logic;                       
-        hit : in std_logic;                       --hit/miss (1 = hit, 0 = miss)
+        hit : in std_logic; --hit/miss (1 = hit, 0 = miss)
         busy : out std_logic;
-        load_in : out std_logic;                      --input registers follow their inputs
-        out_load : out std_logic;                      --output register captures the selected byte
-        out_oe : out std_logic;                      --drive the byte onto CD
-        enable : out std_logic;                      --ENABLE pin to memory
-        ma_oe : out std_logic;                      --drive MA
-        dec_en : out std_logic;                      --address_decoder chip_en
-        refill : out std_logic;                      --1: byte offset from byte_cnt, write data from MD
-        byte_cnt : out std_logic_vector(1 downto 0);   --byte being refilled
-        data_wr : out std_logic;                      --data cell write, BEFORE rising-edge retiming
-        tv_wr : out std_logic                       --tag + valid write, BEFORE rising-edge retiming
+        load_in : out std_logic;    --input registers follow their inputs
+        out_load : out std_logic;   --output register captures the selected byte
+        out_oe : out std_logic; --drive the byte onto CD
+        enable : out std_logic; --ENABLE pin to memory
+        ma_oe : out std_logic;  --drive MA
+        dec_en : out std_logic; --address_decoder chip_en
+        refill : out std_logic; --1: byte offset from byte_cnt, write data from MD
+        byte_cnt : out std_logic_vector(1 downto 0);    --byte being refilled
+        data_wr : out std_logic;    --data cell write, BEFORE rising-edge retiming
+        tv_wr : out std_logic   --tag + valid write, BEFORE rising-edge retiming
     );
 end cache_fsm;
 
