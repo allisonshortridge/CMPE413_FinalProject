@@ -36,11 +36,16 @@ for ndflip_1: ndflip use entity work.ndflip(structural);
 --intermediate signals between gates
 signal sel_1, q_int: std_logic;
 
+signal gnd: std_logic;
+
 begin
+
+    gnd<='0';
+    
 --mapping ports to gates
     mux_1: mux port map(q_int, d, load, sel_1);
 
-    ndflip_1: ndflip port map(sel_1, clk, '0', q_int);
+    ndflip_1: ndflip port map(sel_1, clk, gnd, q_int);
 
     q <= q_int;
 end structural;
