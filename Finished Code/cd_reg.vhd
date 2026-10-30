@@ -9,7 +9,7 @@ entity cd_reg is
         clk  : in  std_logic;
         q    : out std_logic_vector(7 downto 0)
     );
-end entity cd_reg;
+end cd_reg;
 
 architecture structural of cd_reg is
     component reg
