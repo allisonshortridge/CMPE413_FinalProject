@@ -32,4 +32,4 @@ begin
   bit_5 : reg port map (ca(5), load, clk, q(5));
   bit_6 : reg port map (ca(6), load, clk, q(6));
   bit_7 : reg port map (ca(7), load, clk, q(7));
-end architecture structural;
+end structural;
