@@ -15,8 +15,8 @@ use IEEE.std_logic_1164.all;
 --wait for next bit   wait for memory (7 clocks first, 1 clock between bytes)
 --out                 BUSY low, CD output enabled for one clock
 --
---read hit: idle->comp, comp->out                          (2 clocks)
---write hit/miss: idle->comp, comp->write, write->idle        (3 clocks)
+--read hit: idle->comp, comp->out (2 clocks)
+--write hit/miss: idle->comp, comp->write, write->idle (3 clocks)
 --read miss: idle->comp, comp->req, req->wait, byte k written at N(10+2k), N18 ->read, N19 ->out    (19 clocks)
 --
 --counter.vhd functionality:
@@ -30,89 +30,88 @@ use IEEE.std_logic_1164.all;
 
 entity cache_fsm is
     port (
-        clk         : in std_logic;
-        reset       : in std_logic;
-        start       : in std_logic;
-        rw          : in std_logic;                       --RD/WR (1 = read, 0 = write)
-        hit         : in std_logic;                       --hit/miss (1 = hit, 0 = miss)
-
-        busy        : out std_logic;
-        load_in     : out std_logic;                      -- input registers follow their inputs
-        out_load    : out std_logic;                      -- output register captures the selected byte
-        out_oe      : out std_logic;                      -- drive the byte onto CD
-        mem_enable  : out std_logic;                      -- ENABLE pin to memory
-        ma_oe       : out std_logic;                      -- drive MA
-        dec_en      : out std_logic;                      -- address_decoder chip_en
-        refill      : out std_logic;                      -- 1: byte offset from byte_cnt, write data from MD
-        byte_cnt    : out std_logic_vector(1 downto 0);   -- byte being refilled
-        data_wr : out std_logic;                      -- data cell write, BEFORE rising-edge retiming
-        tv_wr   : out std_logic                       -- tag + valid write, BEFORE rising-edge retiming
+        clk : in std_logic;
+        reset : in std_logic;
+        start : in std_logic;
+        rw : in std_logic;                       
+        hit : in std_logic;                       --hit/miss (1 = hit, 0 = miss)
+        busy : out std_logic;
+        load_in : out std_logic;                      --input registers follow their inputs
+        out_load : out std_logic;                      --output register captures the selected byte
+        out_oe : out std_logic;                      --drive the byte onto CD
+        enable : out std_logic;                      --ENABLE pin to memory
+        ma_oe : out std_logic;                      --drive MA
+        dec_en : out std_logic;                      --address_decoder chip_en
+        refill : out std_logic;                      --1: byte offset from byte_cnt, write data from MD
+        byte_cnt : out std_logic_vector(1 downto 0);   --byte being refilled
+        data_wr : out std_logic;                      --data cell write, BEFORE rising-edge retiming
+        tv_wr : out std_logic                       --tag + valid write, BEFORE rising-edge retiming
     );
 end cache_fsm;
 
 architecture structural of cache_fsm is
     component inverter
         port (
-        input   : in std_logic;
-        output  : out std_logic
+        input : in std_logic;
+        output : out std_logic
         );
         end component;
 
     component and2
         port (
-        input1  : in std_logic;
-        input2  : in std_logic;
-        output  : out std_logic
+        input1 : in std_logic;
+        input2 : in std_logic;
+        output : out std_logic
         );
         end component;
 
     component or2
         port (
-        input1  : in std_logic;
-        input2  : in std_logic;
-        output  : out std_logic
+        input1 : in std_logic;
+        input2 : in std_logic;
+        output : out std_logic
         );
         end component;
 
     component nor2
         port (
-        input1  : in std_logic;
-        input2  : in std_logic;
-        output  : out std_logic
+        input1 : in std_logic;
+        input2 : in std_logic;
+        output : out std_logic
         );
         end component;
 
     component xnor2
         port (
-        input1  : in std_logic;
-        input2  : in std_logic;
-        output  : out std_logic
+        input1 : in std_logic;
+        input2 : in std_logic;
+        output : out std_logic
         );
         end component;
 
     component mux
         port (
-        input1  : in std_logic;
-        input2  : in std_logic;
-        sel     : in std_logic;
-        y       : out std_logic
+        input1 : in std_logic;
+        input2 : in std_logic;
+        sel : in std_logic;
+        y : out std_logic
         );
         end component;
 
     component ndflip
         port (
-        d       : in std_logic;
-        clk     : in std_logic;
-        rst     : in std_logic;
-        q       : out std_logic
+        d : in std_logic;
+        clk : in std_logic;
+        rst : in std_logic;
+        q : out std_logic
         );
         end component;
 
     component counter
         port (
-        clk     : in std_logic;
-        rst     : in std_logic;
-        q       : out std_logic_vector(3 downto 0)
+        clk : in std_logic;
+        rst : in std_logic;
+        q : out std_logic_vector(3 downto 0)
         );
         end component;
 
@@ -235,12 +234,12 @@ begin
     and_17: and2 port map(s_wbit, b_zero, tv_wr); --writes tag and valid bit
 
     --output signals
-    load_in    <= s_idle;
-    out_oe     <= s_out;
+    load_in <= s_idle;
+    out_oe <= s_out;
     mem_enable <= s_req;
-    ma_oe      <= s_req; 
-    byte_cnt   <= b1 & b0;
-    out_load   <= out_load_i;
-    refill     <= refill_i;
+    ma_oe <= s_req; 
+    byte_cnt <= b1 & b0;
+    out_load <= out_load_i;
+    refill <= refill_i;
 
 end structural;
