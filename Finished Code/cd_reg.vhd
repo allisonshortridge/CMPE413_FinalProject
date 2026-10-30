@@ -9,7 +9,7 @@ entity cd_reg is
         clk  : in  std_logic;
         q    : out std_logic_vector(7 downto 0)
     );
-end entity cd_reg;
+end cd_reg;
 
 architecture structural of cd_reg is
     component reg
@@ -32,4 +32,4 @@ begin
   bit_5 : reg port map (ca(5), load, clk, q(5));
   bit_6 : reg port map (ca(6), load, clk, q(6));
   bit_7 : reg port map (ca(7), load, clk, q(7));
-end architecture structural;
+end structural;
