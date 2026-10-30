@@ -137,8 +137,12 @@ signal ben0, ben1                            : std_logic_vector(15 downto 0);
 signal lru_wr_en, lru, lru_pick              : std_logic_vector(3 downto 0);
 signal pick01, pick23, lru_sel, t_vic        : std_logic;
 
+signal gnd: std_logic;
+
 begin
 
+    gnd<='0';
+    
     -- write strobes retimed to the rising edge: low = write, one clock wide
     data_ff: pdflip port map(data_wr, clk, rst, data_q);
     tv_ff:   pdflip port map(tv_wr, clk, rst, tv_q);
@@ -148,9 +152,9 @@ begin
     -- wr_valid stays 0 until half a clock after the valid latches close.
     -- reset is first sampled on the falling edge (rst_f), so the rising-edge flop below never samples it
     -- at the same instant the CPU changes it
-    rstf_ff: ndflip port map(rst, clk, '0', rst_f);
-    rstp_ff: pdflip port map(rst_f, clk, '0', rst_p);
-    rstn_ff: ndflip port map(rst_p, clk, '0', rst_n);
+    rstf_ff: ndflip port map(rst, clk, gnd, rst_f);
+    rstp_ff: pdflip port map(rst_f, clk, gnd, rst_p);
+    rstn_ff: ndflip port map(rst_p, clk, gnd, rst_n);
     vt_nor:  nor2 port map(tv_q, rst_p, vt_en);
     wv_nor:  nor2 port map(rst_p, rst_n, wr_valid);
 
