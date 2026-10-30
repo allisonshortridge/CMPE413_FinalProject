@@ -137,7 +137,11 @@ signal ben0, ben1                            : std_logic_vector(15 downto 0);
 signal lru_wr_en, lru, lru_pick              : std_logic_vector(3 downto 0);
 signal pick01, pick23, lru_sel, t_vic        : std_logic;
 
+signal gnd : std_logic;
+
 begin
+
+    gnd <= '0';
 
     -- write strobes retimed to the rising edge: low = write, one clock wide
     data_ff: pdflip port map(data_wr, clk, rst, data_q);
@@ -146,8 +150,8 @@ begin
 
     -- reset invalidation: rst_p is reset sampled on the rising edge, rst_n lags it by half a clock.
     -- wr_valid stays 0 until half a clock after the valid latches close.
-    rstp_ff: pdflip port map(rst, clk, '0', rst_p);
-    rstn_ff: ndflip port map(rst_p, clk, '0', rst_n);
+    rstp_ff: pdflip port map(rst, clk, gnd, rst_p);
+    rstn_ff: ndflip port map(rst_p, clk, gnd, rst_n);
     vt_nor:  nor2 port map(tv_q, rst_p, vt_en);
     wv_nor:  nor2 port map(rst_p, rst_n, wr_valid);
 
@@ -214,4 +218,4 @@ begin
     vic_or:  or2 port map(nvalid1, lru_sel, t_vic);
     vic_and: and2 port map(v0, t_vic, victim);
     
-end architecture structural;
+end structural;
