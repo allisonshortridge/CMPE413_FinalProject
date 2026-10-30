@@ -80,7 +80,7 @@ begin
         write(buff, ca);
         write(buff, string'(" q="));
         write(buff, q);
-        writeline(bufftput, buff);
+        writeline(output, buff);
 
     end loop;
     --set done bit
