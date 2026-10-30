@@ -52,4 +52,4 @@ begin
     cache_block2: cache_block port map(wr_data, block_en(2), byte_en(11 downto 8), rd_wr, vt_en, wr_valid, wr_tag, valid_bit, tag, rd_data);
     cache_block3: cache_block port map(wr_data, block_en(3), byte_en(15 downto 12), rd_wr, vt_en, wr_valid, wr_tag, valid_bit, tag, rd_data);
     
-end architecture structural;
+end structural;
