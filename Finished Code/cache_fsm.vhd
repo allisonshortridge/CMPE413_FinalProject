@@ -2,9 +2,6 @@ library STD;
 library IEEE;
 use IEEE.std_logic_1164.all;
 
---state flops clocked on falling edge of clk.
---memory timed by counter.vhd, which counts RISING edges of clk.
---
 --states:
 --idle                stored inverted: reset (all flops -> 0) means IDLE
 --compare             tag/valid compare (hit) is evaluated here
@@ -25,7 +22,6 @@ use IEEE.std_logic_1164.all;
 --memory data ready at counter = 7, 9, 11, 13, 15
 --15 goes to s_read.
 --
---RESET is synchronous 
 --hold reset high through one falling edge and one rising edge of clk
 
 entity cache_fsm is

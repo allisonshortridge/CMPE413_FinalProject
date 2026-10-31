@@ -1,3 +1,9 @@
+--load = 1: q takes d at falling edge of clk
+--load = 0: q holds value
+--
+--sel = load, input1 = q_int (hold), input2 = d (load)
+--ndflip_1 stores mux output
+--q is unknown until first load
 library STD;
 library IEEE;
 use IEEE.std_logic_1164.all;

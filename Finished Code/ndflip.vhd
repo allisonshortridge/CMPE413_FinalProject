@@ -1,3 +1,9 @@
+--pdl_1 (lead)   closes on falling edge
+--pdl_2 (follow)    passes lead to q
+--holds d for a full clock
+--
+--reset is not asynchronous
+--rst = 1 while lead is open, q goes to 0 at falling edge
 library STD;
 library IEEE;
 use IEEE.std_logic_1164.all;

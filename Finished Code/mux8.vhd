@@ -1,3 +1,10 @@
+--y = input1, sel = 0
+--y = input2, sel = 1
+--
+--eight 1-bit mux in parallel
+--1-bit mux: y = (not sel and input1) or (sel and input2)
+--
+--used for rd and wr muxes
 library STD;
 library IEEE;
 use IEEE.std_logic_1164.all;

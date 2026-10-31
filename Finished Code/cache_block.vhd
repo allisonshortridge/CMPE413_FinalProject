@@ -1,3 +1,17 @@
+--one block = 4 data bytes + 2 bit tag + valid bit
+--
+--cache_byte        4 data bytes. byte_en(i) is chip enable of byte i
+--tag1, tag0        tag cells (wr_tag in, tag out)
+--valid_bit1        valid cell (wr_valid in, valid_bit out)
+--
+--chip_en     selects block. tag, valid and selected byte only driven while chip_en = 1
+--byte_en     byte select from address decoder
+--rd_wr       1 = read, 0 = write
+--vt_en       tag/valid write, 1 = read, 0 = write
+--
+--data and tag/valid have separate signals. refill can write tag and valid on byte 0 only
+--rd_data is for all 4 bytes
+--tag and valid sent out while chip_en = 1
 library STD;
 library IEEE;
 use IEEE.std_logic_1164.all;

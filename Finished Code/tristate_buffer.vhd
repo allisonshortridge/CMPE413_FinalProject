@@ -1,3 +1,8 @@
+--en = 1   output = input1
+--en = 0   output = Z (high impedance)
+--
+--input1 goes through two inverters, then through tx
+--tx driven by en and not_en
 library STD;
 library IEEE;
 use IEEE.std_logic_1164.all;

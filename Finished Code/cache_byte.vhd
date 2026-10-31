@@ -1,3 +1,11 @@
+--bit i of wr_data -> cache_cell bit i -> bit i of rd_data
+--
+--chip_en = 0              rd_data is Z
+--chip_en = 1, rd_wr = 1   read: each cell drives bit to rd_data
+--chip_en = 1, rd_wr = 0   write: latches store wr_data, rd_data is Z
+--
+--wr_data and chip_en are stable while rd_wr is low
+--4 bytes of a cache_block share rd_data bus
 library STD;
 library IEEE;
 use IEEE.std_logic_1164.all;

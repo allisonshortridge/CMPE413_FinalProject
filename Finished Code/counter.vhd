@@ -1,4 +1,11 @@
---4 bit counter
+--q counts 0 to 15 and back to 0, one count per rising edge of clk
+--d0 = not q0
+--d1 = q1 xor q0
+--d2 = q2 xor (q1 and q0)
+--d3 = q3 xor (q2 and q1 and q0)
+--
+--rst = 1 clears q to 0 at next rising edge, rst = 0 counts every clock
+--hold reset high through one falling edge and one rising edge of clk
 library STD;
 library IEEE;
 use IEEE.std_logic_1164.all;
