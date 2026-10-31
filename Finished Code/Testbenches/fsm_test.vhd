@@ -37,10 +37,23 @@ architecture test of fsm_test is
     signal done: std_logic := '0';
 
 begin
-    cache_fsm_1: cache_fsm port map(clk => clock, reset => reset, start => start, rw => rw, hit => hit,
-        busy => busy, load_in => load_in, out_load => out_load, out_oe => out_oe, enable => enable,
-        ma_oe => ma_oe, dec_en => dec_en, refill => refill, byte_cnt => byte_cnt,
-        data_wr => data_wr, tv_wr => tv_wr);
+    cache_fsm_1: cache_fsm port map(
+        clk => clock, 
+        reset => reset, 
+        start => start, 
+        rw => rw, 
+        hit => hit,
+        busy => busy, 
+        load_in => load_in, 
+        out_load => out_load, 
+        out_oe => out_oe, 
+        enable => enable,
+        ma_oe => ma_oe, 
+        dec_en => dec_en, 
+        refill => refill, 
+        byte_cnt => byte_cnt,
+        data_wr => data_wr, 
+        tv_wr => tv_wr);
 
 clk : process
 begin
