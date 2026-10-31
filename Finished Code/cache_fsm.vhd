@@ -1,7 +1,3 @@
-library STD;
-library IEEE;
-use IEEE.std_logic_1164.all;
-
 --states:
 --idle                stored inverted: reset (all flops -> 0) means IDLE
 --compare             tag/valid compare (hit) is evaluated here
@@ -23,6 +19,9 @@ use IEEE.std_logic_1164.all;
 --15 goes to s_read.
 --
 --hold reset high through one falling edge and one rising edge of clk
+library STD;
+library IEEE;
+use IEEE.std_logic_1164.all;
 
 entity cache_fsm is
     port (
