@@ -4,10 +4,10 @@ use IEEE.numeric_std.all;
 use IEEE.std_logic_textio.all;
 use STD.textio.all;
 
-entity hit_miss_test is 
-end hit_miss_test;
+entity hm_test is 
+end hm_test;
 
-architecture test of hit_miss_test is
+architecture test of hm_test is
     component hit_miss port (
             tag_req     : in std_logic_vector(1 downto 0);
             tag_stored  : in std_logic_vector(1 downto 0);
