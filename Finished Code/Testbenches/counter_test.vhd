@@ -1,9 +1,3 @@
---testbench for counter.vhd
---
---count is done in loop (reset gives 0, otherwise count up by 1, 2, 3... 15, 0).
---counter is made using pdflip with synchronous reset
---input is changed on the FALLING edge
---q is read after the next RISING edge
 library IEEE;
 use IEEE.std_logic_1164.all;
 use IEEE.std_logic_textio.all;
