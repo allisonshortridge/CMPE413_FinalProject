@@ -68,6 +68,7 @@ end process clk;
 
 io_process: process
     file infile : text is in "./cache_fsm_in.txt";
+    file outfile : text is out "./cache_fsm_out.txt";
     variable buf : line;
     variable out_line : line;
     variable reset_v, start_v, rw_v, hit_v : std_logic;
@@ -82,7 +83,7 @@ begin
 
         --copy comment lines to output
         if buf(buf'left) = '-' then
-            writeline(output, buf);
+            writeline(outfile, buf);
             next;
         end if;
         
@@ -116,7 +117,7 @@ begin
         write(out_line, rw);
         write(out_line, string'(" Hit: "));
         write(out_line, hit);
-        writeline(output, out_line);
+        writeline(outfile, out_line);
         write(out_line, string'(" Busy: "));
         write(out_line, busy);
         write(out_line, string'(" Load_in: "));
@@ -139,10 +140,10 @@ begin
         write(out_line, tv_wr);
         write(out_line, string'(" Byte_cnt: "));
         write(out_line, byte_cnt);
-        writeline(output, out_line);
+        writeline(outfile, out_line);
         --break to separate each test
         write(out_line, string'(" ----------------------------------------------"));
-        writeline(output, out_line);
+        writeline(outfile, out_line);
         k := k + 1;
 
     end loop;
