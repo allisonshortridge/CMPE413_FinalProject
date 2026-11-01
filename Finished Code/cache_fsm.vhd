@@ -32,8 +32,8 @@ entity cache_fsm is
         hit : in std_logic; --hit/miss (1 = hit, 0 = miss)
         busy : out std_logic;
         load_in : out std_logic;    --input registers follow their inputs
-        out_load : out std_logic;   --output register captures the selected byte
-        out_oe : out std_logic; --drive the byte onto CD
+        out_load : out std_logic;   --output register captures selected byte
+        out_oe : out std_logic; --drive byte onto CD
         enable : out std_logic; --ENABLE pin to memory
         ma_oe : out std_logic;  --drive MA
         dec_en : out std_logic; --address_decoder chip_en
@@ -187,7 +187,7 @@ begin
     --WRITE BIT: counter is not 15
     and_13: and2 port map(wait_done, nall15, go_wbit);
 
-    --READ: wait is done and the counter is 15 (all 4 bytes written)
+    --READ: wait is done and counter is 15 (all 4 bytes written)
     and_14: and2 port map(wait_done, all15, go_read);
 
     --byte counter. counts up when WRITE BIT entered
@@ -199,7 +199,7 @@ begin
     inv_10: inverter port map(x_b1, t_b1);
     or_9: or2 port map(t_b1, s_req, d_b1);
 
-    --hit_q: hit saved at the end of COMPARE
+    --hit_q: hit saved at end of COMPARE
     mux_1: mux port map(hit_q, hit, s_comp, d_hq);
 
     --state flip flops
