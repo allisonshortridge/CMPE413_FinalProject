@@ -216,7 +216,6 @@ architecture structural of cache_top is
     signal ma_addr, ma_y : std_logic_vector(7 downto 0);
 
 begin
-
     --control signals
     fsm_1: cache_fsm port map (
         clk => clk,
@@ -243,20 +242,18 @@ begin
     cd_reg_1: cd_reg port map (cd, load_in, clk, cd_q);
     rw_reg: reg port map (rw, load_in, clk, rw_q);
 
-    --simulation only. refill and dec_en dip for a few delta cycles when the fsm goes from WRITE BIT to WAIT,
-    --while the cache cells are being written. the 1 ps inertial delay swallows the dip
     refill_f <= refill after 1 ps;
     dec_en_f <= dec_en after 1 ps;
 
     --address decoding
-    --chip_en is dec_en plus the OUT state, so the set stays selected for the LRU update during OUT
+    --chip_en is dec_en plus OUT state
     chip_or: or2 port map (dec_en_f, out_oe, chip_en);
     addr_dec: address_decoder port map (ca_q(5 downto 0), chip_en, refill_f, byte_cnt, rq_tag, block_en, byte_en);
 
     --write data: CPU data for a write, memory data for a refill
     wr_mux: mux8 port map (cd_q, md, refill_f, wr_data);
 
-    --the two ways, LRU bits and victim select
+    --two ways, LRU bits and victim select
     lru_1: lru_unit port map (
         wr_data => wr_data,
         rq_tag => rq_tag,
@@ -284,15 +281,15 @@ begin
     hit_1: hit_miss port map (rq_tag, tag1, valid1, hit1);
     hit_or: or2 port map (hit0, hit1, hit_i);
 
-    --way to use: the hit way on a hit, the victim way on a miss
+    --way to use: hit way on a hit, victim way on a miss
     way_mux: mux port map (victim, hit1, hit_i, way_in);
 
-    --read data from the way that hit
+    --read data from way that hit
     rd_mux: mux8 port map (rd_data0, rd_data1, hit1, rd_sel);
     out_reg: output_registers port map (rd_sel, out_load, clk, out_q);
     cd_drv: cd_out port map (out_q, out_oe, cd);
 
-    --memory address. ma_out is 8 bits wide, only the low 6 bits go to the MA pins
+    --memory address. only low 6 bits go to MA pins
     ma_addr <= "00" & ca_q(5 downto 2) & "00";
     ma_drv: ma_out port map (ma_addr, ma_oe, ma_y);
     ma <= ma_y(5 downto 0);
