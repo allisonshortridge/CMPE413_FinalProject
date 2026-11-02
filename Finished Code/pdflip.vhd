@@ -50,7 +50,6 @@ for pdl_1, pdl_2: positive_dlatch use entity work.positive_dlatch(structural);
 signal not_clk, not_rst, d_temp, q_temp: std_logic;
 
 begin
-
     inverter_1: inverter port map(clk, not_clk);
 
     inverter_2: inverter port map(rst, not_rst);

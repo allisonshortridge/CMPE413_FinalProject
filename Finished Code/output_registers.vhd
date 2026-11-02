@@ -40,9 +40,7 @@ signal q_int: std_logic_vector(7 downto 0);
 signal gnd: std_logic;
 
 begin
-
     gnd<='0';
-    
 --mapping ports to gates
     mux_1: mux port map(q_int(0), data_in(0), load, sel_1);
     mux_2: mux port map(q_int(1), data_in(1), load, sel_2);

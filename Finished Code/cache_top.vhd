@@ -21,7 +21,7 @@ entity cache_top is
         ca : in std_logic_vector(5 downto 0);   --CPU address
         cd : inout std_logic_vector(7 downto 0);    --CPU data
         md : in std_logic_vector(7 downto 0);   --memory data
-        vdd : in std_logic; --power pins, not used by the logic
+        vdd : in std_logic;
         gnd : in std_logic;
         busy : out std_logic;
         enable : out std_logic; --ENABLE to memory

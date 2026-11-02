@@ -1,7 +1,7 @@
 --states:
 --idle                stored inverted: reset (all flops -> 0) means IDLE
---compare             tag/valid compare (hit) is evaluated here
---read                read the requested byte after a refill
+--compare             tag/valid compare (hit) evaluated
+--read                read requested byte after a refill
 --write               cache write (hit only) for a CPU write
 --read miss request   ENABLE and MA output enabled for one clock
 --write bit           write one refill byte (data, plus tag/valid on byte 0)
@@ -10,9 +10,8 @@
 --
 --read hit: idle->comp, comp->out (2 clocks)
 --write hit/miss: idle->comp, comp->write, write->idle (3 clocks)
---read miss: idle->comp, comp->req, req->wait, byte k written at N(10+2k), N18 ->read, N19 ->out    (19 clocks)
+--read miss: idle->comp, comp->req, req->wait, byte k written at N(10+2k), N18 ->read, N19 ->out (19 clocks)
 --
---counter.vhd functionality:
 --counter is held in reset (cnt_rst = 1) in every state except s_wait and s_wbit
 --cleared by rising edge inside s_req, starts counting at N3
 --memory data ready at counter = 7, 9, 11, 13, 15

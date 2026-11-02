@@ -9,7 +9,7 @@
 --rd_wr       1 = read, 0 = write
 --vt_en       tag/valid write, 1 = read, 0 = write
 --
---data and tag/valid have separate signals. refill can write tag and valid on byte 0 only
+--data and tag/valid have separate signals. refill writes tag and valid on byte 0 only
 --rd_data is for all 4 bytes
 --tag and valid sent out while chip_en = 1
 library STD;
