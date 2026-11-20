@@ -4,7 +4,7 @@ use IEEE.std_logic_1164.all;
 
 entity address_decoder is
     port (
-        address     :   in std_logic_vector(5 downto 0);
+        address     :   in std_logic_vector(3 downto 0);
         chip_en     :   in std_logic;
         refill      :   in std_logic;                       -- FSM: take byte offset from byte_cnt
         byte_cnt    :   in std_logic_vector(1 downto 0);    -- FSM: byte being refilled

@@ -30,14 +30,14 @@ entity cache_fsm is
         rw : in std_logic;                       
         hit : in std_logic; --hit/miss (1 = hit, 0 = miss)
         busy : out std_logic;
-        load_in : buffer std_logic;    --input registers follow their inputs
-        out_load : buffer std_logic;   --output register captures selected byte
-        out_oe : buffer std_logic; --drive byte onto CD
+        load_in : inout std_logic;    --input registers follow their inputs
+        out_load : inout std_logic;   --output register captures selected byte
+        out_oe : inout std_logic; --drive byte onto CD
         enable : out std_logic; --ENABLE pin to memory
         ma_oe : out std_logic;  --drive MA
         dec_en : out std_logic; --address_decoder chip_en
-        refill : buffer std_logic; --1: byte offset from byte_cnt, write data from MD
-        byte_cnt : buffer std_logic_vector(1 downto 0);    --byte being refilled
+        refill : inout std_logic; --1: byte offset from byte_cnt, write data from MD
+        byte_cnt : inout std_logic_vector(1 downto 0);    --byte being refilled
         data_wr : out std_logic;    --data cell write, BEFORE rising-edge retiming
         tv_wr : out std_logic   --tag + valid write, BEFORE rising-edge retiming
     );

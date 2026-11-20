@@ -1,0 +1,26 @@
+architecture structural of nor2 is
+
+component inverter
+    port (
+        input  : in  std_logic;
+        output : out std_logic
+    );
+end component;
+
+component or2
+    port (
+        input1 : in  std_logic;
+        input2 : in  std_logic;
+        output : out std_logic
+    );
+end component;
+
+for inverter_1: inverter use entity work.inverter(structural);
+for or2_1: or2 use entity work.or2(structural);
+
+signal or_output : std_logic;
+
+begin
+    or2_1:      or2      port map(input1, input2, or_output);
+    inverter_1: inverter port map(or_output, output);
+end structural;
