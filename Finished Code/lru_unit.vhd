@@ -20,6 +20,7 @@ entity lru_unit is
         rd_done     :   in std_logic;    -- FSM out_oe: a read has finished
         clk         :   in std_logic;
         rst         :   in std_logic;
+        gnd         :   in std_logic;
         valid0      :   out std_logic;
         valid1      :   out std_logic;
         tag0        :   out std_logic_vector(1 downto 0);
@@ -137,11 +138,8 @@ signal ben0, ben1                            : std_logic_vector(15 downto 0);
 signal lru_wr_en, lru, lru_pick              : std_logic_vector(3 downto 0);
 signal pick01, pick23, lru_sel, t_vic        : std_logic;
 
-signal gnd: std_logic;
 
 begin
-
-    gnd<='0';
     
     -- write strobes retimed to the rising edge: low = write, one clock wide
     data_ff: pdflip port map(data_wr, clk, rst, data_q);
@@ -168,23 +166,67 @@ begin
     we1_or: or2 port map(lookup, way_i, way_en(1));
 
     -- valid/tag block enables per way; rst_p forces every block on in both ways
-    blk_gate: for i in 0 to 3 generate
-        g0: and2 port map(block_en(i), way_en(0), bw0(i));
-        g1: and2 port map(block_en(i), way_en(1), bw1(i));
-        r0: or2  port map(bw0(i), rst_p, blk0(i));
-        r1: or2  port map(bw1(i), rst_p, blk1(i));
-    end generate;
+
+    g0_0: and2 port map(block_en(0), way_en(0), bw0(0));
+    g1_0: and2 port map(block_en(0), way_en(1), bw1(0));
+    r0_0: or2  port map(bw0(0), rst_p, blk0(0));
+    r1_0: or2  port map(bw1(0), rst_p, blk1(0));
+
+    g0_1: and2 port map(block_en(1), way_en(0), bw0(1));
+    g1_1: and2 port map(block_en(1), way_en(1), bw1(1));
+    r0_1: or2  port map(bw0(1), rst_p, blk0(1));
+    r1_1: or2  port map(bw1(1), rst_p, blk1(1));
+
+    g0_2: and2 port map(block_en(2), way_en(0), bw0(2));
+    g1_2: and2 port map(block_en(2), way_en(1), bw1(2));
+    r0_2: or2  port map(bw0(2), rst_p, blk0(2));
+    r1_2: or2  port map(bw1(2), rst_p, blk1(2));
+
+    g0_3: and2 port map(block_en(3), way_en(0), bw0(3));
+    g1_3: and2 port map(block_en(3), way_en(1), bw1(3));
+    r0_3: or2  port map(bw0(3), rst_p, blk0(3));
+    r1_3: or2  port map(bw1(3), rst_p, blk1(3));
 
     -- data byte enables per way, so a write only reaches the held way
-    byte_gate: for j in 0 to 15 generate
-        b0: and2 port map(byte_en(j), way_en(0), ben0(j));
-        b1: and2 port map(byte_en(j), way_en(1), ben1(j));
-    end generate;
+
+    b0_0:  and2 port map(byte_en(0),  way_en(0), ben0(0));
+    b1_0:  and2 port map(byte_en(0),  way_en(1), ben1(0));
+    b0_1:  and2 port map(byte_en(1),  way_en(0), ben0(1));
+    b1_1:  and2 port map(byte_en(1),  way_en(1), ben1(1));
+    b0_2:  and2 port map(byte_en(2),  way_en(0), ben0(2));
+    b1_2:  and2 port map(byte_en(2),  way_en(1), ben1(2));
+    b0_3:  and2 port map(byte_en(3),  way_en(0), ben0(3));
+    b1_3:  and2 port map(byte_en(3),  way_en(1), ben1(3));
+    b0_4:  and2 port map(byte_en(4),  way_en(0), ben0(4));
+    b1_4:  and2 port map(byte_en(4),  way_en(1), ben1(4));
+    b0_5:  and2 port map(byte_en(5),  way_en(0), ben0(5));
+    b1_5:  and2 port map(byte_en(5),  way_en(1), ben1(5));
+    b0_6:  and2 port map(byte_en(6),  way_en(0), ben0(6));
+    b1_6:  and2 port map(byte_en(6),  way_en(1), ben1(6));
+    b0_7:  and2 port map(byte_en(7),  way_en(0), ben0(7));
+    b1_7:  and2 port map(byte_en(7),  way_en(1), ben1(7));
+    b0_8:  and2 port map(byte_en(8),  way_en(0), ben0(8));
+    b1_8:  and2 port map(byte_en(8),  way_en(1), ben1(8));
+    b0_9:  and2 port map(byte_en(9),  way_en(0), ben0(9));
+    b1_9:  and2 port map(byte_en(9),  way_en(1), ben1(9));
+    b0_10: and2 port map(byte_en(10), way_en(0), ben0(10));
+    b1_10: and2 port map(byte_en(10), way_en(1), ben1(10));
+    b0_11: and2 port map(byte_en(11), way_en(0), ben0(11));
+    b1_11: and2 port map(byte_en(11), way_en(1), ben1(11));
+    b0_12: and2 port map(byte_en(12), way_en(0), ben0(12));
+    b1_12: and2 port map(byte_en(12), way_en(1), ben1(12));
+    b0_13: and2 port map(byte_en(13), way_en(0), ben0(13));
+    b1_13: and2 port map(byte_en(13), way_en(1), ben1(13));
+    b0_14: and2 port map(byte_en(14), way_en(0), ben0(14));
+    b1_14: and2 port map(byte_en(14), way_en(1), ben1(14));
+    b0_15: and2 port map(byte_en(15), way_en(0), ben0(15));
+    b1_15: and2 port map(byte_en(15), way_en(1), ben1(15));
+
 
     way0: cache_way port map(wr_data, blk0, ben0, rd_wr, vt_en, wr_valid, rq_tag, v0, tag0, rd_data0);
     way1: cache_way port map(wr_data, blk1, ben1, rd_wr, vt_en, wr_valid, rq_tag, v1, tag1, rd_data1);
-    valid0 <= v0;
-    valid1 <= v1;
+    vb0: and2 port map(v0, v0, valid0);
+    vb1: and2 port map(v1, v1, valid1);
 
     -- LRU update pulse
     --   read (hit or miss): first (low) half of the out state

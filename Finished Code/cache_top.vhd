@@ -38,14 +38,14 @@ architecture structural of cache_top is
             rw : in std_logic;
             hit : in std_logic;
             busy : out std_logic;
-            load_in : out std_logic;
-            out_load : out std_logic;
-            out_oe : out std_logic;
+            load_in : inout std_logic;
+            out_load : inout std_logic;
+            out_oe : inout std_logic;
             enable : out std_logic;
             ma_oe : out std_logic;
             dec_en : out std_logic;
-            refill : out std_logic;
-            byte_cnt : out std_logic_vector(1 downto 0);
+            refill : inout std_logic;
+            byte_cnt : inout std_logic_vector(1 downto 0);
             data_wr : out std_logic;
             tv_wr : out std_logic
         );
@@ -80,13 +80,12 @@ architecture structural of cache_top is
 
     component address_decoder
         port (
-            address : in std_logic_vector(5 downto 0);
+            address : in std_logic_vector(3 downto 0);
             chip_en : in std_logic;
             refill : in std_logic;
             byte_cnt: in std_logic_vector(1 downto 0);
-            rq_tag : out std_logic_vector(1 downto 0);
-            block_en: out std_logic_vector(3 downto 0);
-            byte_en : out std_logic_vector(15 downto 0)
+            block_en: inout std_logic_vector(3 downto 0);
+            byte_en : inout std_logic_vector(15 downto 0)
         );
         end component;
 
@@ -104,6 +103,7 @@ architecture structural of cache_top is
             rd_done : in std_logic;
             clk : in std_logic;
             rst : in std_logic;
+            gnd : in std_logic;
             valid0 : out std_logic;
             valid1 : out std_logic;
             tag0 : out std_logic_vector(1 downto 0);
@@ -209,7 +209,6 @@ architecture structural of cache_top is
     signal byte_cnt : std_logic_vector(1 downto 0);
 
     --address decoder
-    signal rq_tag : std_logic_vector(1 downto 0);
     signal block_en : std_logic_vector(3 downto 0);
     signal byte_en : std_logic_vector(15 downto 0);
 
@@ -265,7 +264,7 @@ begin
     --address decoding
     --chip_en is dec_en plus OUT state
     chip_or: or2 port map (dec_en_f, out_oe, chip_en);
-    addr_dec: address_decoder port map (ca_q(5 downto 0), chip_en, refill_f, byte_cnt, rq_tag, block_en, byte_en);
+    addr_dec: address_decoder port map (ca_q(3 downto 0), chip_en, refill_f, byte_cnt, block_en, byte_en);
 
     --write data: CPU data for a write, memory data for a refill
     wr_mux: mux8 port map (cd_q, md, refill_f, wr_data);
@@ -273,7 +272,7 @@ begin
     --two ways, LRU bits and victim select
     lru_1: lru_unit port map (
         wr_data => wr_data,
-        rq_tag => rq_tag,
+        rq_tag => ca_q(5 downto 4),
         block_en => block_en,
         byte_en => byte_en,
         data_wr => data_wr,
@@ -284,6 +283,7 @@ begin
         rd_done => out_oe,
         clk => clk,
         rst => reset,
+        gnd => gnd,
         valid0 => valid0,
         valid1 => valid1,
         tag0 => tag0,
@@ -294,8 +294,8 @@ begin
     );
 
     --hit detect. checks per way
-    hit_0: hit_miss port map (rq_tag, tag0, valid0, hit0);
-    hit_1: hit_miss port map (rq_tag, tag1, valid1, hit1);
+    hit_0: hit_miss port map (ca_q(5 downto 4), tag0, valid0, hit0);
+    hit_1: hit_miss port map (ca_q(5 downto 4), tag1, valid1, hit1);
     hit_or: or2 port map (hit0, hit1, hit_i);
 
     --way to use: hit way on a hit, victim way on a miss
