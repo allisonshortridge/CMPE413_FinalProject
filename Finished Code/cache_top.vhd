@@ -149,6 +149,13 @@ architecture structural of cache_top is
         );
         end component;
 
+    component inverter
+        port (
+            input : in std_logic;
+            output : out std_logic
+        );
+        end component;
+
     component output_registers
         port (
             data_in : in std_logic_vector(7 downto 0);
@@ -184,18 +191,20 @@ architecture structural of cache_top is
     for way_mux: mux use entity work.mux(structural);
     for wr_mux, rd_mux: mux8 use entity work.mux8(structural);
     for hit_or, chip_or: or2 use entity work.or2(structural);
+    for inv_r1, inv_r2, inv_d1, inv_d2: inverter use entity work.inverter(structural);
     for out_reg: output_registers use entity work.output_registers(structural);
     for cd_drv: cd_out use entity work.cd_out(structural);
     for ma_drv: ma_out use entity work.ma_out(structural);
 
     --CPU request. held while cache is busy
-    signal ca_in, ca_q, cd_q : std_logic_vector(7 downto 0);
+    signal ca_q, cd_q : std_logic_vector(7 downto 0);
     signal rw_q : std_logic;
 
     --fsm signals
     signal load_in, out_load, out_oe, ma_oe : std_logic;
     signal dec_en, chip_en, refill : std_logic;
     signal dec_en_f, refill_f : std_logic;
+    signal dec_en_n, refill_n : std_logic;
     signal data_wr, tv_wr : std_logic;
     signal byte_cnt : std_logic_vector(1 downto 0);
 
@@ -213,7 +222,7 @@ architecture structural of cache_top is
 
     --data paths
     signal wr_data, rd_sel, out_q : std_logic_vector(7 downto 0);
-    signal ma_addr, ma_y : std_logic_vector(7 downto 0);
+    signal ma_unused : std_logic_vector(1 downto 0);
 
 begin
     --control signals
@@ -237,13 +246,21 @@ begin
     );
 
     --input registers. ca_reg is 8 bits wide, upper 2 bits tied to 0
-    ca_in <= "00" & ca;
-    ca_reg_1: ca_reg port map (ca_in, load_in, clk, ca_q);
+    ca_reg_1: ca_reg port map (
+        ca(7) => gnd,
+        ca(6) => gnd,
+        ca(5 downto 0) => ca,
+        load => load_in,
+        clk => clk,
+        q => ca_q
+    );
     cd_reg_1: cd_reg port map (cd, load_in, clk, cd_q);
     rw_reg: reg port map (rw, load_in, clk, rw_q);
 
-    refill_f <= refill after 1 ps;
-    dec_en_f <= dec_en after 1 ps;
+    inv_r1: inverter port map (refill, refill_n);
+    inv_r2: inverter port map (refill_n, refill_f);
+    inv_d1: inverter port map (dec_en, dec_en_n);
+    inv_d2: inverter port map (dec_en_n, dec_en_f);
 
     --address decoding
     --chip_en is dec_en plus OUT state
@@ -290,8 +307,15 @@ begin
     cd_drv: cd_out port map (out_q, out_oe, cd);
 
     --memory address. only low 6 bits go to MA pins
-    ma_addr <= "00" & ca_q(5 downto 2) & "00";
-    ma_drv: ma_out port map (ma_addr, ma_oe, ma_y);
-    ma <= ma_y(5 downto 0);
+    ma_drv: ma_out port map (
+        addr_in(7) => gnd,
+        addr_in(6) => gnd,
+        addr_in(5 downto 2) => ca_q(5 downto 2),
+        addr_in(1) => gnd,
+        addr_in(0) => gnd,
+        en => ma_oe,
+        y(7 downto 6) => ma_unused,
+        y(5 downto 0) => ma
+    );
 
 end structural;
