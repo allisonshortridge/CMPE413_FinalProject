@@ -1,0 +1,1160 @@
+Running: /umbc/software/cadence/installs/PEGASUS2326/tools.lnx86/Pegasus/bin/64bit/pegasusvirt \
+  -isPegasus \
+  -mode lvs \
+  -global_log_file /afs/umbc.edu/users/s/s/s348/home/cadence/cadence_setup/fsm/pegasusuilvs.log \
+  -control /afs/umbc.edu/users/s/s/s348/home/cadence/cadence_setup/fsm/pegasuslvsctl \
+  -df2_version IC23.1.0 \
+  -run_dir /afs/umbc.edu/users/s/s/s348/home/cadence/cadence_setup/fsm \
+  -no_rules_check \
+  -qrc_data \
+  -schLibName finalproj1 \
+  -schCellName cache_fsm \
+  -schViewName structural \
+  -simViewList auCdl\ schematic \
+  -simStopList auCdl \
+  -displayPinInfo \
+  -source_cdl /afs/umbc.edu/users/s/s/s348/home/cadence/cadence_setup/fsm/cache_fsm.cdl \
+  -spice /afs/umbc.edu/users/s/s/s348/home/cadence/cadence_setup/fsm/cache_fsm.spi \
+  -layLibName finalproj1 \
+  -layCellName cache_fsm \
+  -layViewName layout \
+  -igds /afs/umbc.edu/users/s/s/s348/home/cadence/cadence_setup/fsm/cache_fsm.gds.gz \
+  -layScale 0.0005 \
+  -layTechLib gpdk045 \
+  -convertPin geometryAndText \
+  -replaceBusBitChar nil \
+  -noConvertHalfWidthPath nil \
+  -layHierDepth 32 \
+  -layMaxVertices 2048 \
+  -enableColoring yes \
+  -rulesFile /afs/umbc.edu/users/s/s/s348/home/cadence/cadence_setup/fsm/.technology.rul \
+  -log_dir LOGS
+
+
+
+Virtuoso Framework License (111) was checked out successfully. Total checkout time was 0.02s.
+*WARNING* LIB NCSU_Analog_Parts from File /afs/umbc.edu/users/s/s/s348/home/cadence/cadence_setup/cds.lib Line 12 redefines
+LIB NCSU_Analog_Parts from File /afs/umbc.edu/software/cadence/design_kits/ncsu-cdk-1.6.0.beta/cdssetup/cds.lib
+Insert UNDEFINE NCSU_Analog_Parts
+before DEFINE NCSU_Analog_Parts
+    in /afs/umbc.edu/users/s/s/s348/home/cadence/cadence_setup/cds.lib
+Or remove or comment out DEFINE NCSU_Analog_Parts
+    in /afs/umbc.edu/software/cadence/design_kits/ncsu-cdk-1.6.0.beta/cdssetup/cds.lib
+to suppress this warning message.
+*WARNING* LIB NCSU_Digital_Parts from File /afs/umbc.edu/users/s/s/s348/home/cadence/cadence_setup/cds.lib Line 13 redefines
+LIB NCSU_Digital_Parts from File /afs/umbc.edu/software/cadence/design_kits/ncsu-cdk-1.6.0.beta/cdssetup/cds.lib
+Insert UNDEFINE NCSU_Digital_Parts
+before DEFINE NCSU_Digital_Parts
+    in /afs/umbc.edu/users/s/s/s348/home/cadence/cadence_setup/cds.lib
+Or remove or comment out DEFINE NCSU_Digital_Parts
+    in /afs/umbc.edu/software/cadence/design_kits/ncsu-cdk-1.6.0.beta/cdssetup/cds.lib
+to suppress this warning message.
+*WARNING* LIB NCSU_TechLib_ami06 from File /afs/umbc.edu/users/s/s/s348/home/cadence/cadence_setup/cds.lib Line 14 redefines
+LIB NCSU_TechLib_ami06 from File /afs/umbc.edu/software/cadence/design_kits/ncsu-cdk-1.6.0.beta/cdssetup/cds.lib
+Insert UNDEFINE NCSU_TechLib_ami06
+before DEFINE NCSU_TechLib_ami06
+    in /afs/umbc.edu/users/s/s/s348/home/cadence/cadence_setup/cds.lib
+Or remove or comment out DEFINE NCSU_TechLib_ami06
+    in /afs/umbc.edu/software/cadence/design_kits/ncsu-cdk-1.6.0.beta/cdssetup/cds.lib
+to suppress this warning message.
+*WARNING* LIB NCSU_TechLib_ami16 from File /afs/umbc.edu/users/s/s/s348/home/cadence/cadence_setup/cds.lib Line 15 redefines
+LIB NCSU_TechLib_ami16 from File /afs/umbc.edu/software/cadence/design_kits/ncsu-cdk-1.6.0.beta/cdssetup/cds.lib
+Insert UNDEFINE NCSU_TechLib_ami16
+before DEFINE NCSU_TechLib_ami16
+    in /afs/umbc.edu/users/s/s/s348/home/cadence/cadence_setup/cds.lib
+Or remove or comment out DEFINE NCSU_TechLib_ami16
+    in /afs/umbc.edu/software/cadence/design_kits/ncsu-cdk-1.6.0.beta/cdssetup/cds.lib
+to suppress this warning message.
+*WARNING* LIB NCSU_TechLib_hp06 from File /afs/umbc.edu/users/s/s/s348/home/cadence/cadence_setup/cds.lib Line 16 redefines
+LIB NCSU_TechLib_hp06 from File /afs/umbc.edu/software/cadence/design_kits/ncsu-cdk-1.6.0.beta/cdssetup/cds.lib
+Insert UNDEFINE NCSU_TechLib_hp06
+before DEFINE NCSU_TechLib_hp06
+    in /afs/umbc.edu/users/s/s/s348/home/cadence/cadence_setup/cds.lib
+Or remove or comment out DEFINE NCSU_TechLib_hp06
+    in /afs/umbc.edu/software/cadence/design_kits/ncsu-cdk-1.6.0.beta/cdssetup/cds.lib
+to suppress this warning message.
+*WARNING* LIB NCSU_TechLib_tsmc02 from File /afs/umbc.edu/users/s/s/s348/home/cadence/cadence_setup/cds.lib Line 17 redefines
+LIB NCSU_TechLib_tsmc02 from File /afs/umbc.edu/software/cadence/design_kits/ncsu-cdk-1.6.0.beta/cdssetup/cds.lib
+Insert UNDEFINE NCSU_TechLib_tsmc02
+before DEFINE NCSU_TechLib_tsmc02
+    in /afs/umbc.edu/users/s/s/s348/home/cadence/cadence_setup/cds.lib
+Or remove or comment out DEFINE NCSU_TechLib_tsmc02
+    in /afs/umbc.edu/software/cadence/design_kits/ncsu-cdk-1.6.0.beta/cdssetup/cds.lib
+to suppress this warning message.
+*WARNING* LIB NCSU_TechLib_tsmc02d from File /afs/umbc.edu/users/s/s/s348/home/cadence/cadence_setup/cds.lib Line 18 redefines
+LIB NCSU_TechLib_tsmc02d from File /afs/umbc.edu/software/cadence/design_kits/ncsu-cdk-1.6.0.beta/cdssetup/cds.lib
+Insert UNDEFINE NCSU_TechLib_tsmc02d
+before DEFINE NCSU_TechLib_tsmc02d
+    in /afs/umbc.edu/users/s/s/s348/home/cadence/cadence_setup/cds.lib
+Or remove or comment out DEFINE NCSU_TechLib_tsmc02d
+    in /afs/umbc.edu/software/cadence/design_kits/ncsu-cdk-1.6.0.beta/cdssetup/cds.lib
+to suppress this warning message.
+*WARNING* LIB NCSU_TechLib_tsmc03 from File /afs/umbc.edu/users/s/s/s348/home/cadence/cadence_setup/cds.lib Line 19 redefines
+LIB NCSU_TechLib_tsmc03 from File /afs/umbc.edu/software/cadence/design_kits/ncsu-cdk-1.6.0.beta/cdssetup/cds.lib
+Insert UNDEFINE NCSU_TechLib_tsmc03
+before DEFINE NCSU_TechLib_tsmc03
+    in /afs/umbc.edu/users/s/s/s348/home/cadence/cadence_setup/cds.lib
+Or remove or comment out DEFINE NCSU_TechLib_tsmc03
+    in /afs/umbc.edu/software/cadence/design_kits/ncsu-cdk-1.6.0.beta/cdssetup/cds.lib
+to suppress this warning message.
+*WARNING* LIB NCSU_TechLib_tsmc03d from File /afs/umbc.edu/users/s/s/s348/home/cadence/cadence_setup/cds.lib Line 20 redefines
+LIB NCSU_TechLib_tsmc03d from File /afs/umbc.edu/software/cadence/design_kits/ncsu-cdk-1.6.0.beta/cdssetup/cds.lib
+Insert UNDEFINE NCSU_TechLib_tsmc03d
+before DEFINE NCSU_TechLib_tsmc03d
+    in /afs/umbc.edu/users/s/s/s348/home/cadence/cadence_setup/cds.lib
+Or remove or comment out DEFINE NCSU_TechLib_tsmc03d
+    in /afs/umbc.edu/software/cadence/design_kits/ncsu-cdk-1.6.0.beta/cdssetup/cds.lib
+to suppress this warning message.
+********************************************************************************
+Product   : Virtuoso(R) XStream Out
+Program   : @(#)$CDS: strmout version IC23.1-64b 06/21/2023 09:20 (cpgbld16) $
+          : sub-version  IC23.1-64b.43 
+Started at: 20-Nov-2026  19:12:50
+User Name : s348
+Host Name : ite375pc32.cs.umbc.edu
+Directory : /afs/umbc.edu/users/s/s/s348/home/cadence/cadence_setup
+CADENCE Design Systems, Inc.
+********************************************************************************
+Info: Cellview Rev Num:99,  Tech Rev Num:59
+
+*WARNING* LIB NCSU_TechLib_tsmc04_4M2P from File /afs/umbc.edu/users/s/s/s348/home/cadence/cadence_setup/cds.lib Line 21 redefines
+LIB NCSU_TechLib_tsmc04_4M2P from File /afs/umbc.edu/software/cadence/design_kits/ncsu-cdk-1.6.0.beta/cdssetup/cds.lib
+Insert UNDEFINE NCSU_TechLib_tsmc04_4M2P
+before DEFINE NCSU_TechLib_tsmc04_4M2P
+    in /afs/umbc.edu/users/s/s/s348/home/cadence/cadence_setup/cds.lib
+Or remove or comment out DEFINE NCSU_TechLib_tsmc04_4M2P
+    in /afs/umbc.edu/software/cadence/design_kits/ncsu-cdk-1.6.0.beta/cdssetup/cds.lib
+to suppress this warning message.
+Loading gpdk045/libInit.il ...
+	Loading gpdk045/loadCxt.ile ... done!
+	Loading context 'gpdk045' from library 'gpdk045' ... done!
+	Loading context 'pdkUtils' from library 'gpdk045' ... done!
+	Loading gpdk045/gpdk045_customFilter.il ... done!
+	Loading gpdk045/libInitCustomExit.il ... 
+	Loading Environment Settings ...
+	Loading gpdk045/gpdk045_PDKRegistrations.il ... done!
+
+  *************************************************************           
+  *              Cadence Design Systems, Inc.                 *           
+  *                                                           *           
+  *                    Generic 45nm PDK                       *           
+  *                        (gpdk045)                          *           
+  *                                                           *           
+  *************************************************************           
+	
+
+	VERSION: 6.0 (09-September-2019)
+
+done!
+Loaded gpdk045/libInit.il successfully!
+INFO (XSTRM-217): Reading the layer map file, /umbc/software/design_kits/gpdk045_v_6_0/gpdk045/gpdk045.layermap
+WARNING (XSTRM-333): The '-enableColoring' option will be ignored during XStream Out. This is because there is no color entry in the layer map and the object map file.
+INFO (XSTRM-427): Based on current hardware configuration, running XStream Out translation in multi-threaded mode with 4 threads.
+INFO (XSTRM-280): The output file will be a compressed file because the file name has extension .gz
+INFO (XSTRM-162): You have not used the '-viaMap' option. If the OpenAccess design has native oaVia instances, use the '-viaMap' option for preserving oaVia instances in a XStream Out - XStream In round trip. Using the '-viaMap' option improves performance and VM usage of applications using the Streamed-In design.
+
+Summary of Options :
+library                                 finalproj1
+strmFile                                /afs/umbc.edu/users/s/s/s348/home/cadence/cadence_setup/fsm/cache_fsm.gds.gz
+topCell                                 cache_fsm
+view                                    layout
+runDir                                  /afs/umbc.edu/users/s/s/s348/home/cadence/cadence_setup/fsm
+logFile                                 /afs/umbc.edu/users/s/s/s348/home/cadence/cadence_setup/fsm/PIPO1.LOG
+techLib                                 gpdk045
+hierDepth                               32
+maxVertices                             2048
+layerMap                                /umbc/software/design_kits/gpdk045_v_6_0/gpdk045/gpdk045.layermap
+userSkillFile                           /afs/umbc.edu/users/s/s/s348/home/cadence/cadence_setup/fsm/strmout.il
+labelDepth                              32
+case                                    Preserve
+convertDot                              node
+convertPin                              geometryAndText
+
+INFO (XSTRM-180): You have not used the '-objectMap' option. The design has instance(s) of at least one of following OpenAccess objects: oaBlockage, oaBoundary, oaRow, and oaMarker. Any information about these objects will not be translated into the generated stream file. Use the '-objectMap' option to translate/preserve these objects using XStream.
+INFO (XSTRM-223): 1. Translating stdVia gpdk045/M3_M2/layout as STRUCTURE M3_M2_CDNS_795219970290.
+INFO (XSTRM-223): 2. Translating stdVia gpdk045/M3_M2/layout as STRUCTURE M3_M2_CDNS_795219970291.
+INFO (XSTRM-223): 3. Translating stdVia gpdk045/M2_M1/layout as STRUCTURE M2_M1_CDNS_795219970292.
+INFO (XSTRM-223): 4. Translating stdVia gpdk045/M2_M1/layout as STRUCTURE M2_M1_CDNS_795219970293.
+INFO (XSTRM-223): 5. Translating stdVia gpdk045/M2_M1/layout as STRUCTURE M2_M1_CDNS_795219970294.
+INFO (XSTRM-223): 6. Translating stdVia gpdk045/M4_M3/layout as STRUCTURE M4_M3_CDNS_795219970295.
+INFO (XSTRM-223): 7. Translating stdVia gpdk045/M4_M3/layout as STRUCTURE M4_M3_CDNS_795219970296.
+INFO (XSTRM-223): 8. Translating stdVia gpdk045/M3_M2/layout as STRUCTURE M3_M2_CDNS_795219970297.
+INFO (XSTRM-223): 9. Translating stdVia gpdk045/M3_M2/layout as STRUCTURE M3_M2_CDNS_795219970298.
+INFO (XSTRM-223): 10. Translating stdVia gpdk045/M3_M2/layout as STRUCTURE M3_M2_CDNS_795219970299.
+INFO (XSTRM-223): 11. Translating stdVia gpdk045/M2_M1/layout as STRUCTURE M2_M1_CDNS_7952199702910.
+INFO (XSTRM-223): 12. Translating stdVia gpdk045/M2_M1/layout as STRUCTURE M2_M1_CDNS_7952199702911.
+INFO (XSTRM-223): 13. Translating stdVia gpdk045/M2_M1/layout as STRUCTURE M2_M1_CDNS_7952199702912.
+INFO (XSTRM-223): 14. Translating stdVia gpdk045/M4_M3/layout as STRUCTURE M4_M3_CDNS_7952199702913.
+INFO (XSTRM-223): 15. Translating stdVia gpdk045/M3_M2/layout as STRUCTURE M3_M2_CDNS_7952199702914.
+INFO (XSTRM-223): 16. Translating stdVia gpdk045/M2_M1/layout as STRUCTURE M2_M1_CDNS_7952199702915.
+INFO (XSTRM-223): 17. Translating stdVia gpdk045/M3_M2/layout as STRUCTURE M3_M2_CDNS_7952199702916.
+INFO (XSTRM-223): 18. Translating stdVia gpdk045/M2_M1/layout as STRUCTURE M2_M1_CDNS_7952199702917.
+INFO (XSTRM-223): 19. Translating stdVia gpdk045/M1_PO/layout as STRUCTURE M1_PO_CDNS_7952199702918.
+INFO (XSTRM-223): 20. Translating stdVia gpdk045/M1_PSUB/layout as STRUCTURE M1_PSUB_CDNS_7952199702919.
+INFO (XSTRM-223): 21. Translating stdVia gpdk045/M1_NWELL/layout as STRUCTURE M1_NWELL_CDNS_7952199702920.
+INFO (XSTRM-223): 22. Translating cellview gpdk045/nmos1v/layout as STRUCTURE nmos1v_CDNS_795219970290.
+INFO (XSTRM-223): 23. Translating cellview gpdk045/pmos1v/layout as STRUCTURE pmos1v_CDNS_795219970291.
+INFO (XSTRM-223): 24. Translating cellview gpdk045/pmos1v/layout as STRUCTURE pmos1v_CDNS_795219970292.
+INFO (XSTRM-223): 25. Translating cellview gpdk045/pmos1v/layout as STRUCTURE pmos1v_CDNS_795219970293.
+INFO (XSTRM-223): 26. Translating cellview gpdk045/nmos1v/layout as STRUCTURE nmos1v_CDNS_795219970294.
+INFO (XSTRM-223): 27. Translating cellview gpdk045/nmos1v/layout as STRUCTURE nmos1v_CDNS_795219970295.
+INFO (XSTRM-223): 28. Translating cellview finalproj1/or2/layout as STRUCTURE or2.
+INFO (XSTRM-223): 29. Translating stdVia gpdk045/M1_PO/layout as STRUCTURE M1_PO_CDNS_7952199702921.
+INFO (XSTRM-223): 30. Translating stdVia gpdk045/M1_NWELL/layout as STRUCTURE M1_NWELL_CDNS_7952199702922.
+INFO (XSTRM-223): 31. Translating stdVia gpdk045/M1_PSUB/layout as STRUCTURE M1_PSUB_CDNS_7952199702923.
+INFO (XSTRM-223): 32. Translating cellview gpdk045/nmos1v/layout as STRUCTURE nmos1v_CDNS_795219970296.
+INFO (XSTRM-223): 33. Translating cellview gpdk045/pmos1v/layout as STRUCTURE pmos1v_CDNS_795219970297.
+INFO (XSTRM-223): 34. Translating cellview finalproj1/inverter/layout as STRUCTURE inverter.
+INFO (XSTRM-223): 35. Translating stdVia gpdk045/M1_PO/layout as STRUCTURE M1_PO_CDNS_7952199702924.
+INFO (XSTRM-223): 36. Translating stdVia gpdk045/M1_NWELL/layout as STRUCTURE M1_NWELL_CDNS_7952199702925.
+INFO (XSTRM-223): 37. Translating stdVia gpdk045/M1_PSUB/layout as STRUCTURE M1_PSUB_CDNS_7952199702926.
+INFO (XSTRM-223): 38. Translating cellview gpdk045/pmos1v/layout as STRUCTURE pmos1v_CDNS_795219970298.
+INFO (XSTRM-223): 39. Translating cellview gpdk045/pmos1v/layout as STRUCTURE pmos1v_CDNS_795219970299.
+INFO (XSTRM-223): 40. Translating cellview gpdk045/nmos1v/layout as STRUCTURE nmos1v_CDNS_7952199702910.
+INFO (XSTRM-223): 41. Translating cellview finalproj1/and2/layout as STRUCTURE and2.
+INFO (XSTRM-223): 42. Translating stdVia gpdk045/M2_M1/layout as STRUCTURE M2_M1_CDNS_7952199702927.
+INFO (XSTRM-223): 43. Translating cellview finalproj1/nor2/layout as STRUCTURE nor2.
+INFO (XSTRM-223): 44. Translating cellview finalproj1/positive_dlatch/layout as STRUCTURE positive_dlatch.
+INFO (XSTRM-223): 45. Translating cellview finalproj1/ndflip/layout as STRUCTURE ndflip.
+INFO (XSTRM-223): 46. Translating stdVia gpdk045/M2_M1/layout as STRUCTURE M2_M1_CDNS_7952199702928.
+INFO (XSTRM-223): 47. Translating cellview finalproj1/xnor2/layout as STRUCTURE xnor2.
+INFO (XSTRM-223): 48. Translating stdVia gpdk045/M3_M2/layout as STRUCTURE M3_M2_CDNS_7952199702929.
+INFO (XSTRM-223): 49. Translating cellview finalproj1/mux/layout as STRUCTURE mux.
+INFO (XSTRM-223): 50. Translating stdVia gpdk045/M2_M1/layout as STRUCTURE M2_M1_CDNS_7952199702930.
+INFO (XSTRM-223): 51. Translating cellview finalproj1/xor2/layout as STRUCTURE xor2.
+INFO (XSTRM-223): 52. Translating cellview finalproj1/pdflip/layout as STRUCTURE pdflip.
+INFO (XSTRM-223): 53. Translating cellview finalproj1/counter/layout as STRUCTURE counter.
+INFO (XSTRM-223): 54. Translating cellview finalproj1/cache_fsm/layout as STRUCTURE cache_fsm.
+
+Summary of Objects Translated:
+	Scalar Instances:                       117
+	Array Instances:                        0
+	Polygons:                               0
+	Paths:                                  0
+	Rectangles:                             582
+	Lines:                                  0
+	Arcs:                                   0
+	Donuts:                                 0
+	Dots:                                   0
+	Ellipses:                               0
+	Boundaries:                             0
+	Area Blockages:                         0
+	Layer Blockages:                        0
+	Area Halos:                             0
+	Markers:                                0
+	Rows:                                   0
+	Stitch:                                 0
+	Standard Vias                           975
+	Custom Vias:                            0
+	CdsGen Vias:                            0
+	Pathsegs:                               1969
+	Text:                                   0
+	TextDisplay:                            0
+	Cells:                                  54
+
+Elapsed Time: 0.6s   User Time: 0.1s   CPU Time: 0.1s   Peak VM: 38080KB
+INFO (XSTRM-234): Translation completed. '0' error(s) and '1' warning(s) found.
+
+Creation of CDL for finalproj1/cache_fsm/structural is started
+ si -batch /afs/umbc.edu/users/s/s/s348/home/cadence/cadence_setup/fsm/ >/afs/umbc.edu/users/s/s/s348/home/cadence/cadence_setup/fsm/SI.OUT 2>/afs/umbc.edu/users/s/s/s348/home/cadence/cadence_setup/fsm/SI.LOG 
+Virtuoso Framework License (111) was checked out successfully. Total checkout time was 0.02s.
+
+Running simulation in directory: "/afs/umbc.edu/users/s/s/s348/home/cadence/cadence_setup/fsm/".
+
+*WARNING* LIB NCSU_Analog_Parts from File /afs/umbc.edu/users/s/s/s348/home/cadence/cadence_setup/cds.lib Line 12 redefines
+LIB NCSU_Analog_Parts from File /afs/umbc.edu/software/cadence/design_kits/ncsu-cdk-1.6.0.beta/cdssetup/cds.lib
+Insert UNDEFINE NCSU_Analog_Parts
+before DEFINE NCSU_Analog_Parts
+    in /afs/umbc.edu/users/s/s/s348/home/cadence/cadence_setup/cds.lib
+Or remove or comment out DEFINE NCSU_Analog_Parts
+    in /afs/umbc.edu/software/cadence/design_kits/ncsu-cdk-1.6.0.beta/cdssetup/cds.lib
+to suppress this warning message.
+*WARNING* LIB NCSU_Digital_Parts from File /afs/umbc.edu/users/s/s/s348/home/cadence/cadence_setup/cds.lib Line 13 redefines
+LIB NCSU_Digital_Parts from File /afs/umbc.edu/software/cadence/design_kits/ncsu-cdk-1.6.0.beta/cdssetup/cds.lib
+Insert UNDEFINE NCSU_Digital_Parts
+before DEFINE NCSU_Digital_Parts
+    in /afs/umbc.edu/users/s/s/s348/home/cadence/cadence_setup/cds.lib
+Or remove or comment out DEFINE NCSU_Digital_Parts
+    in /afs/umbc.edu/software/cadence/design_kits/ncsu-cdk-1.6.0.beta/cdssetup/cds.lib
+to suppress this warning message.
+*WARNING* LIB NCSU_TechLib_ami06 from File /afs/umbc.edu/users/s/s/s348/home/cadence/cadence_setup/cds.lib Line 14 redefines
+LIB NCSU_TechLib_ami06 from File /afs/umbc.edu/software/cadence/design_kits/ncsu-cdk-1.6.0.beta/cdssetup/cds.lib
+Insert UNDEFINE NCSU_TechLib_ami06
+before DEFINE NCSU_TechLib_ami06
+    in /afs/umbc.edu/users/s/s/s348/home/cadence/cadence_setup/cds.lib
+Or remove or comment out DEFINE NCSU_TechLib_ami06
+    in /afs/umbc.edu/software/cadence/design_kits/ncsu-cdk-1.6.0.beta/cdssetup/cds.lib
+to suppress this warning message.
+*WARNING* LIB NCSU_TechLib_ami16 from File /afs/umbc.edu/users/s/s/s348/home/cadence/cadence_setup/cds.lib Line 15 redefines
+LIB NCSU_TechLib_ami16 from File /afs/umbc.edu/software/cadence/design_kits/ncsu-cdk-1.6.0.beta/cdssetup/cds.lib
+Insert UNDEFINE NCSU_TechLib_ami16
+before DEFINE NCSU_TechLib_ami16
+    in /afs/umbc.edu/users/s/s/s348/home/cadence/cadence_setup/cds.lib
+Or remove or comment out DEFINE NCSU_TechLib_ami16
+    in /afs/umbc.edu/software/cadence/design_kits/ncsu-cdk-1.6.0.beta/cdssetup/cds.lib
+to suppress this warning message.
+*WARNING* LIB NCSU_TechLib_hp06 from File /afs/umbc.edu/users/s/s/s348/home/cadence/cadence_setup/cds.lib Line 16 redefines
+LIB NCSU_TechLib_hp06 from File /afs/umbc.edu/software/cadence/design_kits/ncsu-cdk-1.6.0.beta/cdssetup/cds.lib
+Insert UNDEFINE NCSU_TechLib_hp06
+before DEFINE NCSU_TechLib_hp06
+    in /afs/umbc.edu/users/s/s/s348/home/cadence/cadence_setup/cds.lib
+Or remove or comment out DEFINE NCSU_TechLib_hp06
+    in /afs/umbc.edu/software/cadence/design_kits/ncsu-cdk-1.6.0.beta/cdssetup/cds.lib
+to suppress this warning message.
+*WARNING* LIB NCSU_TechLib_tsmc02 from File /afs/umbc.edu/users/s/s/s348/home/cadence/cadence_setup/cds.lib Line 17 redefines
+LIB NCSU_TechLib_tsmc02 from File /afs/umbc.edu/software/cadence/design_kits/ncsu-cdk-1.6.0.beta/cdssetup/cds.lib
+Insert UNDEFINE NCSU_TechLib_tsmc02
+before DEFINE NCSU_TechLib_tsmc02
+    in /afs/umbc.edu/users/s/s/s348/home/cadence/cadence_setup/cds.lib
+Or remove or comment out DEFINE NCSU_TechLib_tsmc02
+    in /afs/umbc.edu/software/cadence/design_kits/ncsu-cdk-1.6.0.beta/cdssetup/cds.lib
+to suppress this warning message.
+*WARNING* LIB NCSU_TechLib_tsmc02d from File /afs/umbc.edu/users/s/s/s348/home/cadence/cadence_setup/cds.lib Line 18 redefines
+LIB NCSU_TechLib_tsmc02d from File /afs/umbc.edu/software/cadence/design_kits/ncsu-cdk-1.6.0.beta/cdssetup/cds.lib
+Insert UNDEFINE NCSU_TechLib_tsmc02d
+before DEFINE NCSU_TechLib_tsmc02d
+    in /afs/umbc.edu/users/s/s/s348/home/cadence/cadence_setup/cds.lib
+Or remove or comment out DEFINE NCSU_TechLib_tsmc02d
+    in /afs/umbc.edu/software/cadence/design_kits/ncsu-cdk-1.6.0.beta/cdssetup/cds.lib
+to suppress this warning message.
+*WARNING* LIB NCSU_TechLib_tsmc03 from File /afs/umbc.edu/users/s/s/s348/home/cadence/cadence_setup/cds.lib Line 19 redefines
+LIB NCSU_TechLib_tsmc03 from File /afs/umbc.edu/software/cadence/design_kits/ncsu-cdk-1.6.0.beta/cdssetup/cds.lib
+Insert UNDEFINE NCSU_TechLib_tsmc03
+before DEFINE NCSU_TechLib_tsmc03
+    in /afs/umbc.edu/users/s/s/s348/home/cadence/cadence_setup/cds.lib
+Or remove or comment out DEFINE NCSU_TechLib_tsmc03
+    in /afs/umbc.edu/software/cadence/design_kits/ncsu-cdk-1.6.0.beta/cdssetup/cds.lib
+to suppress this warning message.
+*WARNING* LIB NCSU_TechLib_tsmc03d from File /afs/umbc.edu/users/s/s/s348/home/cadence/cadence_setup/cds.lib Line 20 redefines
+LIB NCSU_TechLib_tsmc03d from File /afs/umbc.edu/software/cadence/design_kits/ncsu-cdk-1.6.0.beta/cdssetup/cds.lib
+Insert UNDEFINE NCSU_TechLib_tsmc03d
+before DEFINE NCSU_TechLib_tsmc03d
+    in /afs/umbc.edu/users/s/s/s348/home/cadence/cadence_setup/cds.lib
+Or remove or comment out DEFINE NCSU_TechLib_tsmc03d
+    in /afs/umbc.edu/software/cadence/design_kits/ncsu-cdk-1.6.0.beta/cdssetup/cds.lib
+to suppress this warning message.
+*WARNING* LIB NCSU_TechLib_tsmc04_4M2P from File /afs/umbc.edu/users/s/s/s348/home/cadence/cadence_setup/cds.lib Line 21 redefines
+LIB NCSU_TechLib_tsmc04_4M2P from File /afs/umbc.edu/software/cadence/design_kits/ncsu-cdk-1.6.0.beta/cdssetup/cds.lib
+Insert UNDEFINE NCSU_TechLib_tsmc04_4M2P
+before DEFINE NCSU_TechLib_tsmc04_4M2P
+    in /afs/umbc.edu/users/s/s/s348/home/cadence/cadence_setup/cds.lib
+Or remove or comment out DEFINE NCSU_TechLib_tsmc04_4M2P
+    in /afs/umbc.edu/software/cadence/design_kits/ncsu-cdk-1.6.0.beta/cdssetup/cds.lib
+to suppress this warning message.
+*WARNING* LIB NCSU_Analog_Parts from File /afs/umbc.edu/users/s/s/s348/home/cadence/cadence_setup/cds.lib Line 12 redefines
+LIB NCSU_Analog_Parts from File /afs/umbc.edu/software/cadence/design_kits/ncsu-cdk-1.6.0.beta/cdssetup/cds.lib
+Insert UNDEFINE NCSU_Analog_Parts
+before DEFINE NCSU_Analog_Parts
+    in /afs/umbc.edu/users/s/s/s348/home/cadence/cadence_setup/cds.lib
+Or remove or comment out DEFINE NCSU_Analog_Parts
+    in /afs/umbc.edu/software/cadence/design_kits/ncsu-cdk-1.6.0.beta/cdssetup/cds.lib
+to suppress this warning message.
+*WARNING* LIB NCSU_Digital_Parts from File /afs/umbc.edu/users/s/s/s348/home/cadence/cadence_setup/cds.lib Line 13 redefines
+LIB NCSU_Digital_Parts from File /afs/umbc.edu/software/cadence/design_kits/ncsu-cdk-1.6.0.beta/cdssetup/cds.lib
+Insert UNDEFINE NCSU_Digital_Parts
+before DEFINE NCSU_Digital_Parts
+    in /afs/umbc.edu/users/s/s/s348/home/cadence/cadence_setup/cds.lib
+Or remove or comment out DEFINE NCSU_Digital_Parts
+    in /afs/umbc.edu/software/cadence/design_kits/ncsu-cdk-1.6.0.beta/cdssetup/cds.lib
+to suppress this warning message.
+*WARNING* LIB NCSU_TechLib_ami06 from File /afs/umbc.edu/users/s/s/s348/home/cadence/cadence_setup/cds.lib Line 14 redefines
+LIB NCSU_TechLib_ami06 from File /afs/umbc.edu/software/cadence/design_kits/ncsu-cdk-1.6.0.beta/cdssetup/cds.lib
+Insert UNDEFINE NCSU_TechLib_ami06
+before DEFINE NCSU_TechLib_ami06
+    in /afs/umbc.edu/users/s/s/s348/home/cadence/cadence_setup/cds.lib
+Or remove or comment out DEFINE NCSU_TechLib_ami06
+    in /afs/umbc.edu/software/cadence/design_kits/ncsu-cdk-1.6.0.beta/cdssetup/cds.lib
+to suppress this warning message.
+*WARNING* LIB NCSU_TechLib_ami16 from File /afs/umbc.edu/users/s/s/s348/home/cadence/cadence_setup/cds.lib Line 15 redefines
+LIB NCSU_TechLib_ami16 from File /afs/umbc.edu/software/cadence/design_kits/ncsu-cdk-1.6.0.beta/cdssetup/cds.lib
+Insert UNDEFINE NCSU_TechLib_ami16
+before DEFINE NCSU_TechLib_ami16
+    in /afs/umbc.edu/users/s/s/s348/home/cadence/cadence_setup/cds.lib
+Or remove or comment out DEFINE NCSU_TechLib_ami16
+    in /afs/umbc.edu/software/cadence/design_kits/ncsu-cdk-1.6.0.beta/cdssetup/cds.lib
+to suppress this warning message.
+*WARNING* LIB NCSU_TechLib_hp06 from File /afs/umbc.edu/users/s/s/s348/home/cadence/cadence_setup/cds.lib Line 16 redefines
+LIB NCSU_TechLib_hp06 from File /afs/umbc.edu/software/cadence/design_kits/ncsu-cdk-1.6.0.beta/cdssetup/cds.lib
+Insert UNDEFINE NCSU_TechLib_hp06
+before DEFINE NCSU_TechLib_hp06
+    in /afs/umbc.edu/users/s/s/s348/home/cadence/cadence_setup/cds.lib
+Or remove or comment out DEFINE NCSU_TechLib_hp06
+    in /afs/umbc.edu/software/cadence/design_kits/ncsu-cdk-1.6.0.beta/cdssetup/cds.lib
+to suppress this warning message.
+*WARNING* LIB NCSU_TechLib_tsmc02 from File /afs/umbc.edu/users/s/s/s348/home/cadence/cadence_setup/cds.lib Line 17 redefines
+LIB NCSU_TechLib_tsmc02 from File /afs/umbc.edu/software/cadence/design_kits/ncsu-cdk-1.6.0.beta/cdssetup/cds.lib
+Insert UNDEFINE NCSU_TechLib_tsmc02
+before DEFINE NCSU_TechLib_tsmc02
+    in /afs/umbc.edu/users/s/s/s348/home/cadence/cadence_setup/cds.lib
+Or remove or comment out DEFINE NCSU_TechLib_tsmc02
+    in /afs/umbc.edu/software/cadence/design_kits/ncsu-cdk-1.6.0.beta/cdssetup/cds.lib
+to suppress this warning message.
+*WARNING* LIB NCSU_TechLib_tsmc02d from File /afs/umbc.edu/users/s/s/s348/home/cadence/cadence_setup/cds.lib Line 18 redefines
+LIB NCSU_TechLib_tsmc02d from File /afs/umbc.edu/software/cadence/design_kits/ncsu-cdk-1.6.0.beta/cdssetup/cds.lib
+Insert UNDEFINE NCSU_TechLib_tsmc02d
+before DEFINE NCSU_TechLib_tsmc02d
+    in /afs/umbc.edu/users/s/s/s348/home/cadence/cadence_setup/cds.lib
+Or remove or comment out DEFINE NCSU_TechLib_tsmc02d
+    in /afs/umbc.edu/software/cadence/design_kits/ncsu-cdk-1.6.0.beta/cdssetup/cds.lib
+to suppress this warning message.
+*WARNING* LIB NCSU_TechLib_tsmc03 from File /afs/umbc.edu/users/s/s/s348/home/cadence/cadence_setup/cds.lib Line 19 redefines
+LIB NCSU_TechLib_tsmc03 from File /afs/umbc.edu/software/cadence/design_kits/ncsu-cdk-1.6.0.beta/cdssetup/cds.lib
+Insert UNDEFINE NCSU_TechLib_tsmc03
+before DEFINE NCSU_TechLib_tsmc03
+    in /afs/umbc.edu/users/s/s/s348/home/cadence/cadence_setup/cds.lib
+Or remove or comment out DEFINE NCSU_TechLib_tsmc03
+    in /afs/umbc.edu/software/cadence/design_kits/ncsu-cdk-1.6.0.beta/cdssetup/cds.lib
+to suppress this warning message.
+*WARNING* LIB NCSU_TechLib_tsmc03d from File /afs/umbc.edu/users/s/s/s348/home/cadence/cadence_setup/cds.lib Line 20 redefines
+LIB NCSU_TechLib_tsmc03d from File /afs/umbc.edu/software/cadence/design_kits/ncsu-cdk-1.6.0.beta/cdssetup/cds.lib
+Insert UNDEFINE NCSU_TechLib_tsmc03d
+before DEFINE NCSU_TechLib_tsmc03d
+    in /afs/umbc.edu/users/s/s/s348/home/cadence/cadence_setup/cds.lib
+Or remove or comment out DEFINE NCSU_TechLib_tsmc03d
+    in /afs/umbc.edu/software/cadence/design_kits/ncsu-cdk-1.6.0.beta/cdssetup/cds.lib
+to suppress this warning message.
+*WARNING* LIB NCSU_TechLib_tsmc04_4M2P from File /afs/umbc.edu/users/s/s/s348/home/cadence/cadence_setup/cds.lib Line 21 redefines
+LIB NCSU_TechLib_tsmc04_4M2P from File /afs/umbc.edu/software/cadence/design_kits/ncsu-cdk-1.6.0.beta/cdssetup/cds.lib
+Insert UNDEFINE NCSU_TechLib_tsmc04_4M2P
+before DEFINE NCSU_TechLib_tsmc04_4M2P
+    in /afs/umbc.edu/users/s/s/s348/home/cadence/cadence_setup/cds.lib
+Or remove or comment out DEFINE NCSU_TechLib_tsmc04_4M2P
+    in /afs/umbc.edu/software/cadence/design_kits/ncsu-cdk-1.6.0.beta/cdssetup/cds.lib
+to suppress this warning message.
+Loading gpdk045/libInit.il ...
+	Loading gpdk045/loadCxt.ile ... done!
+	Loading context 'gpdk045' from library 'gpdk045' ... done!
+	Loading context 'pdkUtils' from library 'gpdk045' ... done!
+	Loading gpdk045/gpdk045_customFilter.il ... done!
+	Loading gpdk045/libInitCustomExit.il ... 
+	Loading Environment Settings ...
+	Loading gpdk045/gpdk045_PDKRegistrations.il ... done!
+
+  *************************************************************           
+  *              Cadence Design Systems, Inc.                 *           
+  *                                                           *           
+  *                    Generic 45nm PDK                       *           
+  *                        (gpdk045)                          *           
+  *                                                           *           
+  *************************************************************           
+	
+
+	VERSION: 6.0 (09-September-2019)
+
+done!
+Loaded gpdk045/libInit.il successfully!
+Loading hnlInit.cxt 
+Running Artist Hierarchical Netlisting ...
+Loading cdf.cxt 
+End netlisting Nov 20 19:12:51 2026
+
+Running simin
+
+Running runSim()...
+
+
+Running runsim with simulator: "auCdl"
+Begin simulation:    Nov 20 19:12:51 2026
+
+auCdl netlisting completed
+End simulation:      Nov 20 19:12:51 2026
+INFO (AUCDL-21): (Analog) CDL netlisting completed successfully.
+
+Pegasus 23.26-s005 yR5+5JOGoFD41eqkI3/4VA 2026-11-20 19:12:54 2268788 ite375pc32.cs.umbc.edu
+Copyright 2024 Cadence Design Systems, Inc.
+All rights reserved worldwide.
+
+INFO:    Command Line Options: -lvs -top_cell cache_fsm -log_dir LOGS -source_top_cell cache_fsm -spice /afs/umbc.edu/users/s/s/s348/home/cadence/cadence_setup/fsm/cache_fsm.spi -qrc_data -control /afs/umbc.edu/users/s/s/s348/home/cadence/cadence_setup/fsm/pegasuslvsctl -ui_data -gdb_data /afs/umbc.edu/users/s/s/s348/home/cadence/cadence_setup/fsm/.technology.rul
+INFO:    Launch host CPU: Model: 11th Gen Intel(R) Core(TM) i7-11700 @ 2.50GHz, OS: Red Hat Enterprise Linux release 9.8 (Plow), Logical cores: 16, Physical cores: 8, Cache: 16384 KB, CPU Speed: 4609.65 MHz
+         Launch host Memory: MemTotal: 31555 MB,  MemFree: 15800 MB,  SwapTotal: 0 MB,  SwapFree: 0 MB,  VmallocTotal: 33554431 MB,  VmallocUsed: 62 MB
+INFO:    Current path: /afs/umbc.edu/users/s/s/s348/home/cadence/cadence_setup/fsm
+INFO:    Run directory same as current path
+INFO:    Log directory: /afs/umbc.edu/users/s/s/s348/home/cadence/cadence_setup/fsm/LOGS
+INFO:    PVL parsing results:
+WARNING: In technology 'gpdk045_pvs', the rule set 'default' is not a Pegasus rule set.
+It will be accepted for this run but should be changed to a pegasusRuleSet.
+WARNING: TEXT_DEPTH at line 87 in file /umbc/software/design_kits/gpdk045_v_6_0/pvs/./pvlLVS.rul is skipped. It is set in control file.
+WARNING: MASK_SVDB_DIR at line 88 in file /umbc/software/design_kits/gpdk045_v_6_0/pvs/./pvlLVS.rul is skipped. It is set in control file.
+
+INFO:    See "/afs/umbc.edu/users/s/s/s348/home/cadence/cadence_setup/fsm/LOGS/pvl.log" for additional details.
+
+INFO:    Checking out 1 license(s) of feature: 'Pegasus_LVS' version 23.2
+INFO:    License checkout successful ... 2026-11-20 19:12:57
+
+INFO:    Checking out 1 license(s) of feature: 'Pegasus_16nm' version 23.2
+INFO:    License checkout successful ... 2026-11-20 19:12:57
+WARNING: Neither hcell nor -automatch option is specified.
+INFO:    Worker 0 started on host ite375pc32.cs.umbc.edu with 1 cpu(s)
+         CPU: Model: 11th Gen Intel(R) Core(TM) i7-11700 @ 2.50GHz, OS: Red Hat Enterprise Linux 9.8 (Plow), Logical cores: 16, Physical cores: 8, Cache: 16384 KB, CPU Speed: 1902.87 MHz
+         Memory: MemTotal: 31555 MB,  MemFree: 16099 MB,  SwapTotal: 0 MB,  SwapFree: 0 MB,  VmallocTotal: 33554431 MB,  VmallocUsed: 62 MB
+INFO:    LVS report file: /afs/umbc.edu/users/s/s/s348/home/cadence/cadence_setup/fsm/cache_fsm.rep 
+INFO:    Extracted layout netlist: /afs/umbc.edu/users/s/s/s348/home/cadence/cadence_setup/fsm/cache_fsm.spi 
+INFO:    Setting LAYOUT_PATH to: /afs/umbc.edu/users/s/s/s348/home/cadence/cadence_setup/fsm/cache_fsm.gds.gz 
+INFO:    Setting LAYOUT_PRIMARY to: cache_fsm 
+INFO:    Setting SCHEMATIC_PATH to: /afs/umbc.edu/users/s/s/s348/home/cadence/cadence_setup/fsm/cache_fsm.cdl 
+INFO:    Setting SCHEMATIC_PRIMARY to: cache_fsm 
+
+INFO:    Gdsii input summary
+         File name: /afs/umbc.edu/users/s/s/s348/home/cadence/cadence_setup/fsm/cache_fsm.gds.gz
+         File size: 32916
+         Version: 5.0
+         Library name: finalproj1
+         Last modified: 2026-11-20 19:4:52
+         Last accessed: 2026-11-20 19:12:50
+         Database unit in user units: 0.0005
+         Database unit in meters: 5e-10
+         Magnification: 1 
+
+INFO:    Cell Summary:
+         ----------------------------------------------------------------------------
+             CELL                           INSTANCE    GEOMETRY      LABELS        HREF        FREF
+         ----------------------------------------------------------------------------
+         M3_M2_CDNS_795219970290                   0           3           0          90         182
+         M3_M2_CDNS_795219970291                   0           3           0         178         191
+         M2_M1_CDNS_795219970292                   0           3           0         313         855
+         M2_M1_CDNS_795219970293                   0           3           0         299         808
+         M2_M1_CDNS_795219970294                   0           3           0           4           6
+         M4_M3_CDNS_795219970295                   0           3           0          17          17
+         M4_M3_CDNS_795219970296                   0           3           0           7           7
+         M3_M2_CDNS_795219970297                   0           3           0          11          11
+         M3_M2_CDNS_795219970298                   0           3           0           1           1
+         M3_M2_CDNS_795219970299                   0           3           0           1           1
+         M2_M1_CDNS_7952199702910                  0           3           0          13         122
+         M2_M1_CDNS_7952199702911                  0           3           0           2           2
+         M2_M1_CDNS_7952199702912                  0           3           0           1           1
+         M4_M3_CDNS_7952199702913                  0           3           0           3           3
+         M3_M2_CDNS_7952199702914                  0           3           0           1           1
+         M2_M1_CDNS_7952199702915                  0           3           0           5           9
+         M3_M2_CDNS_7952199702916                  0           3           0           3           3
+         M2_M1_CDNS_7952199702917                  0           3           0           1           1
+         M1_PO_CDNS_7952199702918                  0           3           0           3         498
+         M1_PSUB_CDNS_7952199702919                0           6           0           1         166
+         M1_NWELL_CDNS_7952199702920               0          11           0           1         166
+         nmos1v_CDNS_795219970290                  0          12           1           1         166
+         pmos1v_CDNS_795219970291                  0          22           5           2         215
+         pmos1v_CDNS_795219970292                  0          42           8           1         166
+         pmos1v_CDNS_795219970293                  0          42           8           1         166
+         nmos1v_CDNS_795219970294                  0          14           2           1         166
+         nmos1v_CDNS_795219970295                  0          12           1           1         166
+         or2                                      11          58           5          18         166
+         M1_PO_CDNS_7952199702921                  0           3           0           1         276
+         M1_NWELL_CDNS_7952199702922               0           7           0           1         276
+         M1_PSUB_CDNS_7952199702923                0           6           0           1         276
+         nmos1v_CDNS_795219970296                  0          14           2           2         325
+         pmos1v_CDNS_795219970297                  0          24           6           1         276
+         inverter                                  5          22           4          23         276
+         M1_PO_CDNS_7952199702924                  0           3           0           3         147
+         M1_NWELL_CDNS_7952199702925               0          11           0           1          49
+         M1_PSUB_CDNS_7952199702926                0           6           0           1          49
+         pmos1v_CDNS_795219970298                  0          22           5           1          49
+         pmos1v_CDNS_795219970299                  0          24           6           1          49
+         nmos1v_CDNS_7952199702910                 0          23           3           2          98
+         and2                                     11          55           5          27          49
+         nor2                                      4          25           5           6         146
+         M2_M1_CDNS_7952199702927                  0           3           0           2          72
+         positive_dlatch                          26          64           6           4          36
+         ndflip                                   24          64           6          14          14
+         M2_M1_CDNS_7952199702928                  0           3           0           8          12
+         xnor2                                    20          46           5           2           2
+         M3_M2_CDNS_7952199702929                  0           3           0           1           1
+         mux                                      20          48           6           1           1
+         M2_M1_CDNS_7952199702930                  0           3           0           1           1
+         xor2                                     17          63           5           3           3
+         pdflip                                   28          71           6           4           4
+         counter                                 118         224           8           1           1
+         cache_fsm                               808        1430          19           1           1
+         ----------------------------------------------------------------------------
+         TOTAL CELL = 54;  INSTANCE = 1092;  GEOMETRY = 2543;  LABEL = 127
+
+INFO:    Layer Summary:
+         ----------------------------------------------------------------------------
+             LAYER                       ID       HPN      HTC        FPN       FTC
+         ----------------------------------------------------------------------------
+         BJTdum                        1000         0         0         0         0
+         Bondpad                       1001         0         0         0         0
+         Cap3dum                       1002         0         0         0         0
+         CapMetal                      1003         0         0         0         0
+         Capdum                        1004         0         0         0         0
+         Cont                          1005        58         0      9498         0
+         DIOdummy                      1006         0         0         0         0
+         IND2dummy                     1007         0         0         0         0
+         INDdummy                      1008         0         0         0         0
+         M1Resdum                      1009         0         0         0         0
+         M2Resdum                      1010         0         0         0         0
+         M3Resdum                      1011         0         0         0         0
+         M4Resdum                      1012         0         0         0         0
+         M5Resdum                      1013         0         0         0         0
+         M6Resdum                      1014         0         0         0         0
+         M7Resdum                      1015         0         0         0         0
+         M8Resdum                      1016         0         0         0         0
+         M9Resdum                      1017         0         0         0         0
+         M10Resdum                     1018         0         0         0         0
+         M11Resdum                     1019         0         0         0         0
+         Metal1                        1020      1292         0     26895         0
+         Metal2                        1021       664         0      3805         0
+         Metal3                        1022       219         0       680         0
+         Metal4                        1023        21         0        45         0
+         Metal5                        1024         0         0         0         0
+         Metal6                        1025         0         0         0         0
+         Metal7                        1026         0         0         0         0
+         Metal8                        1027         0         0         0         0
+         Metal9                        1028         0         0         0         0
+         Metal10                       1029         0         0         0         0
+         Metal11                       1030         0         0         0         0
+         NPN2dum                       1031         0         0         0         0
+         NPN5dum                       1032         0         0         0         0
+         NPN10dum                      1033         0         0         0         0
+         NPNdummy                      1034         0         0         0         0
+         Nburied                       1035         0         0         0         0
+         Nhvt                          1036         0         0         0         0
+         Nimp                          1037        13         0      2333         0
+         Nlvt                          1038         0         0         0         0
+         Nwell                         1039        13         0      2069         0
+         Nzvt                          1040         0         0         0         0
+         Oxide                         1041        61         0      9874         0
+         Oxide_thk                     1042         0         0         0         0
+         PNPdummy                      1043         0         0         0         0
+         Phvt                          1044         0         0         0         0
+         Pimp                          1045        15         0      2333         0
+         Plvt                          1046         0         0         0         0
+         Poly                          1047       165         0     25264         0
+         Psub                          1048         0         0         0         0
+         ResWdum                       1049         0         0         0         0
+         Resdum                        1050         0         0         0         0
+         SiProt                        1051         0         0         0         0
+         Via1                          1052        11         0      1889         0
+         Via2                          1053         8         0       391         0
+         Via3                          1054         3         0        27         0
+         Via4                          1055         0         0         0         0
+         Via5                          1056         0         0         0         0
+         Via6                          1057         0         0         0         0
+         Via7                          1058         0         0         0         0
+         Via8                          1059         0         0         0         0
+         Via9                          1060         0         0         0         0
+         Via10                         1061         0         0         0         0
+         ind10_text                    1062         0         0         0         0
+         ind11_text                    1063         0         0         0         0
+         metal1_conn_text              1064         0       109         0      8062
+         metal2_conn_text              1065         0         0         0         0
+         metal3_conn_text              1066         0         0         0         0
+         metal4_conn_text              1067         0         0         0         0
+         metal5_conn_text              1068         0         0         0         0
+         metal6_conn_text              1069         0         0         0         0
+         metal7_conn_text              1070         0         0         0         0
+         metal8_conn_text              1071         0         0         0         0
+         metal9_conn_text              1072         0         0         0         0
+         metal10_conn_text             1073         0         0         0         0
+         metal11_conn_text             1074         0         0         0         0
+         m1_label                      1076         0         0         0         0
+         m2_label                      1077         0         0         0         0
+         m3_label                      1078         0         0         0         0
+         m4_label                      1079         0         0         0         0
+         m5_label                      1080         0         0         0         0
+         m6_label                      1081         0         0         0         0
+         m7_label                      1082         0         0         0         0
+         m8_label                      1083         0         0         0         0
+         m9_label                      1084         0         0         0         0
+         m10_label                     1085         0         0         0         0
+         m11_label                     1086         0         0         0         0
+         m1_pin                        1087         0         0         0         0
+         m2_pin                        1088         0         0         0         0
+         m3_pin                        1089         0         0         0         0
+         m4_pin                        1090         0         0         0         0
+         m5_pin                        1091         0         0         0         0
+         m6_pin                        1092         0         0         0         0
+         m7_pin                        1093         0         0         0         0
+         m8_pin                        1094         0         0         0         0
+         m9_pin                        1095         0         0         0         0
+         m10_pin                       1096         0         0         0         0
+         m11_pin                       1097         0         0         0         0
+         text                          1098         0         0         0         0
+         nwell_conn_text              10645         0         6         0       921
+         nwell_label                  10765         0         6         0       921
+         nwell_pin                    10875         0         6         0       921
+         ----------------------------------------------------------------------------
+
+INFO:    CHIP EXTENT: 0 0 645900 864360
+
+
+INFO:    Ports ...
+         ========================================================================
+
+INFO:    Texts For Connectivity ...
+         ========================================================================
+         vdd! (170.640, 432.150) 1064 cache_fsm
+         tv_wr (322.485, 262.400) 1064 cache_fsm
+         start (0.030, 158.690) 1064 cache_fsm
+         rw (0.030, 152.250) 1064 cache_fsm
+         reset (0.030, 243.715) 1064 cache_fsm
+         refill (322.485, 310.065) 1064 cache_fsm
+         out_oe (322.485, 58.850) 1064 cache_fsm
+         out_load (322.485, 330.680) 1064 cache_fsm
+         ma_oe (322.485, 228.905) 1064 cache_fsm
+         load_in (322.485, 167.065) 1064 cache_fsm
+         hit (0.030, 242.430) 1064 cache_fsm
+         gnd! (161.255, 0.030) 1064 cache_fsm
+         enable (322.485, 143.875) 1064 cache_fsm
+         dec_en (322.485, 338.410) 1064 cache_fsm
+         data_wr (322.485, 103.940) 1064 cache_fsm
+         clk (0.030, 245.005) 1064 cache_fsm
+         byte_cnt<1> (322.485, 60.225) 1064 cache_fsm
+         byte_cnt<0> (322.485, 60.045) 1064 cache_fsm
+         busy (322.485, 190.255) 1064 cache_fsm
+         vdd! (65.110, 207.170) 1064 counter
+         rst (0.030, 65.045) 1064 counter
+         q<3> (171.490, 78.290) 1064 counter
+         q<2> (171.490, 78.110) 1064 counter
+         q<1> (171.490, 77.930) 1064 counter
+         q<0> (171.490, 77.750) 1064 counter
+         gnd! (16.160, -39.550) 1064 counter
+         clk (0.030, 64.105) 1064 counter
+         vdd! (32.165, 64.305) 1064 pdflip
+         rst (0.030, 46.335) 1064 pdflip
+         q (64.305, 32.165) 1064 pdflip
+         gnd! (32.165, 0.030) 1064 pdflip
+         d (0.030, 61.595) 1064 pdflip
+         clk (0.030, 2.735) 1064 pdflip
+         vdd! (3.050, 6.800) 1064 xor2
+         output (9.890, 3.470) 1064 xor2
+         input2 (0.030, 1.815) 1064 xor2
+         input1 (0.030, 3.940) 1064 xor2
+         gnd! (3.950, 0.015) 1064 xor2
+         y (9.765, 4.895) 1064 mux
+         vdd! (4.895, 9.765) 1064 mux
+         sel (0.030, 6.655) 1064 mux
+         input2 (0.030, 2.695) 1064 mux
+         input1 (0.030, 7.100) 1064 mux
+         gnd! (4.895, 0.030) 1064 mux
+         vdd! (5.085, 10.140) 1064 xnor2
+         output (10.140, 5.085) 1064 xnor2
+         input2 (0.030, 2.395) 1064 xnor2
+         input1 (0.030, 7.770) 1064 xnor2
+         gnd! (5.085, 0.030) 1064 xnor2
+         vdd! (32.165, 64.305) 1064 ndflip
+         rst (0.030, 41.975) 1064 ndflip
+         q (64.305, 32.165) 1064 ndflip
+         gnd! (32.165, 0.030) 1064 ndflip
+         d (0.030, 61.595) 1064 ndflip
+         clk (0.030, 2.735) 1064 ndflip
+         vdd! (11.305, 22.585) 1064 positive_dlatch
+         qbar (22.585, 5.140) 1064 positive_dlatch
+         q (22.585, 17.470) 1064 positive_dlatch
+         gnd! (11.305, 0.030) 1064 positive_dlatch
+         en (0.030, 2.205) 1064 positive_dlatch
+         d (0.030, 20.410) 1064 positive_dlatch
+         vdd! (2.785, 5.540) 1064 nor2
+         output (5.540, 2.785) 1064 nor2
+         input2 (0.030, 1.845) 1064 nor2
+         input1 (0.030, 3.720) 1064 nor2
+         gnd! (2.785, 0.030) 1064 nor2
+         vdd! (0.960, 2.200) 1064 and2
+         output (3.040, 1.325) 1064 and2
+         input2 (2.880, 1.935) 1064 and2
+         input1 (0.030, 1.925) 1064 and2
+         gnd! (1.560, -0.140) 1064 and2
+         S_source_2 (0.330, 0.060) 1064 nmos1v_CDNS_7952199702910
+         S_source_0 (-0.080, 0.060) 1064 nmos1v_CDNS_7952199702910
+         D_drain_1 (0.125, 0.060) 1064 nmos1v_CDNS_7952199702910
+         B (0.110, 0.100) 10765 pmos1v_CDNS_795219970299
+         S_source_2 (0.330, 0.100) 1064 pmos1v_CDNS_795219970299
+         S_source_0 (-0.080, 0.100) 1064 pmos1v_CDNS_795219970299
+         D_drain_1 (0.125, 0.100) 1064 pmos1v_CDNS_795219970299
+         B (0.110, 0.100) 10875 pmos1v_CDNS_795219970299
+         B (0.110, 0.100) 10645 pmos1v_CDNS_795219970299
+         B (0.155, 0.100) 10765 pmos1v_CDNS_795219970298
+         S_source_2 (0.330, 0.100) 1064 pmos1v_CDNS_795219970298
+         D_drain_1 (0.125, 0.100) 1064 pmos1v_CDNS_795219970298
+         B (0.155, 0.100) 10875 pmos1v_CDNS_795219970298
+         B (0.155, 0.100) 10645 pmos1v_CDNS_795219970298
+         vdd! (0.610, 1.290) 1064 inverter
+         output (1.185, 0.555) 1064 inverter
+         input (0.035, 0.545) 1064 inverter
+         gnd! (0.550, -0.020) 1064 inverter
+         B (0.125, 0.100) 10765 pmos1v_CDNS_795219970297
+         S_source_2 (0.330, 0.100) 1064 pmos1v_CDNS_795219970297
+         S_source_0 (-0.080, 0.100) 1064 pmos1v_CDNS_795219970297
+         D_drain_1 (0.125, 0.100) 1064 pmos1v_CDNS_795219970297
+         B (0.125, 0.100) 10875 pmos1v_CDNS_795219970297
+         B (0.125, 0.100) 10645 pmos1v_CDNS_795219970297
+         S_source_0 (-0.080, 0.060) 1064 nmos1v_CDNS_795219970296
+         D_drain_1 (0.125, 0.060) 1064 nmos1v_CDNS_795219970296
+         vdd! (1.235, 2.440) 1064 or2
+         output (2.320, 1.265) 1064 or2
+         input2 (1.720, 0.880) 1064 or2
+         input1 (0.100, 2.205) 1064 or2
+         gnd! (1.085, -0.115) 1064 or2
+         D_drain_1 (0.125, 0.060) 1064 nmos1v_CDNS_795219970295
+         S_source_0 (-0.080, 0.060) 1064 nmos1v_CDNS_795219970294
+         D_drain_1 (0.125, 0.060) 1064 nmos1v_CDNS_795219970294
+         B (0.315, 0.100) 10765 pmos1v_CDNS_795219970293
+         S_source_4 (0.740, 0.100) 1064 pmos1v_CDNS_795219970293
+         S_source_2 (0.330, 0.100) 1064 pmos1v_CDNS_795219970293
+         S_source_0 (-0.080, 0.100) 1064 pmos1v_CDNS_795219970293
+         D_drain_3 (0.535, 0.100) 1064 pmos1v_CDNS_795219970293
+         D_drain_1 (0.125, 0.100) 1064 pmos1v_CDNS_795219970293
+         B (0.315, 0.100) 10875 pmos1v_CDNS_795219970293
+         B (0.315, 0.100) 10645 pmos1v_CDNS_795219970293
+         B (0.330, 0.100) 10765 pmos1v_CDNS_795219970292
+         S_source_4 (0.740, 0.100) 1064 pmos1v_CDNS_795219970292
+         S_source_2 (0.330, 0.100) 1064 pmos1v_CDNS_795219970292
+         S_source_0 (-0.080, 0.100) 1064 pmos1v_CDNS_795219970292
+         D_drain_3 (0.535, 0.100) 1064 pmos1v_CDNS_795219970292
+         D_drain_1 (0.125, 0.100) 1064 pmos1v_CDNS_795219970292
+         B (0.330, 0.100) 10875 pmos1v_CDNS_795219970292
+         B (0.330, 0.100) 10645 pmos1v_CDNS_795219970292
+         B (0.170, 0.100) 10765 pmos1v_CDNS_795219970291
+         S_source_2 (0.330, 0.100) 1064 pmos1v_CDNS_795219970291
+         D_drain_1 (0.125, 0.100) 1064 pmos1v_CDNS_795219970291
+         B (0.170, 0.100) 10875 pmos1v_CDNS_795219970291
+         B (0.170, 0.100) 10645 pmos1v_CDNS_795219970291
+         S_source_0 (-0.080, 0.060) 1064 nmos1v_CDNS_795219970290
+
+INFO:    Texts For SELECT -LABEL ...
+         ========================================================================
+
+INFO:    Texts For EXPAND_TEXT_ORIGIN ...
+         ========================================================================
+
+INFO:    Texts For DFM_TEXT ...
+         ========================================================================
+
+INFO:    Texts For Device Text Model Layer ...
+         ========================================================================
+
+INFO:    Texts For Device Text Property Layer ...
+         ========================================================================
+
+INFO:    Layer Summary(Texts For Connectivity):
+         ----------------------------------------------------------------------------
+             LAYER                       ID       TEXTS
+         ----------------------------------------------------------------------------
+         metal1_conn_text              1064       109
+         nwell_conn_text              10645         6
+         nwell_label                  10765         6
+         nwell_pin                    10875         6
+         ----------------------------------------------------------------------------
+
+INFO:    Layer Summary(Texts For SELECT -LABEL):
+         ----------------------------------------------------------------------------
+             LAYER                       ID       TEXTS
+         ----------------------------------------------------------------------------
+         ----------------------------------------------------------------------------
+
+INFO:    Layer Summary(Texts For EXPAND_TEXT_ORIGIN):
+         ----------------------------------------------------------------------------
+             LAYER                       ID       TEXTS
+         ----------------------------------------------------------------------------
+         ----------------------------------------------------------------------------
+
+INFO:    Layer Summary(Texts For DFM_TEXT):
+         ----------------------------------------------------------------------------
+             LAYER                       ID       TEXTS
+         ----------------------------------------------------------------------------
+         ----------------------------------------------------------------------------
+
+INFO:    Expanded Cell Summary
+         M3_M2_CDNS_795219970298 is expanded.
+         M2_M1_CDNS_7952199702912 is expanded.
+         M2_M1_CDNS_7952199702917 is expanded.
+         M1_PO_CDNS_7952199702921 is expanded.
+         M1_NWELL_CDNS_7952199702922 is expanded.
+         M1_PSUB_CDNS_7952199702923 is expanded.
+         M3_M2_CDNS_7952199702929 is expanded.
+         M3_M2_CDNS_795219970299 is expanded.
+         M3_M2_CDNS_7952199702914 is expanded.
+         M2_M1_CDNS_7952199702930 is expanded.
+INFO:    Status: Runset 100% complete as of 2026-11-20 19:12:58   Elapsed: 00:00:01
+         Worker: Active CPUs  Total Mem(MB)  Active Mem(MB)  CPU time(s)
+              0:    1 /   1             31              22            1
+INFO:	 Status: Finishing as of 2026-11-20 19:12:58   Elapsed: 00:00:01   CPU time[s]: 1
+INFO:    Resource usage by worker at exit:
+                  CPU      Elapsed  CPUs       CPU       Peak        Peak engine
+         Worker:  time[s]  time[s]  Allocated  usage[%]  Memory[MB]  Memory[MB]
+              0:        1        1          1     66.57          31           22
+         Worker resource usage  summary: Total CPU[s]: 1  Run duration[s]: 1  Max peak memory[MB]: 31
+         Worker CPU utilization summary: 1 of 1 available CPU seconds (100.00%) with 1 average available CPU(s)
+INFO:    Extraction result: CLEAN (Reporter)
+INFO:    Generating summary in /afs/umbc.edu/users/s/s/s348/home/cadence/cadence_setup/fsm/cache_fsm.sum
+INFO:    All selected rules completed
+         Total CPU Time                    : 1(s)
+         Total Real Time                   : 2(s)
+         Total Original Geometry           : 2543(85103)
+         Total ERC RuleChecks              : 0
+         Total ERC Results                 : 0 (0)
+INFO:    Pegasus extracted connectivity database creation started
+INFO:    CmdLine: /umbc/software/cadence/installs/PEGASUS2326/tools.lnx86/Pegasus/bin/64bit/edbToEcdb -kf -edb cache_fsm_2268788.db -ecdb ./ -topcell cache_fsm -netlist /afs/umbc.edu/users/s/s/s348/home/cadence/cadence_setup/fsm/svdb/cache_fsm.net -layermap /afs/umbc.edu/users/s/s/s348/home/cadence/cadence_setup/fsm/svdb/cache_fsm.ecdbmap -textmap /afs/umbc.edu/users/s/s/s348/home/cadence/cadence_setup/fsm/svdb/cache_fsm.ports -dependmap cache_fsm.lmap.perc -kvp ifs:oMS -lvsfile /afs/umbc.edu/users/s/s/s348/home/cadence/cadence_setup/fsm/svdb/cache_fsm.lvsfile -saveFloatingNets .cache_fsm.info.softchk 
+INFO:    Opening layer file 'cache_fsm_2268788.db/__layer'...
+INFO:    Loading layer map file '/afs/umbc.edu/users/s/s/s348/home/cadence/cadence_setup/fsm/svdb/cache_fsm.ecdbmap'...
+INFO:    Loading text map file '/afs/umbc.edu/users/s/s/s348/home/cadence/cadence_setup/fsm/svdb/cache_fsm.ports'...
+INFO:    Loading dependency map file 'cache_fsm.lmap.perc'...
+INFO:    Pre loading edb directory contents...
+INFO:    ECDB file name './/.cache_fsm.ecdb'...
+INFO:    Loading lvs file '/afs/umbc.edu/users/s/s/s348/home/cadence/cadence_setup/fsm/svdb/cache_fsm.lvsfile'...
+INFO:    Writing db header information...(0s)
+INFO:    Transfering cdl structures to ecdb structures...
+INFO:    Read Netlist (32 threads)...
+INFO:      DONE - (3s)
+INFO:    Process (32 threads)...
+INFO:    Cell(      26):   2% Done...(3s), M1_PO_CDNS_7952199702924                
+INFO:    Cell(      16):   4% Done...(3s), nmos1v_CDNS_795219970290                
+INFO:    Cell(      37):   6% Done...(3s), M2_M1_CDNS_7952199702928                
+INFO:    Cell(      10):   9% Done...(3s), M4_M3_CDNS_7952199702913                
+INFO:    Cell(       1):  11% Done...(3s), M3_M2_CDNS_795219970291                 
+INFO:    Cell(      34):  13% Done...(3s), M2_M1_CDNS_7952199702927                
+INFO:    Cell(       5):  15% Done...(3s), M4_M3_CDNS_795219970295                 
+INFO:    Cell(      11):  18% Done...(3s), M2_M1_CDNS_7952199702915                
+INFO:    Cell(      12):  20% Done...(3s), M3_M2_CDNS_7952199702916                
+INFO:    Cell(      31):  22% Done...(3s), nmos1v_CDNS_7952199702910               
+INFO:    Cell(      17):  25% Done...(3s), pmos1v_CDNS_795219970291                
+INFO:    Cell(      30):  27% Done...(3s), pmos1v_CDNS_795219970299                
+INFO:    Cell(      27):  29% Done...(3s), M1_NWELL_CDNS_7952199702925             
+INFO:    Cell(      36):  31% Done...(3s), ndflip                                  
+INFO:    Cell(       4):  34% Done...(3s), M2_M1_CDNS_795219970294                 
+INFO:    Cell(       0):  36% Done...(3s), M3_M2_CDNS_795219970290                 
+INFO:    Cell(      13):  38% Done...(3s), M1_PO_CDNS_7952199702918                
+INFO:    Cell(      14):  40% Done...(3s), M1_PSUB_CDNS_7952199702919              
+INFO:    Cell(      32):  43% Done...(3s), and2                                    
+INFO:    Cell(      39):  45% Done...(3s), mux                                     
+INFO:    Cell(      40):  47% Done...(3s), xor2                                    
+INFO:    Cell(      18):  50% Done...(3s), pmos1v_CDNS_795219970292                
+INFO:    Cell(      23):  52% Done...(3s), nmos1v_CDNS_795219970296                
+INFO:    Cell(      29):  54% Done...(3s), pmos1v_CDNS_795219970298                
+INFO:    Cell(      38):  56% Done...(3s), xnor2                                   
+INFO:    Cell(      35):  59% Done...(3s), positive_dlatch                         
+INFO:    Cell(      25):  61% Done...(3s), inverter                                
+INFO:    Cell(      22):  63% Done...(3s), or2                                     
+INFO:    Cell(      42):  65% Done...(3s), counter                                 
+INFO:    Cell(      43):  68% Done...(3s), cache_fsm                               
+INFO:    Cell(      21):  70% Done...(4s), nmos1v_CDNS_795219970295                
+INFO:    Cell(       7):  72% Done...(4s), M3_M2_CDNS_795219970297                 
+INFO:    Cell(       8):  75% Done...(4s), M2_M1_CDNS_7952199702910                
+INFO:    Cell(       2):  77% Done...(4s), M2_M1_CDNS_795219970292                 
+INFO:    Cell(      33):  79% Done...(4s), nor2                                    
+INFO:    Cell(       9):  81% Done...(4s), M2_M1_CDNS_7952199702911                
+INFO:    Cell(      15):  84% Done...(4s), M1_NWELL_CDNS_7952199702920             
+INFO:    Cell(      41):  86% Done...(4s), pdflip                                  
+INFO:    Cell(       3):  88% Done...(4s), M2_M1_CDNS_795219970293                 
+INFO:    Cell(      19):  90% Done...(4s), pmos1v_CDNS_795219970293                
+INFO:    Cell(      24):  93% Done...(4s), pmos1v_CDNS_795219970297                
+INFO:    Cell(       6):  95% Done...(4s), M4_M3_CDNS_795219970296                 
+INFO:    Cell(      20):  97% Done...(5s), nmos1v_CDNS_795219970294                
+INFO:    Cell(      28): 100% Done...(6s), M1_PSUB_CDNS_7952199702926              
+INFO:      DONE - (3s)
+INFO:    Cells creation time: (6s)
+INFO:    Write netlist items...         (6s)
+INFO:    Saving name table to db...
+INFO:    Save device templates to the db...
+INFO:    Save connect rules to the db...
+INFO:    Write calculated header information to the top of file...
+INFO:    Erasing cdl subckts...          (1s)
+
+INFO:    edbToEcdb Header Information:
+  ECDB file version   : 38
+  DevTmpl offset      : 151631
+  Connect offset      : 151731
+  NameTable offset    : 140954
+  Layer Map offset    : 167
+  Cell Start offset   : 137874
+  Cell End offset     : 140954
+  Aux Data offset     : 152035
+  Labels     offset   : 0
+  Layer RW   offset   : 0
+  NVP                 : ifs:0.01 
+  Scale               : 8000
+  GDS Scale           : 2000
+  File size (static)  : 159225
+  File size (dynamic) : 0
+  Cell count          : 44
+  ECDB create time    : 6
+  EDB info            : 10
+  Top Cell            : cache_fsm
+  EDB info (Trans)    : WRITTEN_64 W_NOT_NET_ORDER 
+
+INFO:    edbToEcdb Sizes written to disk (MB):
+  NameTbl             :     0.010677
+  Layers              :     0.005783
+  Shapes              :     0.054656
+  XYTree              :     0.030659
+  LookUpTbls          :     0.005132
+  Cells               :     0.003727
+  Insts               :     0.021276
+  Ports               :     0.012486
+  Nets                :     0.002944
+  Pins                :     0.000572
+  Labels              :     0.003556
+  DevTmpl             :     0.000100
+  Connect             :     0.000300
+  Header              :     0.000167
+  AuxData             :     0.007188
+  NvnLabels           :     0.000002
+---------------------------------
+  Total               :     0.159225
+
+INFO:    Manager summary: CPU(s): 0 Elapsed(s): 7 Peak memory(MB): 1918.47
+INFO:    Pegasus extracted connectivity database creation completed. 2026-11-20 19:13:05
+
+
+INFO:    Creating annotated GDS ...
+INFO:    Library name: cache_fsm_2268788
+INFO:    GDSII file name: /afs/umbc.edu/users/s/s/s348/home/cadence/cadence_setup/fsm/svdb/cache_fsm.agf
+INFO:    Cells to be written out: cache_fsm
+INFO:    Source Library: cache_fsm_2268788
+INFO:    Status: Task in progress ...
+INFO:    Pegasus creating annotated GDS completed. 2026-11-20 19:12:58
+INFO:    Pegasus REPORTDB creation started...
+INFO:    Processing file cache_fsm.rep
+INFO:    Manager summary: CPU(s): 0 Elapsed(s): 0 Peak memory(MB): 0.00
+INFO:    Pegasus REPORTDB creation completed. 2026-11-20 19:13:05
+
+
+INFO:    Comparing netlists ...
+INFO:    Setup VLDB (0s)
+INFO:    Init sch rules (0s)
+INFO:    Init lay rules (0s)
+INFO:    Init structures (0s)
+INFO:    Set cells to delete (0s)
+INFO:    Check expand on pin error (0s)
+INFO:    Reading schematic network
+INFO:     inputting cdl netlist /afs/umbc.edu/users/s/s/s348/home/cadence/cadence_setup/fsm/cache_fsm.cdl...
+WARNING (NVN-13002): *.BIPOLAR is not supported.
+WARNING (NVN-13002): *.RESI is not supported.
+WARNING (NVN-13002): *.RESVAL is not supported.
+WARNING (NVN-13002): *.CAPVAL is not supported.
+WARNING (NVN-13002): *.DIOPERI is not supported.
+WARNING (NVN-13002): *.DIOAREA is not supported.
+WARNING (NVN-13002): *.EQUATION is not supported.
+WARNING (NVN-13003): "*.SCALE" is not supported. Use ".OPTION SCALE" instead or specify  'lvs_cdn_flow_options -cdl_use_scale' in the rule file.
+WARNING (NVN-13002): *.PIN is not supported.
+INFO:     finished loading cdl netlist /afs/umbc.edu/users/s/s/s348/home/cadence/cadence_setup/fsm/cache_fsm.cdl (0s)
+INFO:     commit cdl netlist(s)...
+INFO:     finished committing cdl netlists (0s)
+INFO:    Post sch netlist rule processing (0s)
+INFO:    Reading layout network
+INFO:     inputting (fast parser) cdl netlist  /afs/umbc.edu/users/s/s/s348/home/cadence/cadence_setup/fsm/svdb/cache_fsm.net...
+INFO:     finished loading cdl netlist /afs/umbc.edu/users/s/s/s348/home/cadence/cadence_setup/fsm/svdb/cache_fsm.net (0s)
+INFO:     commit cdl netlist(s)...
+INFO:     finished committing cdl netlists (0s)
+INFO:    Post lay netlist rule processing (0s)
+INFO:    Processing blackBox rules (0s)
+INFO:    Processing bindings (0s)
+INFO:    Commit sch verilog netlist (0s)
+INFO:    Commit lay verilog netlist (0s)
+INFO:    Erase netlist data (0s)
+INFO:    Set blackbox cells (0s)
+INFO:    Sch put cells in memory (0s)
+INFO:    Sch update netlist rules (0s)
+INFO:    Sch set devices to delete (0s)
+INFO:    Sch adjust device pins (0s)
+INFO:    Sch calc hier order (0s)
+INFO:    Sch process inherited connections (0s)
+INFO:    Sch generate qrc files (0s)
+INFO:    Sch handle global pins (0s)
+INFO:    Sch apply rule actions with processed netlist (0s)
+INFO:    Sch process cell supply (0s)
+INFO:    Lay put cells in memory (0s)
+INFO:    Lay update netlist rules (0s)
+INFO:    Lay set devices to delete (0s)
+INFO:    Lay calc hier order (0s)
+INFO:    Lay process inherited connections (0s)
+INFO:    Lay generate qrc files (0s)
+INFO:    Lay handle global pins (0s)
+INFO:    Lay apply rule actions with processed netlist (0s)
+INFO:    Lay process cell supply (0s)
+INFO:    Check if interposer flow (0s)
+INFO:    Check binding file (0s)
+INFO:    Set topcell global pin indicator (0s)
+INFO:    Calculate preserve parameterized cells (0s)
+INFO:    Check generic device bindings (0s)
+INFO:    Calculate primitive device bindings (0s)
+INFO:    Remove unused device parameters (0s)
+INFO:    Set instances to flatten inside cells (0s)
+INFO:    Calculate parameters (0s)
+INFO:    Start sch normalization (0s)
+INFO:    Start lay normalization (0s)
+INFO:    Calculate primitive device bindings (2nd time) (0s)
+INFO:    Finalize binding (0s)
+INFO:    Sch join nets (0s)
+INFO:    Sch setup hier normalization (0s)
+INFO:    Sch remove feedthroughs and black box cell instances (0s)
+INFO:    Sch remove identical pins (0s)
+INFO:    Sch calc connection counts (0s)
+INFO:    Run genHierCells (0s)
+INFO:    Reset normalization flags (0s)
+INFO:    Lay join nets (0s)
+INFO:    Lay setup hier normalization (0s)
+INFO:    Lay remove feedthroughs and black box cell instances (0s)
+INFO:    Lay remove identical pins (0s)
+INFO:    Lay calc connection counts (0s)
+INFO:    Normalize sch (0s)
+INFO:    Read in color file (0s)
+INFO:    Set scale factor per cell (0s)
+INFO:    Setup property init rules (0s)
+INFO:    Write sch vldb file (0s)
+INFO:    Write lay vldb file (0s)
+INFO:    Apply preserve parameterized cells (0s)
+INFO:    Cleanup after VLDB processing (0s)
+WARNING (NVN-15002): Rule 'lvs_recognize_gates -all' was set, but either
+           the power net or the ground net (or both) was missing as follows.
+               schematic power
+               schematic ground
+               layout power
+               layout ground
+           Rule 'lvs_recognize_gates -all' requires both power and ground nets to operate.
+           These can be identified using rules 'lvs_power_name' and 'lvs_ground_name'.
+           Resetting rule to 'lvs_recognize_gates -simple'
+INFO (NVN-10007): Found ecdb file .cache_fsm.ecdb, will use during comparison.
+
+INFO:    Cell comparison output format:
+            <Comparing|Top Cell> <Layout Cell> vs <Schematic Cell>
+               <Layout instances> insts vs <Schematic instances> insts  (<Time>)-<Status>
+
+         Top Cell  cache_fsm vs cache_fsm
+            1627 insts vs 1627 insts . . . . . . . . . . . . . . . . . . . . . (1s)-match
+
+INFO:    Generating the LVS report...
+           Report Init (0s)
+           Load common queries (0s)
+           Create report (0s)
+           Cleanup (0s)
+INFO:    Report finished
+
+INFO:    Extraction Run Summary
+         Total CPU Time        : 1(s)
+         Total Real Time       : 2(s)
+         Peak Memory Used      : 31.00(M)
+
+
+INFO:    NVN Run Summary
+         Total CPU Time        : 1(s)
+         Total Real Time       : 1(s)
+         Peak Memory Used      : 260.06(M)
+
+
+INFO:    LVS Summary
+         Total CPU Time        : 2(s)
+         Total Real Time       : 3(s)
+         Peak Memory Used      : 260.06(M)
+
+    ########################################################
+    #                                                      #
+    # Run Result             : MATCH                       #
+    #                                                      #
+    # Run Summary            : [INFO]  ERC Results: Empty  #
+    #                        : [INFO]  Extraction Clean    #
+    #                                                      #
+    # ERC Summary File       : cache_fsm.sum               #
+    # Extraction Report File : cache_fsm.rep               #
+    # Comparison Report File : cache_fsm.rep.cls           #
+    #                                                      #
+    ########################################################
+
+
+INFO:    Creating cross reference database ...
+INFO:    Manager summary: CPU(s): 0 Elapsed(s): 0 Peak memory(MB): 92.05
+INFO:    Checking in all SoftShare licenses.
+INFO:    Creating cross reference database completed. Fri Nov 20 19:13:06 2026
+
+
+Pegasus finished normally. 2026-11-20 19:13:06
+
+
