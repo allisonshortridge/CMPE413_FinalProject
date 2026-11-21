@@ -1,0 +1,798 @@
+\# Program start time:     UTC 2026.11.21 00:18:56.539
+\# Local time: EST (UTC-05:00) 2026.11.20 19:18:56.539
+\o Program:		@(#)$CDS: virtuoso version IC23.1-64b 06/21/2023 09:33 (cpgbld16) $
+\o Hierarchy:		/umbc/software/cadence/installs/IC231/tools.lnx86/dfII/
+\o Sub version:		sub-version  IC23.1-64b.43  (64-bit addresses)
+\# Command line:	/umbc/software/cadence/installs/IC231/tools/dfII/bin/64bit/virtuoso
+\# Host name (type):	ite375pc32.cs.umbc.edu (x86_64)
+\# Operating system:	Linux 5.14.0-687.56.1.el9_8.x86_64 #1 SMP PREEMPT_DYNAMIC Tue Oct 6 21:51:31 EDT 2026
+\# Linux /etc/issue:	*******************************************************************************
+\# Linux /etc/issue:	WARNING: UNAUTHORIZED ACCESS to this Computer System is in violation
+\# Linux /etc/issue:	of the Maryland Code, Criminal Law Article section 8-606 and 7-302 and
+\# Linux /etc/issue:	UMBC Policy. Violators will be subject to prosecution and/or
+\# X display name (WxH):	:0 (3840x2160)
+\# Available geometry:			TL(0:32) BR(3839:2159)
+\# X server:			The X.Org Foundation
+\# Depth of Visual (Root):	24 (24)
+\# Number of Planes Used:	24
+\# X version:		11.0 (vendor release 12401009)
+\# X resource pool:	base 0xa00000, mask 0x1fffff (2097151), shift 0
+\# 			current id 0x0, current max 0x1ffffa (2097146)
+\# Max data seg size:	     unlimited
+\# Max process size:	     unlimited
+\# Initial sbrk value:	        699 MB
+\# Available memory:	     27,604 MB
+\# System memory:	     31,555 MB
+\# Maximum memory size:	     31,027 MB
+\# Max mem available:	     27,774 MB
+\# Initial memory used:	        171 MB
+\#        process size:	      1,605 MB
+\# Thread usage limits (effective/default):	maxthreads 4096/4096 maxload 16.00/16.00
+\# Qt version:		5.15.9
+\# Window Manager:	GNOME Shell
+\# User Name:		s348
+\o Working Directory:	ite375pc32.cs.umbc.edu:/afs/umbc.edu/users/s/s/s348/home/cadence/cadence_setup
+\# Process Id:		2270126
+\o 
+\o COPYRIGHT (C) 1992-2023  CADENCE DESIGN SYSTEMS INC.  ALL RIGHTS RESERVED.
+\o           (C) 1992-2023  UNIX SYSTEMS Laboratories INC.,
+\o                          Reproduced with permission.
+\o 
+\o This Cadence Design Systems program and online documentation are
+\o proprietary/confidential information and may be disclosed/used only
+\o as authorized in a license agreement controlling such use and disclosure.
+\o 
+\o           RESTRICTED RIGHTS NOTICE (SHORT FORM)
+\o Use/reproduction/disclosure is subject to restriction
+\o set forth at FAR 1252.227-19 or its equivalent.
+\o Loading geView.cxt 
+\o Loading menuBuilder.cxt 
+\o Loading schView.cxt 
+\o Loading selectSv.cxt 
+\o Loading pegasusui.cxt
+\o Loading wireEdit.cxt 
+\o Loading pte2.cxt 
+\o Loading xlUI.cxt 
+\o Loading auCore.cxt 
+\o Loading vhdl.cxt 
+\o Loading seismic.cxt 
+\o Loading ci.cxt 
+\o Loading layers.cxt 
+\o Loading drv.cxt 
+\o Loading ams.cxt 
+\o Loading adexlDM.cxt 
+\o Loading cpf.cxt 
+\o Loading cli.cxt 
+\o Loading lp.cxt 
+\o Loading sipLayout.cxt 
+\# [19:18:56.373745] Configured Lic search path (22.01-s002): 5280@license5.umbc.edu
+\o Virtuoso Framework License (111) was checked out successfully. Total checkout time was 0.02s.
+\w *WARNING* LIB NCSU_Analog_Parts from File /afs/umbc.edu/users/s/s/s348/home/cadence/cadence_setup/cds.lib Line 12 redefines
+\w LIB NCSU_Analog_Parts from File /afs/umbc.edu/software/cadence/design_kits/ncsu-cdk-1.6.0.beta/cdssetup/cds.lib
+\w Insert UNDEFINE NCSU_Analog_Parts
+\w before DEFINE NCSU_Analog_Parts
+\w     in /afs/umbc.edu/users/s/s/s348/home/cadence/cadence_setup/cds.lib
+\w Or remove or comment out DEFINE NCSU_Analog_Parts
+\w     in /afs/umbc.edu/software/cadence/design_kits/ncsu-cdk-1.6.0.beta/cdssetup/cds.lib
+\w to suppress this warning message.
+\w *WARNING* LIB NCSU_Digital_Parts from File /afs/umbc.edu/users/s/s/s348/home/cadence/cadence_setup/cds.lib Line 13 redefines
+\w LIB NCSU_Digital_Parts from File /afs/umbc.edu/software/cadence/design_kits/ncsu-cdk-1.6.0.beta/cdssetup/cds.lib
+\w Insert UNDEFINE NCSU_Digital_Parts
+\w before DEFINE NCSU_Digital_Parts
+\w     in /afs/umbc.edu/users/s/s/s348/home/cadence/cadence_setup/cds.lib
+\w Or remove or comment out DEFINE NCSU_Digital_Parts
+\w     in /afs/umbc.edu/software/cadence/design_kits/ncsu-cdk-1.6.0.beta/cdssetup/cds.lib
+\w to suppress this warning message.
+\w *WARNING* LIB NCSU_TechLib_ami06 from File /afs/umbc.edu/users/s/s/s348/home/cadence/cadence_setup/cds.lib Line 14 redefines
+\w LIB NCSU_TechLib_ami06 from File /afs/umbc.edu/software/cadence/design_kits/ncsu-cdk-1.6.0.beta/cdssetup/cds.lib
+\w Insert UNDEFINE NCSU_TechLib_ami06
+\w before DEFINE NCSU_TechLib_ami06
+\w     in /afs/umbc.edu/users/s/s/s348/home/cadence/cadence_setup/cds.lib
+\w Or remove or comment out DEFINE NCSU_TechLib_ami06
+\w     in /afs/umbc.edu/software/cadence/design_kits/ncsu-cdk-1.6.0.beta/cdssetup/cds.lib
+\w to suppress this warning message.
+\w *WARNING* LIB NCSU_TechLib_ami16 from File /afs/umbc.edu/users/s/s/s348/home/cadence/cadence_setup/cds.lib Line 15 redefines
+\w LIB NCSU_TechLib_ami16 from File /afs/umbc.edu/software/cadence/design_kits/ncsu-cdk-1.6.0.beta/cdssetup/cds.lib
+\w Insert UNDEFINE NCSU_TechLib_ami16
+\w before DEFINE NCSU_TechLib_ami16
+\w     in /afs/umbc.edu/users/s/s/s348/home/cadence/cadence_setup/cds.lib
+\w Or remove or comment out DEFINE NCSU_TechLib_ami16
+\w     in /afs/umbc.edu/software/cadence/design_kits/ncsu-cdk-1.6.0.beta/cdssetup/cds.lib
+\w to suppress this warning message.
+\w *WARNING* LIB NCSU_TechLib_hp06 from File /afs/umbc.edu/users/s/s/s348/home/cadence/cadence_setup/cds.lib Line 16 redefines
+\w LIB NCSU_TechLib_hp06 from File /afs/umbc.edu/software/cadence/design_kits/ncsu-cdk-1.6.0.beta/cdssetup/cds.lib
+\w Insert UNDEFINE NCSU_TechLib_hp06
+\w before DEFINE NCSU_TechLib_hp06
+\w     in /afs/umbc.edu/users/s/s/s348/home/cadence/cadence_setup/cds.lib
+\w Or remove or comment out DEFINE NCSU_TechLib_hp06
+\w     in /afs/umbc.edu/software/cadence/design_kits/ncsu-cdk-1.6.0.beta/cdssetup/cds.lib
+\w to suppress this warning message.
+\w *WARNING* LIB NCSU_TechLib_tsmc02 from File /afs/umbc.edu/users/s/s/s348/home/cadence/cadence_setup/cds.lib Line 17 redefines
+\w LIB NCSU_TechLib_tsmc02 from File /afs/umbc.edu/software/cadence/design_kits/ncsu-cdk-1.6.0.beta/cdssetup/cds.lib
+\w Insert UNDEFINE NCSU_TechLib_tsmc02
+\w before DEFINE NCSU_TechLib_tsmc02
+\w     in /afs/umbc.edu/users/s/s/s348/home/cadence/cadence_setup/cds.lib
+\w Or remove or comment out DEFINE NCSU_TechLib_tsmc02
+\w     in /afs/umbc.edu/software/cadence/design_kits/ncsu-cdk-1.6.0.beta/cdssetup/cds.lib
+\w to suppress this warning message.
+\w *WARNING* LIB NCSU_TechLib_tsmc02d from File /afs/umbc.edu/users/s/s/s348/home/cadence/cadence_setup/cds.lib Line 18 redefines
+\w LIB NCSU_TechLib_tsmc02d from File /afs/umbc.edu/software/cadence/design_kits/ncsu-cdk-1.6.0.beta/cdssetup/cds.lib
+\w Insert UNDEFINE NCSU_TechLib_tsmc02d
+\w before DEFINE NCSU_TechLib_tsmc02d
+\w     in /afs/umbc.edu/users/s/s/s348/home/cadence/cadence_setup/cds.lib
+\w Or remove or comment out DEFINE NCSU_TechLib_tsmc02d
+\w     in /afs/umbc.edu/software/cadence/design_kits/ncsu-cdk-1.6.0.beta/cdssetup/cds.lib
+\w to suppress this warning message.
+\w *WARNING* LIB NCSU_TechLib_tsmc03 from File /afs/umbc.edu/users/s/s/s348/home/cadence/cadence_setup/cds.lib Line 19 redefines
+\w LIB NCSU_TechLib_tsmc03 from File /afs/umbc.edu/software/cadence/design_kits/ncsu-cdk-1.6.0.beta/cdssetup/cds.lib
+\w Insert UNDEFINE NCSU_TechLib_tsmc03
+\w before DEFINE NCSU_TechLib_tsmc03
+\w     in /afs/umbc.edu/users/s/s/s348/home/cadence/cadence_setup/cds.lib
+\w Or remove or comment out DEFINE NCSU_TechLib_tsmc03
+\w     in /afs/umbc.edu/software/cadence/design_kits/ncsu-cdk-1.6.0.beta/cdssetup/cds.lib
+\w to suppress this warning message.
+\w *WARNING* LIB NCSU_TechLib_tsmc03d from File /afs/umbc.edu/users/s/s/s348/home/cadence/cadence_setup/cds.lib Line 20 redefines
+\w LIB NCSU_TechLib_tsmc03d from File /afs/umbc.edu/software/cadence/design_kits/ncsu-cdk-1.6.0.beta/cdssetup/cds.lib
+\w Insert UNDEFINE NCSU_TechLib_tsmc03d
+\w before DEFINE NCSU_TechLib_tsmc03d
+\w     in /afs/umbc.edu/users/s/s/s348/home/cadence/cadence_setup/cds.lib
+\w Or remove or comment out DEFINE NCSU_TechLib_tsmc03d
+\w     in /afs/umbc.edu/software/cadence/design_kits/ncsu-cdk-1.6.0.beta/cdssetup/cds.lib
+\w to suppress this warning message.
+\# Memory report: using         291 MB, process size 1,793 MB at UTC 2026.11.21 00:19:06.473
+\w *WARNING* LIB NCSU_TechLib_tsmc04_4M2P from File /afs/umbc.edu/users/s/s/s348/home/cadence/cadence_setup/cds.lib Line 21 redefines
+\w LIB NCSU_TechLib_tsmc04_4M2P from File /afs/umbc.edu/software/cadence/design_kits/ncsu-cdk-1.6.0.beta/cdssetup/cds.lib
+\w Insert UNDEFINE NCSU_TechLib_tsmc04_4M2P
+\w before DEFINE NCSU_TechLib_tsmc04_4M2P
+\w     in /afs/umbc.edu/users/s/s/s348/home/cadence/cadence_setup/cds.lib
+\w Or remove or comment out DEFINE NCSU_TechLib_tsmc04_4M2P
+\w     in /afs/umbc.edu/software/cadence/design_kits/ncsu-cdk-1.6.0.beta/cdssetup/cds.lib
+\w to suppress this warning message.
+\p > 
+\o Loading tilp.cxt 
+\o Loading validator.cxt 
+\o Loading vrf.cxt 
+\o Loading multiTechPlugin.cxt 
+\o Loading exportDie.cxt 
+\# Loading perfDiag...
+\# (PerfDiag): Set GDB path to environment variable 'gdbPath' (gdb).
+\o The Health Monitor tool is installed. You can access it from CIW - Tools - Diagnostic Center or use the shell command 'cdsPerfDiag -p 2270126' to open it when Virtuoso freezes.
+\o Loading diagCenter.cxt 
+\# (PerfDiag): Use backtrace from GLIBC.
+\# Available memory:         27,470 MB at UTC 2026.11.21 00:19:07.655
+\# Memory report: Maximum memory size now 27,782 MB at UTC 2026.11.21 00:19:07.655
+\# Thread usage report: 22 active threads, active load 1.40 at UTC 2026.11.21 00:19:07.655
+\a ddsHiRefresh()
+\# [19:19:09.241456] Periodic Lic check successful
+\# [19:19:09.241731] Feature usage summary:
+\# [19:19:09.241731] 111
+\# [19:19:09.241731] Virtuoso_Adv_Node_Framework
+\o 
+\o Refreshing data from disk:
+\w *WARNING* LIB NCSU_Analog_Parts from File /afs/umbc.edu/users/s/s/s348/home/cadence/cadence_setup/cds.lib Line 12 redefines
+\w LIB NCSU_Analog_Parts from File /afs/umbc.edu/software/cadence/design_kits/ncsu-cdk-1.6.0.beta/cdssetup/cds.lib
+\w Insert UNDEFINE NCSU_Analog_Parts
+\w before DEFINE NCSU_Analog_Parts
+\w     in /afs/umbc.edu/users/s/s/s348/home/cadence/cadence_setup/cds.lib
+\w Or remove or comment out DEFINE NCSU_Analog_Parts
+\w     in /afs/umbc.edu/software/cadence/design_kits/ncsu-cdk-1.6.0.beta/cdssetup/cds.lib
+\w to suppress this warning message.
+\w *WARNING* LIB NCSU_Digital_Parts from File /afs/umbc.edu/users/s/s/s348/home/cadence/cadence_setup/cds.lib Line 13 redefines
+\w LIB NCSU_Digital_Parts from File /afs/umbc.edu/software/cadence/design_kits/ncsu-cdk-1.6.0.beta/cdssetup/cds.lib
+\w Insert UNDEFINE NCSU_Digital_Parts
+\w before DEFINE NCSU_Digital_Parts
+\w     in /afs/umbc.edu/users/s/s/s348/home/cadence/cadence_setup/cds.lib
+\w Or remove or comment out DEFINE NCSU_Digital_Parts
+\w     in /afs/umbc.edu/software/cadence/design_kits/ncsu-cdk-1.6.0.beta/cdssetup/cds.lib
+\w to suppress this warning message.
+\w *WARNING* LIB NCSU_TechLib_ami06 from File /afs/umbc.edu/users/s/s/s348/home/cadence/cadence_setup/cds.lib Line 14 redefines
+\w LIB NCSU_TechLib_ami06 from File /afs/umbc.edu/software/cadence/design_kits/ncsu-cdk-1.6.0.beta/cdssetup/cds.lib
+\w Insert UNDEFINE NCSU_TechLib_ami06
+\w before DEFINE NCSU_TechLib_ami06
+\w     in /afs/umbc.edu/users/s/s/s348/home/cadence/cadence_setup/cds.lib
+\w Or remove or comment out DEFINE NCSU_TechLib_ami06
+\w     in /afs/umbc.edu/software/cadence/design_kits/ncsu-cdk-1.6.0.beta/cdssetup/cds.lib
+\w to suppress this warning message.
+\w *WARNING* LIB NCSU_TechLib_ami16 from File /afs/umbc.edu/users/s/s/s348/home/cadence/cadence_setup/cds.lib Line 15 redefines
+\w LIB NCSU_TechLib_ami16 from File /afs/umbc.edu/software/cadence/design_kits/ncsu-cdk-1.6.0.beta/cdssetup/cds.lib
+\w Insert UNDEFINE NCSU_TechLib_ami16
+\w before DEFINE NCSU_TechLib_ami16
+\w     in /afs/umbc.edu/users/s/s/s348/home/cadence/cadence_setup/cds.lib
+\w Or remove or comment out DEFINE NCSU_TechLib_ami16
+\w     in /afs/umbc.edu/software/cadence/design_kits/ncsu-cdk-1.6.0.beta/cdssetup/cds.lib
+\w to suppress this warning message.
+\w *WARNING* LIB NCSU_TechLib_hp06 from File /afs/umbc.edu/users/s/s/s348/home/cadence/cadence_setup/cds.lib Line 16 redefines
+\w LIB NCSU_TechLib_hp06 from File /afs/umbc.edu/software/cadence/design_kits/ncsu-cdk-1.6.0.beta/cdssetup/cds.lib
+\w Insert UNDEFINE NCSU_TechLib_hp06
+\w before DEFINE NCSU_TechLib_hp06
+\w     in /afs/umbc.edu/users/s/s/s348/home/cadence/cadence_setup/cds.lib
+\w Or remove or comment out DEFINE NCSU_TechLib_hp06
+\w     in /afs/umbc.edu/software/cadence/design_kits/ncsu-cdk-1.6.0.beta/cdssetup/cds.lib
+\w to suppress this warning message.
+\w *WARNING* LIB NCSU_TechLib_tsmc02 from File /afs/umbc.edu/users/s/s/s348/home/cadence/cadence_setup/cds.lib Line 17 redefines
+\w LIB NCSU_TechLib_tsmc02 from File /afs/umbc.edu/software/cadence/design_kits/ncsu-cdk-1.6.0.beta/cdssetup/cds.lib
+\w Insert UNDEFINE NCSU_TechLib_tsmc02
+\w before DEFINE NCSU_TechLib_tsmc02
+\w     in /afs/umbc.edu/users/s/s/s348/home/cadence/cadence_setup/cds.lib
+\w Or remove or comment out DEFINE NCSU_TechLib_tsmc02
+\w     in /afs/umbc.edu/software/cadence/design_kits/ncsu-cdk-1.6.0.beta/cdssetup/cds.lib
+\w to suppress this warning message.
+\w *WARNING* LIB NCSU_TechLib_tsmc02d from File /afs/umbc.edu/users/s/s/s348/home/cadence/cadence_setup/cds.lib Line 18 redefines
+\w LIB NCSU_TechLib_tsmc02d from File /afs/umbc.edu/software/cadence/design_kits/ncsu-cdk-1.6.0.beta/cdssetup/cds.lib
+\w Insert UNDEFINE NCSU_TechLib_tsmc02d
+\w before DEFINE NCSU_TechLib_tsmc02d
+\w     in /afs/umbc.edu/users/s/s/s348/home/cadence/cadence_setup/cds.lib
+\w Or remove or comment out DEFINE NCSU_TechLib_tsmc02d
+\w     in /afs/umbc.edu/software/cadence/design_kits/ncsu-cdk-1.6.0.beta/cdssetup/cds.lib
+\w to suppress this warning message.
+\w *WARNING* LIB NCSU_TechLib_tsmc03 from File /afs/umbc.edu/users/s/s/s348/home/cadence/cadence_setup/cds.lib Line 19 redefines
+\w LIB NCSU_TechLib_tsmc03 from File /afs/umbc.edu/software/cadence/design_kits/ncsu-cdk-1.6.0.beta/cdssetup/cds.lib
+\w Insert UNDEFINE NCSU_TechLib_tsmc03
+\w before DEFINE NCSU_TechLib_tsmc03
+\w     in /afs/umbc.edu/users/s/s/s348/home/cadence/cadence_setup/cds.lib
+\w Or remove or comment out DEFINE NCSU_TechLib_tsmc03
+\w     in /afs/umbc.edu/software/cadence/design_kits/ncsu-cdk-1.6.0.beta/cdssetup/cds.lib
+\w to suppress this warning message.
+\w *WARNING* LIB NCSU_TechLib_tsmc03d from File /afs/umbc.edu/users/s/s/s348/home/cadence/cadence_setup/cds.lib Line 20 redefines
+\w LIB NCSU_TechLib_tsmc03d from File /afs/umbc.edu/software/cadence/design_kits/ncsu-cdk-1.6.0.beta/cdssetup/cds.lib
+\w Insert UNDEFINE NCSU_TechLib_tsmc03d
+\w before DEFINE NCSU_TechLib_tsmc03d
+\w     in /afs/umbc.edu/users/s/s/s348/home/cadence/cadence_setup/cds.lib
+\w Or remove or comment out DEFINE NCSU_TechLib_tsmc03d
+\w     in /afs/umbc.edu/software/cadence/design_kits/ncsu-cdk-1.6.0.beta/cdssetup/cds.lib
+\w to suppress this warning message.
+\w *WARNING* LIB NCSU_TechLib_tsmc04_4M2P from File /afs/umbc.edu/users/s/s/s348/home/cadence/cadence_setup/cds.lib Line 21 redefines
+\w LIB NCSU_TechLib_tsmc04_4M2P from File /afs/umbc.edu/software/cadence/design_kits/ncsu-cdk-1.6.0.beta/cdssetup/cds.lib
+\w Insert UNDEFINE NCSU_TechLib_tsmc04_4M2P
+\w before DEFINE NCSU_TechLib_tsmc04_4M2P
+\w     in /afs/umbc.edu/users/s/s/s348/home/cadence/cadence_setup/cds.lib
+\w Or remove or comment out DEFINE NCSU_TechLib_tsmc04_4M2P
+\w     in /afs/umbc.edu/software/cadence/design_kits/ncsu-cdk-1.6.0.beta/cdssetup/cds.lib
+\w to suppress this warning message.
+\o .. ddUpdateLibList called to update the library list.
+\# Displaying modal dbox "ddsDBox", title "No Data to Refresh"
+\p > 
+\a hiDBoxOK(ddsDBox)
+\r t
+\o .. all open properties and cellviews are current with their
+\o    files on disk and all effective CDF data is current with
+\o    the base CDF data.
+\r nil
+\a ddsOpenLibManager()
+\w *WARNING* LIB NCSU_Analog_Parts from File /afs/umbc.edu/users/s/s/s348/home/cadence/cadence_setup/cds.lib Line 12 redefines
+\w LIB NCSU_Analog_Parts from File /afs/umbc.edu/software/cadence/design_kits/ncsu-cdk-1.6.0.beta/cdssetup/cds.lib
+\w Insert UNDEFINE NCSU_Analog_Parts
+\w before DEFINE NCSU_Analog_Parts
+\w     in /afs/umbc.edu/users/s/s/s348/home/cadence/cadence_setup/cds.lib
+\w Or remove or comment out DEFINE NCSU_Analog_Parts
+\w     in /afs/umbc.edu/software/cadence/design_kits/ncsu-cdk-1.6.0.beta/cdssetup/cds.lib
+\w to suppress this warning message.
+\w *WARNING* LIB NCSU_Digital_Parts from File /afs/umbc.edu/users/s/s/s348/home/cadence/cadence_setup/cds.lib Line 13 redefines
+\w LIB NCSU_Digital_Parts from File /afs/umbc.edu/software/cadence/design_kits/ncsu-cdk-1.6.0.beta/cdssetup/cds.lib
+\w Insert UNDEFINE NCSU_Digital_Parts
+\w before DEFINE NCSU_Digital_Parts
+\w     in /afs/umbc.edu/users/s/s/s348/home/cadence/cadence_setup/cds.lib
+\w Or remove or comment out DEFINE NCSU_Digital_Parts
+\w     in /afs/umbc.edu/software/cadence/design_kits/ncsu-cdk-1.6.0.beta/cdssetup/cds.lib
+\w to suppress this warning message.
+\w *WARNING* LIB NCSU_TechLib_ami06 from File /afs/umbc.edu/users/s/s/s348/home/cadence/cadence_setup/cds.lib Line 14 redefines
+\w LIB NCSU_TechLib_ami06 from File /afs/umbc.edu/software/cadence/design_kits/ncsu-cdk-1.6.0.beta/cdssetup/cds.lib
+\w Insert UNDEFINE NCSU_TechLib_ami06
+\w before DEFINE NCSU_TechLib_ami06
+\w     in /afs/umbc.edu/users/s/s/s348/home/cadence/cadence_setup/cds.lib
+\w Or remove or comment out DEFINE NCSU_TechLib_ami06
+\w     in /afs/umbc.edu/software/cadence/design_kits/ncsu-cdk-1.6.0.beta/cdssetup/cds.lib
+\w to suppress this warning message.
+\w *WARNING* LIB NCSU_TechLib_ami16 from File /afs/umbc.edu/users/s/s/s348/home/cadence/cadence_setup/cds.lib Line 15 redefines
+\w LIB NCSU_TechLib_ami16 from File /afs/umbc.edu/software/cadence/design_kits/ncsu-cdk-1.6.0.beta/cdssetup/cds.lib
+\w Insert UNDEFINE NCSU_TechLib_ami16
+\w before DEFINE NCSU_TechLib_ami16
+\w     in /afs/umbc.edu/users/s/s/s348/home/cadence/cadence_setup/cds.lib
+\w Or remove or comment out DEFINE NCSU_TechLib_ami16
+\w     in /afs/umbc.edu/software/cadence/design_kits/ncsu-cdk-1.6.0.beta/cdssetup/cds.lib
+\w to suppress this warning message.
+\w *WARNING* LIB NCSU_TechLib_hp06 from File /afs/umbc.edu/users/s/s/s348/home/cadence/cadence_setup/cds.lib Line 16 redefines
+\w LIB NCSU_TechLib_hp06 from File /afs/umbc.edu/software/cadence/design_kits/ncsu-cdk-1.6.0.beta/cdssetup/cds.lib
+\w Insert UNDEFINE NCSU_TechLib_hp06
+\w before DEFINE NCSU_TechLib_hp06
+\w     in /afs/umbc.edu/users/s/s/s348/home/cadence/cadence_setup/cds.lib
+\w Or remove or comment out DEFINE NCSU_TechLib_hp06
+\w     in /afs/umbc.edu/software/cadence/design_kits/ncsu-cdk-1.6.0.beta/cdssetup/cds.lib
+\w to suppress this warning message.
+\w *WARNING* LIB NCSU_TechLib_tsmc02 from File /afs/umbc.edu/users/s/s/s348/home/cadence/cadence_setup/cds.lib Line 17 redefines
+\w LIB NCSU_TechLib_tsmc02 from File /afs/umbc.edu/software/cadence/design_kits/ncsu-cdk-1.6.0.beta/cdssetup/cds.lib
+\w Insert UNDEFINE NCSU_TechLib_tsmc02
+\w before DEFINE NCSU_TechLib_tsmc02
+\w     in /afs/umbc.edu/users/s/s/s348/home/cadence/cadence_setup/cds.lib
+\w Or remove or comment out DEFINE NCSU_TechLib_tsmc02
+\w     in /afs/umbc.edu/software/cadence/design_kits/ncsu-cdk-1.6.0.beta/cdssetup/cds.lib
+\w to suppress this warning message.
+\w *WARNING* LIB NCSU_TechLib_tsmc02d from File /afs/umbc.edu/users/s/s/s348/home/cadence/cadence_setup/cds.lib Line 18 redefines
+\w LIB NCSU_TechLib_tsmc02d from File /afs/umbc.edu/software/cadence/design_kits/ncsu-cdk-1.6.0.beta/cdssetup/cds.lib
+\w Insert UNDEFINE NCSU_TechLib_tsmc02d
+\w before DEFINE NCSU_TechLib_tsmc02d
+\w     in /afs/umbc.edu/users/s/s/s348/home/cadence/cadence_setup/cds.lib
+\w Or remove or comment out DEFINE NCSU_TechLib_tsmc02d
+\w     in /afs/umbc.edu/software/cadence/design_kits/ncsu-cdk-1.6.0.beta/cdssetup/cds.lib
+\w to suppress this warning message.
+\w *WARNING* LIB NCSU_TechLib_tsmc03 from File /afs/umbc.edu/users/s/s/s348/home/cadence/cadence_setup/cds.lib Line 19 redefines
+\w LIB NCSU_TechLib_tsmc03 from File /afs/umbc.edu/software/cadence/design_kits/ncsu-cdk-1.6.0.beta/cdssetup/cds.lib
+\w Insert UNDEFINE NCSU_TechLib_tsmc03
+\w before DEFINE NCSU_TechLib_tsmc03
+\w     in /afs/umbc.edu/users/s/s/s348/home/cadence/cadence_setup/cds.lib
+\w Or remove or comment out DEFINE NCSU_TechLib_tsmc03
+\w     in /afs/umbc.edu/software/cadence/design_kits/ncsu-cdk-1.6.0.beta/cdssetup/cds.lib
+\w to suppress this warning message.
+\w *WARNING* LIB NCSU_TechLib_tsmc03d from File /afs/umbc.edu/users/s/s/s348/home/cadence/cadence_setup/cds.lib Line 20 redefines
+\w LIB NCSU_TechLib_tsmc03d from File /afs/umbc.edu/software/cadence/design_kits/ncsu-cdk-1.6.0.beta/cdssetup/cds.lib
+\w Insert UNDEFINE NCSU_TechLib_tsmc03d
+\w before DEFINE NCSU_TechLib_tsmc03d
+\w     in /afs/umbc.edu/users/s/s/s348/home/cadence/cadence_setup/cds.lib
+\w Or remove or comment out DEFINE NCSU_TechLib_tsmc03d
+\w     in /afs/umbc.edu/software/cadence/design_kits/ncsu-cdk-1.6.0.beta/cdssetup/cds.lib
+\w to suppress this warning message.
+\w *WARNING* LIB NCSU_TechLib_tsmc04_4M2P from File /afs/umbc.edu/users/s/s/s348/home/cadence/cadence_setup/cds.lib Line 21 redefines
+\w LIB NCSU_TechLib_tsmc04_4M2P from File /afs/umbc.edu/software/cadence/design_kits/ncsu-cdk-1.6.0.beta/cdssetup/cds.lib
+\w Insert UNDEFINE NCSU_TechLib_tsmc04_4M2P
+\w before DEFINE NCSU_TechLib_tsmc04_4M2P
+\w     in /afs/umbc.edu/users/s/s/s348/home/cadence/cadence_setup/cds.lib
+\w Or remove or comment out DEFINE NCSU_TechLib_tsmc04_4M2P
+\w     in /afs/umbc.edu/software/cadence/design_kits/ncsu-cdk-1.6.0.beta/cdssetup/cds.lib
+\w to suppress this warning message.
+\r t
+\o Loading oasis.cxt 
+\a ddsHiRefresh()
+\o 
+\o Refreshing data from disk:
+\w *WARNING* LIB NCSU_Analog_Parts from File /afs/umbc.edu/users/s/s/s348/home/cadence/cadence_setup/cds.lib Line 12 redefines
+\w LIB NCSU_Analog_Parts from File /afs/umbc.edu/software/cadence/design_kits/ncsu-cdk-1.6.0.beta/cdssetup/cds.lib
+\w Insert UNDEFINE NCSU_Analog_Parts
+\w before DEFINE NCSU_Analog_Parts
+\w     in /afs/umbc.edu/users/s/s/s348/home/cadence/cadence_setup/cds.lib
+\w Or remove or comment out DEFINE NCSU_Analog_Parts
+\w     in /afs/umbc.edu/software/cadence/design_kits/ncsu-cdk-1.6.0.beta/cdssetup/cds.lib
+\w to suppress this warning message.
+\w *WARNING* LIB NCSU_Digital_Parts from File /afs/umbc.edu/users/s/s/s348/home/cadence/cadence_setup/cds.lib Line 13 redefines
+\w LIB NCSU_Digital_Parts from File /afs/umbc.edu/software/cadence/design_kits/ncsu-cdk-1.6.0.beta/cdssetup/cds.lib
+\w Insert UNDEFINE NCSU_Digital_Parts
+\w before DEFINE NCSU_Digital_Parts
+\w     in /afs/umbc.edu/users/s/s/s348/home/cadence/cadence_setup/cds.lib
+\w Or remove or comment out DEFINE NCSU_Digital_Parts
+\w     in /afs/umbc.edu/software/cadence/design_kits/ncsu-cdk-1.6.0.beta/cdssetup/cds.lib
+\w to suppress this warning message.
+\w *WARNING* LIB NCSU_TechLib_ami06 from File /afs/umbc.edu/users/s/s/s348/home/cadence/cadence_setup/cds.lib Line 14 redefines
+\w LIB NCSU_TechLib_ami06 from File /afs/umbc.edu/software/cadence/design_kits/ncsu-cdk-1.6.0.beta/cdssetup/cds.lib
+\w Insert UNDEFINE NCSU_TechLib_ami06
+\w before DEFINE NCSU_TechLib_ami06
+\w     in /afs/umbc.edu/users/s/s/s348/home/cadence/cadence_setup/cds.lib
+\w Or remove or comment out DEFINE NCSU_TechLib_ami06
+\w     in /afs/umbc.edu/software/cadence/design_kits/ncsu-cdk-1.6.0.beta/cdssetup/cds.lib
+\w to suppress this warning message.
+\w *WARNING* LIB NCSU_TechLib_ami16 from File /afs/umbc.edu/users/s/s/s348/home/cadence/cadence_setup/cds.lib Line 15 redefines
+\w LIB NCSU_TechLib_ami16 from File /afs/umbc.edu/software/cadence/design_kits/ncsu-cdk-1.6.0.beta/cdssetup/cds.lib
+\w Insert UNDEFINE NCSU_TechLib_ami16
+\w before DEFINE NCSU_TechLib_ami16
+\w     in /afs/umbc.edu/users/s/s/s348/home/cadence/cadence_setup/cds.lib
+\w Or remove or comment out DEFINE NCSU_TechLib_ami16
+\w     in /afs/umbc.edu/software/cadence/design_kits/ncsu-cdk-1.6.0.beta/cdssetup/cds.lib
+\w to suppress this warning message.
+\w *WARNING* LIB NCSU_TechLib_hp06 from File /afs/umbc.edu/users/s/s/s348/home/cadence/cadence_setup/cds.lib Line 16 redefines
+\w LIB NCSU_TechLib_hp06 from File /afs/umbc.edu/software/cadence/design_kits/ncsu-cdk-1.6.0.beta/cdssetup/cds.lib
+\w Insert UNDEFINE NCSU_TechLib_hp06
+\w before DEFINE NCSU_TechLib_hp06
+\w     in /afs/umbc.edu/users/s/s/s348/home/cadence/cadence_setup/cds.lib
+\w Or remove or comment out DEFINE NCSU_TechLib_hp06
+\w     in /afs/umbc.edu/software/cadence/design_kits/ncsu-cdk-1.6.0.beta/cdssetup/cds.lib
+\w to suppress this warning message.
+\w *WARNING* LIB NCSU_TechLib_tsmc02 from File /afs/umbc.edu/users/s/s/s348/home/cadence/cadence_setup/cds.lib Line 17 redefines
+\w LIB NCSU_TechLib_tsmc02 from File /afs/umbc.edu/software/cadence/design_kits/ncsu-cdk-1.6.0.beta/cdssetup/cds.lib
+\w Insert UNDEFINE NCSU_TechLib_tsmc02
+\w before DEFINE NCSU_TechLib_tsmc02
+\w     in /afs/umbc.edu/users/s/s/s348/home/cadence/cadence_setup/cds.lib
+\w Or remove or comment out DEFINE NCSU_TechLib_tsmc02
+\w     in /afs/umbc.edu/software/cadence/design_kits/ncsu-cdk-1.6.0.beta/cdssetup/cds.lib
+\w to suppress this warning message.
+\w *WARNING* LIB NCSU_TechLib_tsmc02d from File /afs/umbc.edu/users/s/s/s348/home/cadence/cadence_setup/cds.lib Line 18 redefines
+\w LIB NCSU_TechLib_tsmc02d from File /afs/umbc.edu/software/cadence/design_kits/ncsu-cdk-1.6.0.beta/cdssetup/cds.lib
+\w Insert UNDEFINE NCSU_TechLib_tsmc02d
+\w before DEFINE NCSU_TechLib_tsmc02d
+\w     in /afs/umbc.edu/users/s/s/s348/home/cadence/cadence_setup/cds.lib
+\w Or remove or comment out DEFINE NCSU_TechLib_tsmc02d
+\w     in /afs/umbc.edu/software/cadence/design_kits/ncsu-cdk-1.6.0.beta/cdssetup/cds.lib
+\w to suppress this warning message.
+\w *WARNING* LIB NCSU_TechLib_tsmc03 from File /afs/umbc.edu/users/s/s/s348/home/cadence/cadence_setup/cds.lib Line 19 redefines
+\w LIB NCSU_TechLib_tsmc03 from File /afs/umbc.edu/software/cadence/design_kits/ncsu-cdk-1.6.0.beta/cdssetup/cds.lib
+\w Insert UNDEFINE NCSU_TechLib_tsmc03
+\w before DEFINE NCSU_TechLib_tsmc03
+\w     in /afs/umbc.edu/users/s/s/s348/home/cadence/cadence_setup/cds.lib
+\w Or remove or comment out DEFINE NCSU_TechLib_tsmc03
+\w     in /afs/umbc.edu/software/cadence/design_kits/ncsu-cdk-1.6.0.beta/cdssetup/cds.lib
+\w to suppress this warning message.
+\w *WARNING* LIB NCSU_TechLib_tsmc03d from File /afs/umbc.edu/users/s/s/s348/home/cadence/cadence_setup/cds.lib Line 20 redefines
+\w LIB NCSU_TechLib_tsmc03d from File /afs/umbc.edu/software/cadence/design_kits/ncsu-cdk-1.6.0.beta/cdssetup/cds.lib
+\w Insert UNDEFINE NCSU_TechLib_tsmc03d
+\w before DEFINE NCSU_TechLib_tsmc03d
+\w     in /afs/umbc.edu/users/s/s/s348/home/cadence/cadence_setup/cds.lib
+\w Or remove or comment out DEFINE NCSU_TechLib_tsmc03d
+\w     in /afs/umbc.edu/software/cadence/design_kits/ncsu-cdk-1.6.0.beta/cdssetup/cds.lib
+\w to suppress this warning message.
+\w *WARNING* LIB NCSU_TechLib_tsmc04_4M2P from File /afs/umbc.edu/users/s/s/s348/home/cadence/cadence_setup/cds.lib Line 21 redefines
+\w LIB NCSU_TechLib_tsmc04_4M2P from File /afs/umbc.edu/software/cadence/design_kits/ncsu-cdk-1.6.0.beta/cdssetup/cds.lib
+\w Insert UNDEFINE NCSU_TechLib_tsmc04_4M2P
+\w before DEFINE NCSU_TechLib_tsmc04_4M2P
+\w     in /afs/umbc.edu/users/s/s/s348/home/cadence/cadence_setup/cds.lib
+\w Or remove or comment out DEFINE NCSU_TechLib_tsmc04_4M2P
+\w     in /afs/umbc.edu/software/cadence/design_kits/ncsu-cdk-1.6.0.beta/cdssetup/cds.lib
+\w to suppress this warning message.
+\o .. ddUpdateLibList called to update the library list.
+\# Displaying modal dbox "ddsDBox", title "No Data to Refresh"
+\p > 
+\a hiDBoxOK(ddsDBox)
+\r t
+\o .. all open properties and cellviews are current with their
+\o    files on disk and all effective CDF data is current with
+\o    the base CDF data.
+\r nil
+\i ddsServOpen("finalproj1" "lru_unit" "layout" "edit" nil)
+\o Loading le.cxt 
+\o Loading cle.cxt 
+\o Loading lx.cxt 
+\o Loading pe.cxt 
+\o Loading lce.cxt 
+\o Loading drdEdit.cxt 
+\o Loading rte.cxt 
+\# Displaying modal dbox "_icLicLicenseQuestionDBox", title "Next License"
+\p > 
+\a hiDBoxUser(_icLicLicenseQuestionDBox nil 1)
+\r t
+\# Current Window: window(2)
+\w *WARNING* LIB NCSU_Analog_Parts from File /afs/umbc.edu/users/s/s/s348/home/cadence/cadence_setup/cds.lib Line 12 redefines
+\w LIB NCSU_Analog_Parts from File /afs/umbc.edu/software/cadence/design_kits/ncsu-cdk-1.6.0.beta/cdssetup/cds.lib
+\w Insert UNDEFINE NCSU_Analog_Parts
+\w before DEFINE NCSU_Analog_Parts
+\w     in /afs/umbc.edu/users/s/s/s348/home/cadence/cadence_setup/cds.lib
+\w Or remove or comment out DEFINE NCSU_Analog_Parts
+\w     in /afs/umbc.edu/software/cadence/design_kits/ncsu-cdk-1.6.0.beta/cdssetup/cds.lib
+\w to suppress this warning message.
+\w *WARNING* LIB NCSU_Digital_Parts from File /afs/umbc.edu/users/s/s/s348/home/cadence/cadence_setup/cds.lib Line 13 redefines
+\w LIB NCSU_Digital_Parts from File /afs/umbc.edu/software/cadence/design_kits/ncsu-cdk-1.6.0.beta/cdssetup/cds.lib
+\w Insert UNDEFINE NCSU_Digital_Parts
+\w before DEFINE NCSU_Digital_Parts
+\w     in /afs/umbc.edu/users/s/s/s348/home/cadence/cadence_setup/cds.lib
+\w Or remove or comment out DEFINE NCSU_Digital_Parts
+\w     in /afs/umbc.edu/software/cadence/design_kits/ncsu-cdk-1.6.0.beta/cdssetup/cds.lib
+\w to suppress this warning message.
+\w *WARNING* LIB NCSU_TechLib_ami06 from File /afs/umbc.edu/users/s/s/s348/home/cadence/cadence_setup/cds.lib Line 14 redefines
+\w LIB NCSU_TechLib_ami06 from File /afs/umbc.edu/software/cadence/design_kits/ncsu-cdk-1.6.0.beta/cdssetup/cds.lib
+\w Insert UNDEFINE NCSU_TechLib_ami06
+\w before DEFINE NCSU_TechLib_ami06
+\w     in /afs/umbc.edu/users/s/s/s348/home/cadence/cadence_setup/cds.lib
+\w Or remove or comment out DEFINE NCSU_TechLib_ami06
+\w     in /afs/umbc.edu/software/cadence/design_kits/ncsu-cdk-1.6.0.beta/cdssetup/cds.lib
+\w to suppress this warning message.
+\w *WARNING* LIB NCSU_TechLib_ami16 from File /afs/umbc.edu/users/s/s/s348/home/cadence/cadence_setup/cds.lib Line 15 redefines
+\w LIB NCSU_TechLib_ami16 from File /afs/umbc.edu/software/cadence/design_kits/ncsu-cdk-1.6.0.beta/cdssetup/cds.lib
+\w Insert UNDEFINE NCSU_TechLib_ami16
+\w before DEFINE NCSU_TechLib_ami16
+\w     in /afs/umbc.edu/users/s/s/s348/home/cadence/cadence_setup/cds.lib
+\w Or remove or comment out DEFINE NCSU_TechLib_ami16
+\w     in /afs/umbc.edu/software/cadence/design_kits/ncsu-cdk-1.6.0.beta/cdssetup/cds.lib
+\w to suppress this warning message.
+\w *WARNING* LIB NCSU_TechLib_hp06 from File /afs/umbc.edu/users/s/s/s348/home/cadence/cadence_setup/cds.lib Line 16 redefines
+\w LIB NCSU_TechLib_hp06 from File /afs/umbc.edu/software/cadence/design_kits/ncsu-cdk-1.6.0.beta/cdssetup/cds.lib
+\w Insert UNDEFINE NCSU_TechLib_hp06
+\w before DEFINE NCSU_TechLib_hp06
+\w     in /afs/umbc.edu/users/s/s/s348/home/cadence/cadence_setup/cds.lib
+\w Or remove or comment out DEFINE NCSU_TechLib_hp06
+\w     in /afs/umbc.edu/software/cadence/design_kits/ncsu-cdk-1.6.0.beta/cdssetup/cds.lib
+\w to suppress this warning message.
+\w *WARNING* LIB NCSU_TechLib_tsmc02 from File /afs/umbc.edu/users/s/s/s348/home/cadence/cadence_setup/cds.lib Line 17 redefines
+\w LIB NCSU_TechLib_tsmc02 from File /afs/umbc.edu/software/cadence/design_kits/ncsu-cdk-1.6.0.beta/cdssetup/cds.lib
+\w Insert UNDEFINE NCSU_TechLib_tsmc02
+\w before DEFINE NCSU_TechLib_tsmc02
+\w     in /afs/umbc.edu/users/s/s/s348/home/cadence/cadence_setup/cds.lib
+\w Or remove or comment out DEFINE NCSU_TechLib_tsmc02
+\w     in /afs/umbc.edu/software/cadence/design_kits/ncsu-cdk-1.6.0.beta/cdssetup/cds.lib
+\w to suppress this warning message.
+\w *WARNING* LIB NCSU_TechLib_tsmc02d from File /afs/umbc.edu/users/s/s/s348/home/cadence/cadence_setup/cds.lib Line 18 redefines
+\w LIB NCSU_TechLib_tsmc02d from File /afs/umbc.edu/software/cadence/design_kits/ncsu-cdk-1.6.0.beta/cdssetup/cds.lib
+\w Insert UNDEFINE NCSU_TechLib_tsmc02d
+\w before DEFINE NCSU_TechLib_tsmc02d
+\w     in /afs/umbc.edu/users/s/s/s348/home/cadence/cadence_setup/cds.lib
+\w Or remove or comment out DEFINE NCSU_TechLib_tsmc02d
+\w     in /afs/umbc.edu/software/cadence/design_kits/ncsu-cdk-1.6.0.beta/cdssetup/cds.lib
+\w to suppress this warning message.
+\w *WARNING* LIB NCSU_TechLib_tsmc03 from File /afs/umbc.edu/users/s/s/s348/home/cadence/cadence_setup/cds.lib Line 19 redefines
+\w LIB NCSU_TechLib_tsmc03 from File /afs/umbc.edu/software/cadence/design_kits/ncsu-cdk-1.6.0.beta/cdssetup/cds.lib
+\w Insert UNDEFINE NCSU_TechLib_tsmc03
+\w before DEFINE NCSU_TechLib_tsmc03
+\w     in /afs/umbc.edu/users/s/s/s348/home/cadence/cadence_setup/cds.lib
+\w Or remove or comment out DEFINE NCSU_TechLib_tsmc03
+\w     in /afs/umbc.edu/software/cadence/design_kits/ncsu-cdk-1.6.0.beta/cdssetup/cds.lib
+\w to suppress this warning message.
+\w *WARNING* LIB NCSU_TechLib_tsmc03d from File /afs/umbc.edu/users/s/s/s348/home/cadence/cadence_setup/cds.lib Line 20 redefines
+\w LIB NCSU_TechLib_tsmc03d from File /afs/umbc.edu/software/cadence/design_kits/ncsu-cdk-1.6.0.beta/cdssetup/cds.lib
+\w Insert UNDEFINE NCSU_TechLib_tsmc03d
+\w before DEFINE NCSU_TechLib_tsmc03d
+\w     in /afs/umbc.edu/users/s/s/s348/home/cadence/cadence_setup/cds.lib
+\w Or remove or comment out DEFINE NCSU_TechLib_tsmc03d
+\w     in /afs/umbc.edu/software/cadence/design_kits/ncsu-cdk-1.6.0.beta/cdssetup/cds.lib
+\w to suppress this warning message.
+\w *WARNING* LIB NCSU_TechLib_tsmc04_4M2P from File /afs/umbc.edu/users/s/s/s348/home/cadence/cadence_setup/cds.lib Line 21 redefines
+\w LIB NCSU_TechLib_tsmc04_4M2P from File /afs/umbc.edu/software/cadence/design_kits/ncsu-cdk-1.6.0.beta/cdssetup/cds.lib
+\w Insert UNDEFINE NCSU_TechLib_tsmc04_4M2P
+\w before DEFINE NCSU_TechLib_tsmc04_4M2P
+\w     in /afs/umbc.edu/users/s/s/s348/home/cadence/cadence_setup/cds.lib
+\w Or remove or comment out DEFINE NCSU_TechLib_tsmc04_4M2P
+\w     in /afs/umbc.edu/software/cadence/design_kits/ncsu-cdk-1.6.0.beta/cdssetup/cds.lib
+\w to suppress this warning message.
+\o Loading gpdk045/libInit.il ...
+\o 	Loading gpdk045/loadCxt.ile ... done!
+\o 	Loading context 'gpdk045' from library 'gpdk045' ... done!
+\o 	Loading context 'pdkUtils' from library 'gpdk045' ... done!
+\o 	Loading gpdk045/gpdk045_customFilter.il ... done!
+\o 	Loading gpdk045/libInitCustomExit.il ... 
+\o 	Loading Environment Settings ...
+\o 	Loading Model Management File ...
+\o Loading analog.cxt 
+\o Loading asimenv.cxt 
+\o Loading spectrei.cxt 
+\# Memory report: using         420 MB, process size 1,922 MB at UTC 2026.11.21 00:19:31.181
+\o Loading dal.cxt 
+\o Loading awv.cxt 
+\o Loading socket.cxt 
+\o Loading par.cxt 
+\o Loading alvs.cxt 
+\o Loading caa.cxt 
+\o Loading amps.cxt 
+\o Loading adexlCore.cxt 
+\o Loading adexl.cxt 
+\o Loading vdsil.cxt 
+\o Loading te.cxt 
+\o Loading schHDL.cxt 
+\o Loading devCheck.cxt 
+\o Loading relXpert.cxt 
+\o Loading hspiceD.cxt 
+\o Loading spectreinl.cxt 
+\o Loading UltraSim.cxt 
+\o Loading msgHandler.cxt 
+\o Loading AMSOSS.cxt 
+\o Loading AMS.cxt 
+\o 	Loading gpdk045/gpdk045_PDKRegistrations.il ... done!
+\o 
+\o   *************************************************************           
+\o   *              Cadence Design Systems, Inc.                 *           
+\o   *                                                           *           
+\o   *                    Generic 45nm PDK                       *           
+\o   *                        (gpdk045)                          *           
+\o   *                                                           *           
+\o   *************************************************************           
+\o 	
+\o 
+\o 	VERSION: 6.0 (09-September-2019)
+\o 
+\o done!
+\o Loaded gpdk045/libInit.il successfully!
+\o Loading wsp.cxt 
+\o Loading soi.cxt 
+\o Loading cph.cxt 
+\w *WARNING* LIB NCSU_Analog_Parts from File /afs/umbc.edu/users/s/s/s348/home/cadence/cadence_setup/cds.lib Line 12 redefines
+\w LIB NCSU_Analog_Parts from File /afs/umbc.edu/software/cadence/design_kits/ncsu-cdk-1.6.0.beta/cdssetup/cds.lib
+\w Insert UNDEFINE NCSU_Analog_Parts
+\w before DEFINE NCSU_Analog_Parts
+\w     in /afs/umbc.edu/users/s/s/s348/home/cadence/cadence_setup/cds.lib
+\w Or remove or comment out DEFINE NCSU_Analog_Parts
+\w     in /afs/umbc.edu/software/cadence/design_kits/ncsu-cdk-1.6.0.beta/cdssetup/cds.lib
+\w to suppress this warning message.
+\w *WARNING* LIB NCSU_Digital_Parts from File /afs/umbc.edu/users/s/s/s348/home/cadence/cadence_setup/cds.lib Line 13 redefines
+\w LIB NCSU_Digital_Parts from File /afs/umbc.edu/software/cadence/design_kits/ncsu-cdk-1.6.0.beta/cdssetup/cds.lib
+\w Insert UNDEFINE NCSU_Digital_Parts
+\w before DEFINE NCSU_Digital_Parts
+\w     in /afs/umbc.edu/users/s/s/s348/home/cadence/cadence_setup/cds.lib
+\w Or remove or comment out DEFINE NCSU_Digital_Parts
+\w     in /afs/umbc.edu/software/cadence/design_kits/ncsu-cdk-1.6.0.beta/cdssetup/cds.lib
+\w to suppress this warning message.
+\w *WARNING* LIB NCSU_TechLib_ami06 from File /afs/umbc.edu/users/s/s/s348/home/cadence/cadence_setup/cds.lib Line 14 redefines
+\w LIB NCSU_TechLib_ami06 from File /afs/umbc.edu/software/cadence/design_kits/ncsu-cdk-1.6.0.beta/cdssetup/cds.lib
+\w Insert UNDEFINE NCSU_TechLib_ami06
+\w before DEFINE NCSU_TechLib_ami06
+\w     in /afs/umbc.edu/users/s/s/s348/home/cadence/cadence_setup/cds.lib
+\w Or remove or comment out DEFINE NCSU_TechLib_ami06
+\w     in /afs/umbc.edu/software/cadence/design_kits/ncsu-cdk-1.6.0.beta/cdssetup/cds.lib
+\w to suppress this warning message.
+\w *WARNING* LIB NCSU_TechLib_ami16 from File /afs/umbc.edu/users/s/s/s348/home/cadence/cadence_setup/cds.lib Line 15 redefines
+\w LIB NCSU_TechLib_ami16 from File /afs/umbc.edu/software/cadence/design_kits/ncsu-cdk-1.6.0.beta/cdssetup/cds.lib
+\w Insert UNDEFINE NCSU_TechLib_ami16
+\w before DEFINE NCSU_TechLib_ami16
+\w     in /afs/umbc.edu/users/s/s/s348/home/cadence/cadence_setup/cds.lib
+\w Or remove or comment out DEFINE NCSU_TechLib_ami16
+\w     in /afs/umbc.edu/software/cadence/design_kits/ncsu-cdk-1.6.0.beta/cdssetup/cds.lib
+\w to suppress this warning message.
+\w *WARNING* LIB NCSU_TechLib_hp06 from File /afs/umbc.edu/users/s/s/s348/home/cadence/cadence_setup/cds.lib Line 16 redefines
+\w LIB NCSU_TechLib_hp06 from File /afs/umbc.edu/software/cadence/design_kits/ncsu-cdk-1.6.0.beta/cdssetup/cds.lib
+\w Insert UNDEFINE NCSU_TechLib_hp06
+\w before DEFINE NCSU_TechLib_hp06
+\w     in /afs/umbc.edu/users/s/s/s348/home/cadence/cadence_setup/cds.lib
+\w Or remove or comment out DEFINE NCSU_TechLib_hp06
+\w     in /afs/umbc.edu/software/cadence/design_kits/ncsu-cdk-1.6.0.beta/cdssetup/cds.lib
+\w to suppress this warning message.
+\w *WARNING* LIB NCSU_TechLib_tsmc02 from File /afs/umbc.edu/users/s/s/s348/home/cadence/cadence_setup/cds.lib Line 17 redefines
+\w LIB NCSU_TechLib_tsmc02 from File /afs/umbc.edu/software/cadence/design_kits/ncsu-cdk-1.6.0.beta/cdssetup/cds.lib
+\w Insert UNDEFINE NCSU_TechLib_tsmc02
+\w before DEFINE NCSU_TechLib_tsmc02
+\w     in /afs/umbc.edu/users/s/s/s348/home/cadence/cadence_setup/cds.lib
+\w Or remove or comment out DEFINE NCSU_TechLib_tsmc02
+\w     in /afs/umbc.edu/software/cadence/design_kits/ncsu-cdk-1.6.0.beta/cdssetup/cds.lib
+\w to suppress this warning message.
+\w *WARNING* LIB NCSU_TechLib_tsmc02d from File /afs/umbc.edu/users/s/s/s348/home/cadence/cadence_setup/cds.lib Line 18 redefines
+\w LIB NCSU_TechLib_tsmc02d from File /afs/umbc.edu/software/cadence/design_kits/ncsu-cdk-1.6.0.beta/cdssetup/cds.lib
+\w Insert UNDEFINE NCSU_TechLib_tsmc02d
+\w before DEFINE NCSU_TechLib_tsmc02d
+\w     in /afs/umbc.edu/users/s/s/s348/home/cadence/cadence_setup/cds.lib
+\w Or remove or comment out DEFINE NCSU_TechLib_tsmc02d
+\w     in /afs/umbc.edu/software/cadence/design_kits/ncsu-cdk-1.6.0.beta/cdssetup/cds.lib
+\w to suppress this warning message.
+\w *WARNING* LIB NCSU_TechLib_tsmc03 from File /afs/umbc.edu/users/s/s/s348/home/cadence/cadence_setup/cds.lib Line 19 redefines
+\w LIB NCSU_TechLib_tsmc03 from File /afs/umbc.edu/software/cadence/design_kits/ncsu-cdk-1.6.0.beta/cdssetup/cds.lib
+\w Insert UNDEFINE NCSU_TechLib_tsmc03
+\w before DEFINE NCSU_TechLib_tsmc03
+\w     in /afs/umbc.edu/users/s/s/s348/home/cadence/cadence_setup/cds.lib
+\w Or remove or comment out DEFINE NCSU_TechLib_tsmc03
+\w     in /afs/umbc.edu/software/cadence/design_kits/ncsu-cdk-1.6.0.beta/cdssetup/cds.lib
+\w to suppress this warning message.
+\w *WARNING* LIB NCSU_TechLib_tsmc03d from File /afs/umbc.edu/users/s/s/s348/home/cadence/cadence_setup/cds.lib Line 20 redefines
+\w LIB NCSU_TechLib_tsmc03d from File /afs/umbc.edu/software/cadence/design_kits/ncsu-cdk-1.6.0.beta/cdssetup/cds.lib
+\w Insert UNDEFINE NCSU_TechLib_tsmc03d
+\w before DEFINE NCSU_TechLib_tsmc03d
+\w     in /afs/umbc.edu/users/s/s/s348/home/cadence/cadence_setup/cds.lib
+\w Or remove or comment out DEFINE NCSU_TechLib_tsmc03d
+\w     in /afs/umbc.edu/software/cadence/design_kits/ncsu-cdk-1.6.0.beta/cdssetup/cds.lib
+\w to suppress this warning message.
+\# Current Window: window(3)
+\o Loading schematic.cxt 
+\o Loading vb.cxt 
+\o Loading ncl.cxt 
+\o Loading cfde.cxt 
+\o Loading nt.cxt 
+\o Loading oi.cxt 
+\o Loading see.cxt 
+\o Loading treeAssistant.cxt 
+\o Loading asst.cxt 
+\a _ciAssistantReplay_newAssistantByName(dwindow('ciProspector1) "Rapid Analog Prototype")
+\r t
+\o Loading simui.cxt 
+\o Loading hia.cxt 
+\o Loading hsm.cxt 
+\o Loading dpt.cxt 
+\o Loading mpt.cxt 
+\o Loading schMap.cxt 
+\o Loading layerProc.cxt 
+\# Current Window: window(2) Window cellview: finalproj1:lru_unit:layout  Application: Virtuoso XL
+\o INFO (BND-1003): Binder initialized for layout cellview 'finalproj1/lru_unit/layout' and source cellview 'finalproj1/lru_unit/schematic':
+\o 
+\o                  bound
+\o   terminals         62
+\o   nets             153
+\o   instances         88
+\o 
+\o INFO (BND-1004): Layout instances and terminals match source.
+\o Loading vfoCmd.cxt 
+\o The Quantus UI context file was successfully loaded.
+\o Loading sna.cxt
+\o Loading ia.cxt 
+\o Loading ev20.cxt 
+\o Loading vfp.cxt 
+\# Memory report: using         571 MB, process size 2,450 MB at UTC 2026.11.21 00:19:36.127
+\o Loading smd.cxt 
+\o Loading atd.cxt 
+\a _treeWidgetTreeWidgetItemClicked(_iaConfForm->_iaCfgTree "Generate Trunks" "0" "Unchecked")
+\r t
+\a _treeWidgetTreeWidgetItemClicked(_iaConfForm->_iaCfgTree "Generate Trunks" "0" "Unchecked")
+\r t
+\o Loading apInfra.cxt 
+\o Loading vca.cxt 
+\o Loading vrfECO.cxt 
+\a when(dwindow('oiAssistant1) hiMapWindow(dwindow('oiAssistant1)))
+\r t
+\a when(dwindow('treeAssistant1) hiMapWindow(dwindow('treeAssistant1)))
+\r t
+\a when(dwindow('ptePaletteAssistant1) hiMapWindow(dwindow('ptePaletteAssistant1)))
+\r t
+\a hiCloseWindow(swindow(2))
+\o INFO (LX-1947): Editing 'finalproj1/lru_unit/layout' in Layout XL without a connectivity reference can introduce Layout XL compliance issues.
+\o Specify the source schematic using the 'Connectivity - Update - Connectivity Reference' menu command.
+\r t
+\a hiCloseWindow(swindow(1))
+\r t
+\a ddsHiRefresh()
+\o 
+\o Refreshing data from disk:
+\w *WARNING* LIB NCSU_Analog_Parts from File /afs/umbc.edu/users/s/s/s348/home/cadence/cadence_setup/cds.lib Line 12 redefines
+\w LIB NCSU_Analog_Parts from File /afs/umbc.edu/software/cadence/design_kits/ncsu-cdk-1.6.0.beta/cdssetup/cds.lib
+\w Insert UNDEFINE NCSU_Analog_Parts
+\w before DEFINE NCSU_Analog_Parts
+\w     in /afs/umbc.edu/users/s/s/s348/home/cadence/cadence_setup/cds.lib
+\w Or remove or comment out DEFINE NCSU_Analog_Parts
+\w     in /afs/umbc.edu/software/cadence/design_kits/ncsu-cdk-1.6.0.beta/cdssetup/cds.lib
+\w to suppress this warning message.
+\w *WARNING* LIB NCSU_Digital_Parts from File /afs/umbc.edu/users/s/s/s348/home/cadence/cadence_setup/cds.lib Line 13 redefines
+\w LIB NCSU_Digital_Parts from File /afs/umbc.edu/software/cadence/design_kits/ncsu-cdk-1.6.0.beta/cdssetup/cds.lib
+\w Insert UNDEFINE NCSU_Digital_Parts
+\w before DEFINE NCSU_Digital_Parts
+\w     in /afs/umbc.edu/users/s/s/s348/home/cadence/cadence_setup/cds.lib
+\w Or remove or comment out DEFINE NCSU_Digital_Parts
+\w     in /afs/umbc.edu/software/cadence/design_kits/ncsu-cdk-1.6.0.beta/cdssetup/cds.lib
+\w to suppress this warning message.
+\w *WARNING* LIB NCSU_TechLib_ami06 from File /afs/umbc.edu/users/s/s/s348/home/cadence/cadence_setup/cds.lib Line 14 redefines
+\w LIB NCSU_TechLib_ami06 from File /afs/umbc.edu/software/cadence/design_kits/ncsu-cdk-1.6.0.beta/cdssetup/cds.lib
+\w Insert UNDEFINE NCSU_TechLib_ami06
+\w before DEFINE NCSU_TechLib_ami06
+\w     in /afs/umbc.edu/users/s/s/s348/home/cadence/cadence_setup/cds.lib
+\w Or remove or comment out DEFINE NCSU_TechLib_ami06
+\w     in /afs/umbc.edu/software/cadence/design_kits/ncsu-cdk-1.6.0.beta/cdssetup/cds.lib
+\w to suppress this warning message.
+\w *WARNING* LIB NCSU_TechLib_ami16 from File /afs/umbc.edu/users/s/s/s348/home/cadence/cadence_setup/cds.lib Line 15 redefines
+\w LIB NCSU_TechLib_ami16 from File /afs/umbc.edu/software/cadence/design_kits/ncsu-cdk-1.6.0.beta/cdssetup/cds.lib
+\w Insert UNDEFINE NCSU_TechLib_ami16
+\w before DEFINE NCSU_TechLib_ami16
+\w     in /afs/umbc.edu/users/s/s/s348/home/cadence/cadence_setup/cds.lib
+\w Or remove or comment out DEFINE NCSU_TechLib_ami16
+\w     in /afs/umbc.edu/software/cadence/design_kits/ncsu-cdk-1.6.0.beta/cdssetup/cds.lib
+\w to suppress this warning message.
+\w *WARNING* LIB NCSU_TechLib_hp06 from File /afs/umbc.edu/users/s/s/s348/home/cadence/cadence_setup/cds.lib Line 16 redefines
+\w LIB NCSU_TechLib_hp06 from File /afs/umbc.edu/software/cadence/design_kits/ncsu-cdk-1.6.0.beta/cdssetup/cds.lib
+\w Insert UNDEFINE NCSU_TechLib_hp06
+\w before DEFINE NCSU_TechLib_hp06
+\w     in /afs/umbc.edu/users/s/s/s348/home/cadence/cadence_setup/cds.lib
+\w Or remove or comment out DEFINE NCSU_TechLib_hp06
+\w     in /afs/umbc.edu/software/cadence/design_kits/ncsu-cdk-1.6.0.beta/cdssetup/cds.lib
+\w to suppress this warning message.
+\w *WARNING* LIB NCSU_TechLib_tsmc02 from File /afs/umbc.edu/users/s/s/s348/home/cadence/cadence_setup/cds.lib Line 17 redefines
+\w LIB NCSU_TechLib_tsmc02 from File /afs/umbc.edu/software/cadence/design_kits/ncsu-cdk-1.6.0.beta/cdssetup/cds.lib
+\w Insert UNDEFINE NCSU_TechLib_tsmc02
+\w before DEFINE NCSU_TechLib_tsmc02
+\w     in /afs/umbc.edu/users/s/s/s348/home/cadence/cadence_setup/cds.lib
+\w Or remove or comment out DEFINE NCSU_TechLib_tsmc02
+\w     in /afs/umbc.edu/software/cadence/design_kits/ncsu-cdk-1.6.0.beta/cdssetup/cds.lib
+\w to suppress this warning message.
+\w *WARNING* LIB NCSU_TechLib_tsmc02d from File /afs/umbc.edu/users/s/s/s348/home/cadence/cadence_setup/cds.lib Line 18 redefines
+\w LIB NCSU_TechLib_tsmc02d from File /afs/umbc.edu/software/cadence/design_kits/ncsu-cdk-1.6.0.beta/cdssetup/cds.lib
+\w Insert UNDEFINE NCSU_TechLib_tsmc02d
+\w before DEFINE NCSU_TechLib_tsmc02d
+\w     in /afs/umbc.edu/users/s/s/s348/home/cadence/cadence_setup/cds.lib
+\w Or remove or comment out DEFINE NCSU_TechLib_tsmc02d
+\w     in /afs/umbc.edu/software/cadence/design_kits/ncsu-cdk-1.6.0.beta/cdssetup/cds.lib
+\w to suppress this warning message.
+\w *WARNING* LIB NCSU_TechLib_tsmc03 from File /afs/umbc.edu/users/s/s/s348/home/cadence/cadence_setup/cds.lib Line 19 redefines
+\w LIB NCSU_TechLib_tsmc03 from File /afs/umbc.edu/software/cadence/design_kits/ncsu-cdk-1.6.0.beta/cdssetup/cds.lib
+\w Insert UNDEFINE NCSU_TechLib_tsmc03
+\w before DEFINE NCSU_TechLib_tsmc03
+\w     in /afs/umbc.edu/users/s/s/s348/home/cadence/cadence_setup/cds.lib
+\w Or remove or comment out DEFINE NCSU_TechLib_tsmc03
+\w     in /afs/umbc.edu/software/cadence/design_kits/ncsu-cdk-1.6.0.beta/cdssetup/cds.lib
+\w to suppress this warning message.
+\w *WARNING* LIB NCSU_TechLib_tsmc03d from File /afs/umbc.edu/users/s/s/s348/home/cadence/cadence_setup/cds.lib Line 20 redefines
+\w LIB NCSU_TechLib_tsmc03d from File /afs/umbc.edu/software/cadence/design_kits/ncsu-cdk-1.6.0.beta/cdssetup/cds.lib
+\w Insert UNDEFINE NCSU_TechLib_tsmc03d
+\w before DEFINE NCSU_TechLib_tsmc03d
+\w     in /afs/umbc.edu/users/s/s/s348/home/cadence/cadence_setup/cds.lib
+\w Or remove or comment out DEFINE NCSU_TechLib_tsmc03d
+\w     in /afs/umbc.edu/software/cadence/design_kits/ncsu-cdk-1.6.0.beta/cdssetup/cds.lib
+\w to suppress this warning message.
+\w *WARNING* LIB NCSU_TechLib_tsmc04_4M2P from File /afs/umbc.edu/users/s/s/s348/home/cadence/cadence_setup/cds.lib Line 21 redefines
+\w LIB NCSU_TechLib_tsmc04_4M2P from File /afs/umbc.edu/software/cadence/design_kits/ncsu-cdk-1.6.0.beta/cdssetup/cds.lib
+\w Insert UNDEFINE NCSU_TechLib_tsmc04_4M2P
+\w before DEFINE NCSU_TechLib_tsmc04_4M2P
+\w     in /afs/umbc.edu/users/s/s/s348/home/cadence/cadence_setup/cds.lib
+\w Or remove or comment out DEFINE NCSU_TechLib_tsmc04_4M2P
+\w     in /afs/umbc.edu/software/cadence/design_kits/ncsu-cdk-1.6.0.beta/cdssetup/cds.lib
+\w to suppress this warning message.
+\o .. ddUpdateLibList called to update the library list.
+\# Displaying modal dbox "ddsDBox", title "No Data to Refresh"
+\p > 
+\a hiDBoxOK(ddsDBox)
+\r t
+\o .. all open properties and cellviews are current with their
+\o    files on disk and all effective CDF data is current with
+\o    the base CDF data.
+\r nil
